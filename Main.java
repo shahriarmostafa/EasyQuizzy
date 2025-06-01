@@ -6,4 +6,4 @@ public class Main{
        Sign_in s1= new Sign_in();
        s1.setVisible(true);
     }
-}
+}//...
