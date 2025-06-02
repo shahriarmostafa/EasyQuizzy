@@ -31,10 +31,23 @@ public class SignUp  extends JFrame
         // nmlbl.setBounds();
 
         crlbl=new JLabel("Creat your account");
-        crlbl.setBounds(500,40,200,100);
-        crlbl.setFont(new Font("Arial", Font.BOLD, 20));
+        crlbl.setBounds(600,5,300,100);
+        crlbl.setFont(new Font("Arial", Font.BOLD, 25));
         crlbl.setForeground(Color.BLUE);
         panel.add(crlbl);
+
+        fnmlbl=new JLabel("Enter your full name");
+        fnmlbl.setBounds(500,85,200,50);
+        fnmlbl.setFont(new Font("Arial", Font.BOLD, 15));
+        panel.add(fnmlbl);
+
+        nmfld=new JTextField();
+		nmfld.setBounds(500,125,400,35);
+        nmfld.setFont(new Font("Arial", Font.BOLD, 15));
+		panel.add(nmfld);
+
+
+
 
 
 
