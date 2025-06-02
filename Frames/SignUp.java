@@ -10,6 +10,7 @@ public class SignUp  extends JFrame
 	JTextField nmfld;
 	JPasswordField psfld;
 	JButton rgstbtn,bckbtn;
+    ImageIcon icon;
 	JPanel panel;
 
     public SignUp()
@@ -20,6 +21,9 @@ public class SignUp  extends JFrame
 
         panel=new JPanel();
 		panel.setLayout(null);
+
+        icon = new ImageIcon(getClass().getResource("../Images/logo.png"));
+        this.setIconImage(icon.getImage());
 
         // wlbl=new JLabel("Welcome");
         // wlbl.setBounds(500, 50, 250, 150);
@@ -77,14 +81,22 @@ public class SignUp  extends JFrame
 		panel.add(psfld);
 
 
+        rgstbtn=new JButton("Sign Up");
+        rgstbtn.setBounds(500,400,250,50);
+        rgstbtn.setForeground(Color.WHITE);
+        rgstbtn.setBackground(Color.BLUE);
+        rgstbtn.setFont(new Font("Arial", Font.BOLD, 18));
+       // rgstbtn.addMouseListener(this);
+        panel.add(rgstbtn);
 
 
-
-
-
-
-
-
+        bckbtn=new JButton("Back");
+        bckbtn.setBounds(580,465,100,40);
+        bckbtn.setForeground(Color.WHITE);
+        bckbtn.setBackground(Color.BLUE);
+        bckbtn.setFont(new Font("Arial", Font.BOLD, 18));
+        //bckbtn.addMouseListener(this);
+        panel.add(bckbtn);
 
         this.add(panel);
 
