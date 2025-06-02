@@ -34,7 +34,7 @@ public class Sign_in extends JFrame implements MouseListener
         welcomelbl.setForeground(Color.BLUE);
         panel.add(welcomelbl);
 
-        namelbl=new JLabel("Name ");
+        namelbl=new JLabel("Username");
         namelbl.setBounds(500,200,100,50);
         namelbl.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(namelbl);
@@ -44,7 +44,7 @@ public class Sign_in extends JFrame implements MouseListener
         namefld.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(namefld);
 
-        passlbl=new JLabel("Pass ");
+        passlbl=new JLabel("Password");
         passlbl.setBounds(500,270,100,50);
         passlbl.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(passlbl);
