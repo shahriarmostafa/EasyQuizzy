@@ -34,22 +34,22 @@ public class Sign_in extends JFrame{
         panel.add(welcomelbl);
 
         namelbl=new JLabel("Name ");
-        namelbl.setBounds(500,240,100,50);
+        namelbl.setBounds(500,200,100,50);
         namelbl.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(namelbl);
 
         namefld=new JTextField();
-        namefld.setBounds(550,240,200,50);
+        namefld.setBounds(500,240,250,35);
         namefld.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(namefld);
 
         passlbl=new JLabel("Pass ");
-        passlbl.setBounds(500,310,100,50);
+        passlbl.setBounds(500,270,100,50);
         passlbl.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(passlbl);
 
         passfld=new JPasswordField();
-        passfld.setBounds(550,310,200,50);
+        passfld.setBounds(500,310,250,35);
         passfld.setFont(new Font("Arial", Font.BOLD, 15));
         passfld.setEchoChar('*');
         panel.add(passfld);
@@ -66,6 +66,14 @@ public class Sign_in extends JFrame{
         imagelbl = new JLabel(sideImage);
         imagelbl.setBounds(35, 80,436, 424);
         panel.add(imagelbl);
+
+        // ImageIcon bigLogo = new ImageIcon(getClass().getResource("logo2.png"));
+        // imagelbl = new JLabel(bigLogo);
+        // imagelbl.setBounds(450,0,600,400);
+        // panel.add(imagelbl);
+
+
+
 
         this.add(panel);
 
