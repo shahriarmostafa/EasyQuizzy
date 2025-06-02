@@ -3,7 +3,7 @@ import java.lang.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-public class SignUp  extends JFrame
+public class SignUp  extends JFrame implements MouseListener
 {
 
     JLabel wlbl,fnmlbl,unmlbl,pslbl,crlbl;
@@ -86,7 +86,7 @@ public class SignUp  extends JFrame
         rgstbtn.setForeground(Color.WHITE);
         rgstbtn.setBackground(Color.BLUE);
         rgstbtn.setFont(new Font("Arial", Font.BOLD, 18));
-       // rgstbtn.addMouseListener(this);
+        rgstbtn.addMouseListener(this);
         panel.add(rgstbtn);
 
 
@@ -95,13 +95,44 @@ public class SignUp  extends JFrame
         bckbtn.setForeground(Color.WHITE);
         bckbtn.setBackground(Color.BLUE);
         bckbtn.setFont(new Font("Arial", Font.BOLD, 18));
-        //bckbtn.addMouseListener(this);
+        bckbtn.addMouseListener(this);
         panel.add(bckbtn);
 
         this.add(panel);
 
 
     }
+    public void mouseClicked(MouseEvent me){}
+	public void mousePressed(MouseEvent me){}
+	public void mouseReleased(MouseEvent me){}
+    public void mouseEntered(MouseEvent me)
+    {
+        if(me.getSource()==rgstbtn)
+        {
+            rgstbtn.setBackground(Color.WHITE);
+            rgstbtn.setForeground(Color.BLUE);
+        }
+
+        else if(me.getSource()==bckbtn)
+        {
+            bckbtn.setBackground(Color.WHITE);
+            bckbtn.setForeground(Color.BLUE);
+        }
+    }
+    public void mouseExited(MouseEvent me)
+    {
+        if(me.getSource()==rgstbtn)
+        {
+            rgstbtn.setBackground(Color.BLUE);
+            rgstbtn.setForeground(Color.WHITE);
+        }
+        else if(me.getSource()==bckbtn)
+        {
+            bckbtn.setBackground(Color.BLUE);
+            bckbtn.setForeground(Color.WHITE);
+        }
+    }
+
 
 
     
