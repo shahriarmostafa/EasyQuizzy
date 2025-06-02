@@ -20,7 +20,7 @@ public class Sign_in extends JFrame implements MouseListener
     public Sign_in()
     {
         super("Log In");
-        this.setSize(950,550);
+        this.setSize(950,600);
 		this.setLocationRelativeTo(null);
 
         panel = new JPanel();

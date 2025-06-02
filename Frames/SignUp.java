@@ -16,7 +16,7 @@ public class SignUp  extends JFrame implements MouseListener
     public SignUp()
     {
         super("Sign Up");
-        this.setSize(950,550);
+        this.setSize(950,600);
         this.setLocationRelativeTo(null);
 
         panel=new JPanel();
