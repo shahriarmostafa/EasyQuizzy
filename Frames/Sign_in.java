@@ -2,10 +2,11 @@ package Frames;
 import java.lang.*;
 import javax.swing.*;
 import java.awt.*;
-//import java.awt.event.*;
-public class Sign_in extends JFrame{
+import java.awt.event.*;
+public class Sign_in extends JFrame implements MouseListener
+{
 
-    JLabel namelbl,passlbl,imagelbl,welcomelbl;
+    JLabel namelbl,passlbl,imagelbl,welcomelbl,queslbl;
 	JTextField namefld;
 	JPasswordField passfld;
 	JButton lgnbtn,rgstrbtn,backbtn;
@@ -59,13 +60,31 @@ public class Sign_in extends JFrame{
         lgnbtn.setForeground(Color.WHITE);
         lgnbtn.setBackground(Color.BLUE);
         lgnbtn.setFont(new Font("Arial", Font.BOLD, 18));
+        lgnbtn.addMouseListener(this);
         panel.add(lgnbtn);
 
-        
+        queslbl=new JLabel("Don’t have a account?");
+        queslbl.setBounds(500,435,200,50);
+        queslbl.setFont(new Font("Arial", Font.BOLD, 15));
+        panel.add(queslbl);
+
+
+
+        rgstrbtn=new JButton("Sign Up");
+        rgstrbtn.setBounds(670,445,80,30);
+        rgstrbtn.setForeground(Color.BLUE);
+        rgstrbtn.setBackground(Color.WHITE);
+        rgstrbtn.setFont(new Font("Arial", Font.BOLD, 12));
+        rgstrbtn.addMouseListener(this);
+        panel.add(rgstrbtn);
+
+
         ImageIcon sideImage = new ImageIcon(getClass().getResource("sideimg.png"));
         imagelbl = new JLabel(sideImage);
         imagelbl.setBounds(35, 80,436, 424);
         panel.add(imagelbl);
+
+
 
         // ImageIcon bigLogo = new ImageIcon(getClass().getResource("logo2.png"));
         // imagelbl = new JLabel(bigLogo);
@@ -81,5 +100,35 @@ public class Sign_in extends JFrame{
 
     }
 
+    public void mouseClicked(MouseEvent me){}
+	public void mousePressed(MouseEvent me){}
+	public void mouseReleased(MouseEvent me){}
+    public void mouseEntered(MouseEvent me)
+    {
+        if(me.getSource()==lgnbtn)
+        {
+            lgnbtn.setBackground(Color.WHITE);
+            lgnbtn.setForeground(Color.BLUE);
+        }
+
+        else if(me.getSource()==rgstrbtn)
+        {
+            rgstrbtn.setBackground(Color.BLUE);
+            rgstrbtn.setForeground(Color.WHITE);
+        }
+    }
+    public void mouseExited(MouseEvent me)
+    {
+        if(me.getSource()==lgnbtn)
+        {
+            lgnbtn.setBackground(Color.BLUE);
+            lgnbtn.setForeground(Color.WHITE);
+        }
+        else if(me.getSource()==rgstrbtn)
+        {
+            rgstrbtn.setBackground(Color.WHITE);
+            rgstrbtn.setForeground(Color.BLUE);
+        }
+    }
 
 }
