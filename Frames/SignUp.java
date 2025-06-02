@@ -6,7 +6,7 @@ import java.awt.event.*;
 public class SignUp  extends JFrame
 {
 
-    JLabel wlbl,fnmlbl,nmlbl,pslbl,crlbl;
+    JLabel wlbl,fnmlbl,unmlbl,pslbl,crlbl;
 	JTextField nmfld;
 	JPasswordField psfld;
 	JButton rgstbtn,bckbtn;
@@ -27,11 +27,8 @@ public class SignUp  extends JFrame
         // wlbl.setForeground(Color.BLUE);
         // panel.add(wlbl);
 
-        // nmlbl=new JLabel();
-        // nmlbl.setBounds();
-
         crlbl=new JLabel("Creat your account");
-        crlbl.setBounds(600,5,300,100);
+        crlbl.setBounds(500,5,300,100);
         crlbl.setFont(new Font("Arial", Font.BOLD, 25));
         crlbl.setForeground(Color.BLUE);
         panel.add(crlbl);
@@ -42,9 +39,47 @@ public class SignUp  extends JFrame
         panel.add(fnmlbl);
 
         nmfld=new JTextField();
-		nmfld.setBounds(500,125,400,35);
+		nmfld.setBounds(500,125,250,35);
         nmfld.setFont(new Font("Arial", Font.BOLD, 15));
 		panel.add(nmfld);
+
+        unmlbl=new JLabel("Username");
+        unmlbl.setBounds(500,155,200,50);
+        unmlbl.setFont(new Font("Arial", Font.BOLD, 15));
+        panel.add(unmlbl);
+
+        nmfld=new JTextField();
+		nmfld.setBounds(500,195,250,35);
+        nmfld.setFont(new Font("Arial", Font.BOLD, 15));
+		panel.add(nmfld);
+
+
+        pslbl=new JLabel("Password");
+        pslbl.setBounds(500,225,100,50);
+        pslbl.setFont(new Font("Arial", Font.BOLD, 15));
+        panel.add(pslbl);
+
+        psfld=new JPasswordField();
+		psfld.setBounds(500,265,250,35);
+        psfld.setFont(new Font("Arial", Font.BOLD, 15));
+        psfld.setEchoChar('*');
+		panel.add(psfld);
+
+        pslbl=new JLabel("Confirm Password");
+        pslbl.setBounds(500,305,200,50);
+        pslbl.setFont(new Font("Arial", Font.BOLD, 15));
+        panel.add(pslbl);
+
+        psfld=new JPasswordField();
+		psfld.setBounds(500,345,250,35);
+        psfld.setFont(new Font("Arial", Font.BOLD, 15));
+        psfld.setEchoChar('*');
+		panel.add(psfld);
+
+
+
+
+
 
 
 
