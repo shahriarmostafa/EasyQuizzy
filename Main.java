@@ -8,7 +8,7 @@ public class Main{
     {
        Sign_in s1= new Sign_in();
        SignUp s2 =new SignUp();
-       s2.setVisible(true);
-       //s1.setVisible(true);
+    //    s2.setVisible(true);
+       s1.setVisible(true);
     }
 }

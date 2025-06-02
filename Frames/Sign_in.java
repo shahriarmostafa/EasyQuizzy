@@ -12,8 +12,10 @@ public class Sign_in extends JFrame implements MouseListener
 	JButton lgnbtn,rgstrbtn,backbtn;
 	Color mycolor,lblcolor;
 	Font myfont;
-	ImageIcon bg,logo;
+	ImageIcon icon, sideImage;
 	JPanel panel;
+
+    
 
     public Sign_in()
     {
@@ -25,7 +27,7 @@ public class Sign_in extends JFrame implements MouseListener
         panel.setLayout(null);
         panel.setBackground(Color.WHITE);
 
-        ImageIcon icon = new ImageIcon(getClass().getResource("logo.png"));
+        icon = new ImageIcon(getClass().getResource("../Images/logo.png"));
         this.setIconImage(icon.getImage());
 
         welcomelbl=new JLabel("Welcome Back");
@@ -79,9 +81,9 @@ public class Sign_in extends JFrame implements MouseListener
         panel.add(rgstrbtn);
 
 
-        ImageIcon sideImage = new ImageIcon(getClass().getResource("sideimg.png"));
+        sideImage = new ImageIcon(getClass().getResource("../Images/sideimg.png"));
         imagelbl = new JLabel(sideImage);
-        imagelbl.setBounds(35, 80,436, 424);
+        imagelbl.setBounds(35, 80, 436, 424);
         panel.add(imagelbl);
 
 
