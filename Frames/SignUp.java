@@ -3,12 +3,14 @@ import java.lang.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-public class SignUp  extends JFrame implements MouseListener
+import Entities.*;
+
+public class SignUp  extends JFrame implements MouseListener, ActionListener
 {
 
     JLabel wlbl,fnmlbl,unmlbl,pslbl,crlbl, welcomeLabel, helloLabel, logoLbl,sloganlbl;
-	JTextField nmfld;
-	JPasswordField psfld;
+	JTextField fullNameField, usernameField;
+	JPasswordField passwordField, confirmPasswordField;
 	JButton rgstbtn,bckbtn;
     ImageIcon icon, roundLogo;
 	JPanel panel, leftPanel;
@@ -83,20 +85,20 @@ public class SignUp  extends JFrame implements MouseListener
         fnmlbl.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(fnmlbl);
 
-        nmfld=new JTextField();
-		nmfld.setBounds(587,125,250,35);
-        nmfld.setFont(new Font("Arial", Font.BOLD, 15));
-		panel.add(nmfld);
+        fullNameField=new JTextField();
+		fullNameField.setBounds(587,125,250,35);
+        fullNameField.setFont(new Font("Arial", Font.BOLD, 15));
+		panel.add(fullNameField);
 
         unmlbl=new JLabel("Username");
         unmlbl.setBounds(587,155,200,50);
         unmlbl.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(unmlbl);
 
-        nmfld=new JTextField();
-		nmfld.setBounds(587,195,250,35);
-        nmfld.setFont(new Font("Arial", Font.BOLD, 15));
-		panel.add(nmfld);
+        usernameField=new JTextField();
+		usernameField.setBounds(587,195,250,35);
+        usernameField.setFont(new Font("Arial", Font.BOLD, 15));
+		panel.add(usernameField);
 
 
         pslbl=new JLabel("Password");
@@ -104,22 +106,22 @@ public class SignUp  extends JFrame implements MouseListener
         pslbl.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(pslbl);
 
-        psfld=new JPasswordField();
-		psfld.setBounds(587,265,250,35);
-        psfld.setFont(new Font("Arial", Font.BOLD, 15));
-        psfld.setEchoChar('*');
-		panel.add(psfld);
+        passwordField=new JPasswordField();
+		passwordField.setBounds(587,265,250,35);
+        passwordField.setFont(new Font("Arial", Font.BOLD, 15));
+        passwordField.setEchoChar('*');
+		panel.add(passwordField);
 
         pslbl=new JLabel("Confirm Password");
         pslbl.setBounds(587,305,200,50);
         pslbl.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(pslbl);
 
-        psfld=new JPasswordField();
-		psfld.setBounds(587,345,250,35);
-        psfld.setFont(new Font("Arial", Font.BOLD, 15));
-        psfld.setEchoChar('*');
-		panel.add(psfld);
+        confirmPasswordField=new JPasswordField();
+		confirmPasswordField.setBounds(587,345,250,35);
+        confirmPasswordField.setFont(new Font("Arial", Font.BOLD, 15));
+        confirmPasswordField.setEchoChar('*');
+		panel.add(confirmPasswordField);
 
 
         rgstbtn=new JButton("Sign Up");
@@ -129,6 +131,7 @@ public class SignUp  extends JFrame implements MouseListener
         rgstbtn.setBorder(null);
         rgstbtn.setFont(new Font("Arial", Font.BOLD, 18));
         rgstbtn.addMouseListener(this);
+        rgstbtn.addActionListener(this);
         panel.add(rgstbtn);
 
 
@@ -162,6 +165,24 @@ public class SignUp  extends JFrame implements MouseListener
             rgstbtn.setBackground(themeColor);
         }
 
+    }
+
+    public void actionPerformed(ActionEvent ae){
+        String fullName = fullNameField.getText();
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+        String confirmpassword = confirmPasswordField.getText();
+        if(!password.equals(confirmpassword)){
+            JOptionPane.showMessageDialog(null,"Password did not match...");
+            return;
+        }
+        else{
+            Account a1=new Account(fullName , username, password);
+			a1.addAccount();
+			this.setVisible(false);
+			HomePage h1=new HomePage();
+			h1.setVisible(true);
+        }
     }
 
 

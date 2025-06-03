@@ -1,6 +1,9 @@
 package Frames;
 import java.lang.*;
 import javax.swing.*;
+
+import Entities.Account;
+
 import java.awt.*;
 import java.awt.event.*;
 public class Sign_in extends JFrame implements MouseListener,ActionListener
@@ -140,6 +143,11 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
     }
     public void actionPerformed(ActionEvent ae)
 	{
+
+
+
+
+
 		if(ae.getSource()==rgstrbtn)
 		{
 			this.setVisible(false);
@@ -148,9 +156,25 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
 		}
 		else if(ae.getSource()==lgnbtn)
 		{
-			this.setVisible(false);
-			HomePage hp=new HomePage();
-			hp.setVisible(true);
+            String username = namefld.getText();
+            String password = passfld.getText();
+
+            Account a1=new Account(username, password);
+			
+			if(a1.getAccount(username, password)==true)
+			{
+				this.setVisible(false);
+                HomePage h1=new HomePage();
+                h1.setVisible(true);
+                JOptionPane.showMessageDialog(null, "Sign in success");
+			}
+            else{
+                JOptionPane.showMessageDialog(null, "Wrong user name or password");
+            }
+
+
+
+
 		}
 	}
 
