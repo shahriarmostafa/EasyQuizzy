@@ -62,13 +62,6 @@ public class SignUp  extends JFrame implements MouseListener
         panel.add(leftPanel);
 
 
-  
-
-
-        
-
-
-        
 
         icon = new ImageIcon(getClass().getResource("../Images/logo.png"));
         this.setIconImage(icon.getImage());

@@ -6,13 +6,13 @@ import java.awt.event.*;
 public class Sign_in extends JFrame implements MouseListener,ActionListener
 {
 
-    JLabel namelbl,passlbl,imagelbl,welcomelbl,queslbl;
+    JLabel namelbl,passlbl,imagelbl,welcomelbl,queslbl,logolbl;
 	JTextField namefld;
 	JPasswordField passfld;
 	JButton lgnbtn,rgstrbtn,backbtn;
 	Color mycolor,lblcolor;
 	Font myfont;
-	ImageIcon icon, sideImage;
+	ImageIcon icon, sideImage,bigLogo;
 	JPanel panel;
 
     
@@ -63,6 +63,7 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
         lgnbtn.setBackground(Color.BLUE);
         lgnbtn.setFont(new Font("Arial", Font.BOLD, 18));
         lgnbtn.addMouseListener(this);
+        lgnbtn.addActionListener(this);
         panel.add(lgnbtn);
 
         queslbl=new JLabel("Don’t have a account?");
@@ -89,10 +90,14 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
 
 
 
-        // ImageIcon bigLogo = new ImageIcon(getClass().getResource("logo2.png"));
-        // imagelbl = new JLabel(bigLogo);
-        // imagelbl.setBounds(450,0,600,400);
-        // panel.add(imagelbl);
+       bigLogo = new ImageIcon(getClass().getResource("../Images/logo2.png"));
+        Image scaledImage = bigLogo.getImage().getScaledInstance(
+            205, 155, Image.SCALE_SMOOTH
+        );
+        ImageIcon scaledImageFinal = new ImageIcon(scaledImage);
+        logolbl = new JLabel(scaledImageFinal);
+        logolbl.setBounds(700, 2, 205, 155);
+        panel.add(logolbl);
 
 
 
@@ -141,12 +146,12 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
 			SignUp su=new SignUp();
 			su.setVisible(true);
 		}
-		// else if(ae.getSource()==lgnbtn)
-		// {
-		// 	this.setVisible(false);
-		// 	Homepage h1=new Homepage();
-		// 	h1.setVisible(true);
-		// }
+		else if(ae.getSource()==lgnbtn)
+		{
+			this.setVisible(false);
+			HomePage hp=new HomePage();
+			hp.setVisible(true);
+		}
 	}
 
 
