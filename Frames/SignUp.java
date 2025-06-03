@@ -6,7 +6,7 @@ import java.awt.event.*;
 public class SignUp  extends JFrame implements MouseListener
 {
 
-    JLabel wlbl,fnmlbl,unmlbl,pslbl,crlbl, welcomeLabel, helloLabel, logoLbl;
+    JLabel wlbl,fnmlbl,unmlbl,pslbl,crlbl, welcomeLabel, helloLabel, logoLbl,sloganlbl;
 	JTextField nmfld;
 	JPasswordField psfld;
 	JButton rgstbtn,bckbtn;
@@ -49,11 +49,23 @@ public class SignUp  extends JFrame implements MouseListener
         logoLbl.setBounds(138, 200, 200, 200);
         panel.add(logoLbl);
 
+        // sloganlbl=new JLabel("Tap, think, win! Easy Quizzy brings"+"\n"+"the fun right to your fingertips." );
+        // sloganlbl.setBounds(100,400,250,100);
+        // sloganlbl.setFont(new Font("Arail", Font.PLAIN, 15));
+        // sloganlbl.setForeground(Color.WHITE);
+        // panel.add(sloganlbl);
+
 
         leftPanel = new JPanel();
         leftPanel.setBounds(0, 0, 475, 600);
         leftPanel.setBackground(themeColor);
         panel.add(leftPanel);
+
+
+  
+
+
+        
 
 
         
@@ -68,8 +80,8 @@ public class SignUp  extends JFrame implements MouseListener
         // panel.add(wlbl);
 
         crlbl=new JLabel("Creat your account");
-        crlbl.setBounds(587,5,300,100);
-        crlbl.setFont(new Font("Arial", Font.BOLD, 25));
+        crlbl.setBounds(587,4,300,100);
+        crlbl.setFont(new Font("Arial", Font.BOLD, 28));
         crlbl.setForeground(themeColor);
         panel.add(crlbl);
 

@@ -3,7 +3,7 @@ import java.lang.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-public class Sign_in extends JFrame implements MouseListener
+public class Sign_in extends JFrame implements MouseListener,ActionListener
 {
 
     JLabel namelbl,passlbl,imagelbl,welcomelbl,queslbl;
@@ -78,6 +78,7 @@ public class Sign_in extends JFrame implements MouseListener
         rgstrbtn.setBackground(Color.WHITE);
         rgstrbtn.setFont(new Font("Arial", Font.BOLD, 12));
         rgstrbtn.addMouseListener(this);
+        rgstrbtn.addActionListener(this);
         panel.add(rgstrbtn);
 
 
@@ -132,5 +133,21 @@ public class Sign_in extends JFrame implements MouseListener
             rgstrbtn.setForeground(Color.BLUE);
         }
     }
+    public void actionPerformed(ActionEvent ae)
+	{
+		if(ae.getSource()==rgstrbtn)
+		{
+			this.setVisible(false);
+			SignUp su=new SignUp();
+			su.setVisible(true);
+		}
+		// else if(ae.getSource()==lgnbtn)
+		// {
+		// 	this.setVisible(false);
+		// 	Homepage h1=new Homepage();
+		// 	h1.setVisible(true);
+		// }
+	}
+
 
 }
