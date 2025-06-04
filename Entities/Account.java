@@ -13,6 +13,8 @@ public class Account
 	private File myfile;
 	private FileWriter fwrite;
 	private Scanner sc;
+
+	public Account(){}
 	
 	public Account(String uname,String upass)
 	{

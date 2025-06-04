@@ -95,11 +95,11 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
 
        bigLogo = new ImageIcon(getClass().getResource("../Images/logo2.png"));
         Image scaledImage = bigLogo.getImage().getScaledInstance(
-            205, 155, Image.SCALE_SMOOTH
+            164, 124, Image.SCALE_SMOOTH
         );
         ImageIcon scaledImageFinal = new ImageIcon(scaledImage);
         logolbl = new JLabel(scaledImageFinal);
-        logolbl.setBounds(700, 2, 205, 155);
+        logolbl.setBounds(500, 25, 164, 124);
         panel.add(logolbl);
 
 
