@@ -1,16 +1,16 @@
 package Frames;
 import java.lang.*;
 import javax.swing.*;
-import java.awt.Color;
+import java.awt.*;
 
 public class AdminPage extends JFrame {
 
     JLabel namelbl;
 	JTextField namefld;
-	JButton backbtn;
+	JButton logOutButton,addQButton;
     Color myColor,lbColor;
-    ImageIcon icon;
-	JPanel panel;
+    ImageIcon icon,adminIcon,addQ;
+	JPanel panel,topPanel,sidePanel;
 
     public AdminPage()
     {
@@ -26,11 +26,61 @@ public class AdminPage extends JFrame {
         icon = new ImageIcon(getClass().getResource("../Images/logo.png"));
         this.setIconImage(icon.getImage());
 
+        adminIcon = new ImageIcon(getClass().getResource("../Images/adminIcon.png"));
+        Image scaledImageRlogo = adminIcon.getImage().getScaledInstance(
+            40, 40, Image.SCALE_SMOOTH
+        );
+        ImageIcon scaledImageRlogoFinal = new ImageIcon(scaledImageRlogo);
+        JLabel adminLbl = new JLabel(scaledImageRlogoFinal);
+        adminLbl.setBounds(190, 7, 40, 40);
+        panel.add(adminLbl);
+
+        logOutButton = new JButton("Log Out");
+        logOutButton.setBounds(805, 7, 100, 30);
+        logOutButton.setForeground(Color.BLUE);
+        logOutButton.setBackground(Color.WHITE);
+        logOutButton.setFont(new Font("Arial", Font.BOLD, 16));
+        // logOutButton.addMouseListener(this);
+        // logOutButton.addActionListener(this);
+        panel.add(logOutButton);
+
+        topPanel = new JPanel();
+        topPanel.setLayout(null);
+        topPanel.setBounds(185, 0, 950, 50);
+        topPanel.setBackground(new Color(29, 29, 54));
+        panel.add(topPanel);
 
         namelbl = new JLabel("ADMIN DASHBOARD");
-        namelbl.setBounds(100, 100, 400, 50);
-        namelbl.setForeground(Color.RED);
-        panel.add(namelbl);
+        namelbl.setBounds(50, 6, 200, 40);
+        namelbl.setFont(new Font("Arial", Font.BOLD, 16));
+        namelbl.setForeground(Color.WHITE);
+        topPanel.add(namelbl);
+
+        sidePanel = new JPanel();
+        sidePanel.setLayout(null);
+        sidePanel.setBounds(0, 0, 185, 600);
+        sidePanel.setBackground(Color.BLUE);
+        panel.add(sidePanel);
+
+        //add q
+        addQ = new ImageIcon(getClass().getResource("../Images/addQ.png"));
+        Image scaledAddQImage = addQ.getImage().getScaledInstance(
+            38, 38, Image.SCALE_SMOOTH
+        );
+        ImageIcon scaledAddQIcon = new ImageIcon(scaledAddQImage);
+        JLabel addQlbl = new JLabel(scaledAddQIcon);
+        addQlbl.setBounds(0, 7, 38, 38);
+        sidePanel.add(addQlbl);
+
+        addQButton = new JButton("Add Question");
+        addQButton.setBounds(40, 14, 158, 25);
+        addQButton.setForeground(Color.WHITE);
+        addQButton.setBackground(Color.BLUE);
+        addQButton.setFont(new Font("Arial", Font.PLAIN, 20));
+        // addQButton.addMouseListener(this);
+        // addQButton.addActionListener(this);
+        sidePanel.add(addQButton);
+
 
 
         this.add(panel);

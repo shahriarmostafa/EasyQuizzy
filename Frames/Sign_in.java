@@ -62,27 +62,22 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
         passfld.setEchoChar('*');
         panel.add(passfld);
 
-        showIcon = new ImageIcon(getClass().getResource("../Images/closed-eyes.png"));     
-        hideIcon = new ImageIcon(getClass().getResource("../Images/eye-close-up.png"));
-        
-        // showIcon = new ImageIcon(getClass().getResource("/Images/closed-eyes.png"));
-        // Image scaledImage = showIcon.getImage().getScaledInstance(
-        //     5, 5, Image.SCALE_SMOOTH
-        // );
-        Image scaledImageEye = showIcon.getImage().getScaledInstance(
-            20, 20, Image.SCALE_SMOOTH
-        );
-        ImageIcon scaledImageFinalEye = new ImageIcon(scaledImageEye);
-        eyeIcon = new JLabel(scaledImageFinalEye);
-        eyeIcon.setBounds(730, 310, 20, 20);
-        eyeIcon.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        eyeIcon.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                togglePasswordVisibility();
-            }
-        });
-        panel.add(eyeIcon);
+showIcon = new ImageIcon(getClass().getResource("/Images/eye-close-up.png")); // open eye (show password)
+hideIcon = new ImageIcon(getClass().getResource("/Images/closed-eyes.png"));  // closed eye (hide password)
+
+// Start with hiding the password (closed eye)
+Image scaledHide = hideIcon.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH);
+eyeIcon = new JLabel(new ImageIcon(scaledHide));
+eyeIcon.setBounds(730, 310, 20, 20);
+eyeIcon.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+eyeIcon.addMouseListener(new MouseAdapter() {
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        togglePasswordVisibility();
+    }
+});
+panel.add(eyeIcon);
+
 
         lgnbtn=new JButton("Login");
         lgnbtn.setBounds(500,380,250,50);
@@ -134,16 +129,19 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
 
 
     }
-    private void togglePasswordVisibility() {
-        if (isPasswordVisible) {
-            passfld.setEchoChar('*');
-            eyeIcon.setIcon(hideIcon);
-        } else {
-            passfld.setEchoChar((char) 0);
-            eyeIcon.setIcon(showIcon);
-        }
-        isPasswordVisible = !isPasswordVisible;
+private void togglePasswordVisibility() {
+    if (isPasswordVisible) {
+        passfld.setEchoChar('*');
+        Image scaledHide = hideIcon.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH);
+        eyeIcon.setIcon(new ImageIcon(scaledHide));
+    } else {
+        passfld.setEchoChar((char) 0);
+        Image scaledShow = showIcon.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH);
+        eyeIcon.setIcon(new ImageIcon(scaledShow));
     }
+    isPasswordVisible = !isPasswordVisible;
+}
+
 
     public void mouseClicked(MouseEvent me){}
 	public void mousePressed(MouseEvent me){}
