@@ -13,10 +13,12 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
 	JTextField namefld;
 	JPasswordField passfld;
 	JButton lgnbtn,rgstrbtn,backbtn;
+    JLabel eyeIcon;
 	Color mycolor,lblcolor;
 	Font myfont;
-	ImageIcon icon, sideImage,bigLogo;
+	ImageIcon icon, sideImage, bigLogo, showIcon, hideIcon;
 	JPanel panel;
+    boolean isPasswordVisible = false;
 
     
 
@@ -30,7 +32,7 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
         panel.setLayout(null);
         panel.setBackground(Color.WHITE);
 
-        icon = new ImageIcon(getClass().getResource("../Images/logo.png"));
+        icon = new ImageIcon(getClass().getResource("/Images/logo.png"));
         this.setIconImage(icon.getImage());
 
         welcomelbl=new JLabel("Welcome Back");
@@ -59,6 +61,25 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
         passfld.setFont(new Font("Arial", Font.BOLD, 15));
         passfld.setEchoChar('*');
         panel.add(passfld);
+
+        showIcon = new ImageIcon(getClass().getResource("../Images/closed-eyes.png"));     
+        hideIcon = new ImageIcon(getClass().getResource("../Images/eye-close-up.png"));
+        
+        // showIcon = new ImageIcon(getClass().getResource("/Images/closed-eyes.png"));
+        // Image scaledImage = showIcon.getImage().getScaledInstance(
+        //     5, 5, Image.SCALE_SMOOTH
+        // );
+
+        eyeIcon = new JLabel(showIcon);
+        eyeIcon.setBounds(730, 310, 100, 200);
+        eyeIcon.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        eyeIcon.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                togglePasswordVisibility();
+            }
+        });
+        panel.add(eyeIcon);
 
         lgnbtn=new JButton("Login");
         lgnbtn.setBounds(500,380,250,50);
@@ -93,7 +114,7 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
 
 
 
-       bigLogo = new ImageIcon(getClass().getResource("../Images/logo2.png"));
+       bigLogo = new ImageIcon(getClass().getResource("/Images/logo2.png"));
         Image scaledImage = bigLogo.getImage().getScaledInstance(
             164, 124, Image.SCALE_SMOOTH
         );
@@ -109,6 +130,16 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
 
 
 
+    }
+    private void togglePasswordVisibility() {
+        if (isPasswordVisible) {
+            passfld.setEchoChar('*');
+            eyeIcon.setIcon(hideIcon);
+        } else {
+            passfld.setEchoChar((char) 0);
+            eyeIcon.setIcon(showIcon);
+        }
+        isPasswordVisible = !isPasswordVisible;
     }
 
     public void mouseClicked(MouseEvent me){}
