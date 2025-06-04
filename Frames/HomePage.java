@@ -7,11 +7,11 @@ import java.awt.*;
 public class HomePage extends JFrame {
 
 
-    JLabel namelbl, hiNameLabel, attendExamLabel;
+    JLabel namelbl, hiNameLabel, attendExamLabel,qLabel;
 	JTextField namefld;
 	JButton backbtn, logOutButton, attendQuiz;
     Color themeColor;
-    ImageIcon icon, roundLogo;
+    ImageIcon icon, roundLogo,qimg;
 	JPanel panel, topPanel;
     
     public HomePage(){
@@ -63,22 +63,32 @@ public class HomePage extends JFrame {
         topPanel.setBackground(themeColor);
         panel.add(topPanel);
 
+        //question
+        qimg = new ImageIcon(getClass().getResource("/Images/question.jpg"));
+        Image scaledImage = qimg.getImage().getScaledInstance(
+            300, 300, Image.SCALE_SMOOTH
+        );
+        ImageIcon scaledImageFinal = new ImageIcon(scaledImage);
+        qLabel = new JLabel(scaledImageFinal);
+        qLabel.setBounds(300, 50, 300, 300);
+        panel.add(qLabel);
+
 
         //mid part
         hiNameLabel = new JLabel("Hi, " + fullName, SwingConstants.CENTER);
-        hiNameLabel.setBounds(0, 150, 950, 30);
+        hiNameLabel.setBounds(0, 340, 950, 30);
         hiNameLabel.setFont(new Font("Arial", Font.BOLD, 30));
         hiNameLabel.setForeground(themeColor);
         panel.add(hiNameLabel);
 
         attendExamLabel = new JLabel("Attend the latest Quiz?", SwingConstants.CENTER);
-        attendExamLabel.setBounds(0, 180, 950, 30);
+        attendExamLabel.setBounds(0, 370, 950, 30);
         attendExamLabel.setFont(new Font("Arial", Font.BOLD, 20));
         panel.add(attendExamLabel);
 
         attendQuiz = new JButton("Attend Now!");
-        attendQuiz.setBounds(415, 215, 120, 45);
-        attendQuiz.setForeground(Color.BLACK);
+        attendQuiz.setBounds(415, 405, 120, 45);
+        attendQuiz.setForeground(Color.WHITE);
         attendQuiz.setBackground(themeColor);
         attendQuiz.setFont(new Font("Arial", Font.BOLD, 14));
         // logOutButton.addMouseListener(this);

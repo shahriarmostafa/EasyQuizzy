@@ -12,9 +12,9 @@ public class Main{
        SignUp s2 =new SignUp();
        HomePage h1=new HomePage("Syed Shahriar Mustafa");
        AdminPage a1= new AdminPage();
-       s2.setVisible(true);
+       //s2.setVisible(true);
     //    s1.setVisible(true);
-      //  h1.setVisible(true);
+      h1.setVisible(true);
       //  s1.setVisible(true);
 
     }
