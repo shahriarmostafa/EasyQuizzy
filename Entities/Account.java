@@ -38,13 +38,39 @@ public class Account
 	{
 		this.upass=upass;
 	}
+
 	public void setFullName(String fullName)
 	{
 		this.fullName=fullName;
 	}
 
-	public String getFullName()
+	public String getFullName(){
+		return fullName;
+	}
+
+	public String getFullNameForSignIn(String username)
 	{
+		String fullName = "";
+		try
+		{
+			myfile=new File("./Data.txt");
+			sc=new Scanner(myfile);
+			
+			while(sc.hasNextLine())
+			{
+				String line=sc.nextLine();
+				String[] value=line.split("\t");
+				if(value[1].equals(username))
+				{
+					fullName = value[0];
+				}
+			}
+			
+		}
+		catch(IOException ioe)
+		{
+			ioe.printStackTrace();
+		}
 		return fullName;
 	}
 	
