@@ -2,7 +2,7 @@ package Frames;
 import java.lang.*;
 import javax.swing.*;
 
-import Entities.Account;
+import Entities.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -69,9 +69,12 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
         // Image scaledImage = showIcon.getImage().getScaledInstance(
         //     5, 5, Image.SCALE_SMOOTH
         // );
-
-        eyeIcon = new JLabel(showIcon);
-        eyeIcon.setBounds(730, 310, 100, 200);
+        Image scaledImageEye = showIcon.getImage().getScaledInstance(
+            20, 20, Image.SCALE_SMOOTH
+        );
+        ImageIcon scaledImageFinalEye = new ImageIcon(scaledImageEye);
+        eyeIcon = new JLabel(scaledImageFinalEye);
+        eyeIcon.setBounds(730, 310, 20, 20);
         eyeIcon.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         eyeIcon.addMouseListener(new MouseAdapter() {
             @Override
@@ -199,7 +202,7 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
 			if(a1.getAccount(username, password)==true)
 			{
 				this.setVisible(false);
-                HomePage h1=new HomePage();
+                HomePage h1=new HomePage("Syed");
                 h1.setVisible(true);
                 JOptionPane.showMessageDialog(null, "Sign in success");
 			}
