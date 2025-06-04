@@ -200,7 +200,7 @@ private void togglePasswordVisibility() {
 			if(a1.getAccount(username, password)==true)
 			{
 				this.setVisible(false);
-                HomePage h1=new HomePage("Syed");
+                HomePage h1=new HomePage(a1.getFullNameForSignIn(username));
                 h1.setVisible(true);
                 JOptionPane.showMessageDialog(null, "Sign in success");
 			}

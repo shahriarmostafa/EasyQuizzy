@@ -40,15 +40,15 @@ public class HomePage extends JFrame {
 
         roundLogo = new ImageIcon(getClass().getResource("../Images/roundLogo.png"));
         Image scaledImageRlogo = roundLogo.getImage().getScaledInstance(
-            60, 60, Image.SCALE_SMOOTH
+            50, 50, Image.SCALE_SMOOTH
         );
         ImageIcon scaledImageRlogoFinal = new ImageIcon(scaledImageRlogo);
         JLabel labelRoundLogo = new JLabel(scaledImageRlogoFinal);
-        labelRoundLogo.setBounds(30, 15, 60, 60);
+        labelRoundLogo.setBounds(30, 10, 50, 50);
         panel.add(labelRoundLogo);
 
         logOutButton = new JButton("Log Out");
-        logOutButton.setBounds(805, 25, 100, 40);
+        logOutButton.setBounds(805, 15, 100, 40);
         logOutButton.setForeground(themeColor);
         logOutButton.setBackground(Color.WHITE);
         logOutButton.setFont(new Font("Arial", Font.BOLD, 14));
@@ -59,35 +59,37 @@ public class HomePage extends JFrame {
 
         //top part
         topPanel = new JPanel();
-        topPanel.setBounds(0, 0, 950, 90);
+        topPanel.setBounds(0, 0, 950, 70);
         topPanel.setBackground(themeColor);
         panel.add(topPanel);
 
-        //question
-        qimg = new ImageIcon(getClass().getResource("/Images/question.jpg"));
-        Image scaledImage = qimg.getImage().getScaledInstance(
-            300, 300, Image.SCALE_SMOOTH
-        );
-        ImageIcon scaledImageFinal = new ImageIcon(scaledImage);
-        qLabel = new JLabel(scaledImageFinal);
-        qLabel.setBounds(300, 50, 300, 300);
-        panel.add(qLabel);
+        
 
 
         //mid part
         hiNameLabel = new JLabel("Hi, " + fullName, SwingConstants.CENTER);
-        hiNameLabel.setBounds(0, 340, 950, 30);
+        hiNameLabel.setBounds(0, 125, 950, 30);
         hiNameLabel.setFont(new Font("Arial", Font.BOLD, 30));
-        hiNameLabel.setForeground(themeColor);
+        // hiNameLabel.setForeground(Color.WHITE);
         panel.add(hiNameLabel);
 
+        //question
+        qimg = new ImageIcon(getClass().getResource("/Images/question.jpg"));
+        Image scaledImage = qimg.getImage().getScaledInstance(
+            280, 280, Image.SCALE_SMOOTH
+        );
+        ImageIcon scaledImageFinal = new ImageIcon(scaledImage);
+        qLabel = new JLabel(scaledImageFinal);
+        qLabel.setBounds(335, 160, 280, 280);
+        panel.add(qLabel);
+
         attendExamLabel = new JLabel("Attend the latest Quiz?", SwingConstants.CENTER);
-        attendExamLabel.setBounds(0, 370, 950, 30);
+        attendExamLabel.setBounds(0, 445, 950, 30);
         attendExamLabel.setFont(new Font("Arial", Font.BOLD, 20));
         panel.add(attendExamLabel);
 
         attendQuiz = new JButton("Attend Now!");
-        attendQuiz.setBounds(415, 405, 120, 45);
+        attendQuiz.setBounds(415, 480, 120, 45);
         attendQuiz.setForeground(Color.WHITE);
         attendQuiz.setBackground(themeColor);
         attendQuiz.setFont(new Font("Arial", Font.BOLD, 14));
