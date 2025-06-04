@@ -160,7 +160,11 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
             String password = passfld.getText();
 
             Account a1=new Account(username, password);
-			
+			if(username.isEmpty() || password.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null,"Feild is empty");
+                return;
+            }
 			if(a1.getAccount(username, password)==true)
 			{
 				this.setVisible(false);

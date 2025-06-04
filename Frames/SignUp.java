@@ -172,6 +172,11 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         String username = usernameField.getText();
         String password = passwordField.getText();
         String confirmpassword = confirmPasswordField.getText();
+        if(fullName.isEmpty() ||username.isEmpty() || password.isEmpty() || confirmpassword.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null,"Feild is empty");
+                return;
+            }
         if(!password.equals(confirmpassword)){
             JOptionPane.showMessageDialog(null,"Password did not match...");
             return;
