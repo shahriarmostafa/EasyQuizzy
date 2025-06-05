@@ -10,7 +10,7 @@ public class AdminPage extends JFrame {
 	JButton logOutButton,addQButton;
     Color myColor,lbColor;
     ImageIcon icon,adminIcon,addQ;
-	JPanel panel,topPanel,sidePanel;
+	JPanel panel,topPanel,sidePanel,midPanel1,midPanel2;
 
     public AdminPage()
     {
@@ -61,6 +61,20 @@ public class AdminPage extends JFrame {
         sidePanel.setBounds(0, 0, 185, 600);
         sidePanel.setBackground(Color.BLUE);
         panel.add(sidePanel);
+
+        midPanel1 = new JPanel();
+        midPanel1.setLayout(null);
+        midPanel1.setBounds(250, 110, 200, 150);
+        midPanel1.setBackground(Color.BLUE);
+        panel.add(midPanel1);
+
+
+        midPanel2 = new JPanel();
+        midPanel2.setLayout(null);
+        midPanel2.setBounds(650, 110, 200, 150);
+        midPanel2.setBackground(Color.BLUE);
+        panel.add(midPanel2);
+
 
         //add q
         addQ = new ImageIcon(getClass().getResource("../Images/addQ.png"));
