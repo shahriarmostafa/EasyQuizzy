@@ -62,21 +62,20 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
         passfld.setEchoChar('*');
         panel.add(passfld);
 
-showIcon = new ImageIcon(getClass().getResource("/Images/eye-close-up.png")); // open eye (show password)
-hideIcon = new ImageIcon(getClass().getResource("/Images/closed-eyes.png"));  // closed eye (hide password)
+        showIcon = new ImageIcon(getClass().getResource("../Images/eye-close-up.png"));
+        hideIcon = new ImageIcon(getClass().getResource("../Images/closed-eyes.png"));
 
-// Start with hiding the password (closed eye)
-Image scaledHide = hideIcon.getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH);
-eyeIcon = new JLabel(new ImageIcon(scaledHide));
-eyeIcon.setBounds(730, 310, 20, 20);
-eyeIcon.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-eyeIcon.addMouseListener(new MouseAdapter() {
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        togglePasswordVisibility();
-    }
-});
-panel.add(eyeIcon);
+        Image scaledHide = hideIcon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH);
+        eyeIcon = new JLabel(new ImageIcon(scaledHide));
+        eyeIcon.setBounds(750, 315, 25, 25);
+        eyeIcon.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        eyeIcon.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                togglePasswordVisibility();
+            }
+        });
+        panel.add(eyeIcon);
 
 
         lgnbtn=new JButton("Login");

@@ -12,9 +12,15 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
 	JTextField fullNameField, usernameField;
 	JPasswordField passwordField, confirmPasswordField;
 	JButton rgstbtn,bckbtn;
-    ImageIcon icon, roundLogo;
+    ImageIcon icon, roundLogo,openEyeIcon, closedEyeIcon;
 	JPanel panel, leftPanel;
     Color themeColor, hoverColor;
+
+    JLabel togglePassword, toggleConfirmPassword;
+    boolean isPasswordVisible = false;
+    boolean isConfirmPasswordVisible = false;
+
+    
 
     public SignUp()
     {
@@ -112,17 +118,61 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         passwordField.setEchoChar('*');
 		panel.add(passwordField);
 
-        pslbl=new JLabel("Confirm Password");
-        pslbl.setBounds(587,305,200,50);
+        // Load both eye icons (open and closed)
+        closedEyeIcon = new ImageIcon(getClass().getResource("../Images/closed-eyes.png"));
+        openEyeIcon = new ImageIcon(getClass().getResource("../Images/open-eyes.png"));
+
+        // Set scaled icons
+        Image closedEye = closedEyeIcon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH);
+        Image openEye = openEyeIcon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH);
+
+        // Toggle password visibility icon
+        togglePassword = new JLabel(new ImageIcon(closedEye));
+        togglePassword.setBounds(840, 265, 25, 25);
+        togglePassword.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        togglePassword.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                if (isPasswordVisible) {
+                    passwordField.setEchoChar('*');
+                    togglePassword.setIcon(new ImageIcon(closedEye));
+                } else {
+                    passwordField.setEchoChar((char) 0);
+                    togglePassword.setIcon(new ImageIcon(openEye));
+                }
+                isPasswordVisible = !isPasswordVisible;
+            }
+        });
+        panel.add(togglePassword);
+
+        // Confirm password
+        pslbl = new JLabel("Confirm Password");
+        pslbl.setBounds(587, 305, 200, 50);
         pslbl.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(pslbl);
 
-        confirmPasswordField=new JPasswordField();
-		confirmPasswordField.setBounds(587,345,250,35);
+        confirmPasswordField = new JPasswordField();
+        confirmPasswordField.setBounds(587, 345, 250, 35);
         confirmPasswordField.setFont(new Font("Arial", Font.BOLD, 15));
         confirmPasswordField.setEchoChar('*');
-		panel.add(confirmPasswordField);
+        panel.add(confirmPasswordField);
 
+        // Toggle confirm password icon
+        toggleConfirmPassword = new JLabel(new ImageIcon(closedEye));
+        toggleConfirmPassword.setBounds(840, 345, 25, 25);
+        toggleConfirmPassword.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        toggleConfirmPassword.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                if (isConfirmPasswordVisible) {
+                    confirmPasswordField.setEchoChar('*');
+                    toggleConfirmPassword.setIcon(new ImageIcon(closedEye));
+                } else {
+                    confirmPasswordField.setEchoChar((char) 0);
+                    toggleConfirmPassword.setIcon(new ImageIcon(openEye));
+                }
+                isConfirmPasswordVisible = !isConfirmPasswordVisible;
+            }
+        });
+        panel.add(toggleConfirmPassword);
 
         rgstbtn=new JButton("Sign Up");
         rgstbtn.setBounds(587,400,250,50);
