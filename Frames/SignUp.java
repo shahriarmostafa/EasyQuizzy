@@ -119,8 +119,8 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
 		panel.add(passwordField);
 
         // Load both eye icons (open and closed)
-        closedEyeIcon = new ImageIcon(getClass().getResource("../Images/eye-close-up.png"));
-        openEyeIcon = new ImageIcon(getClass().getResource("../Images/closed-eyes.png"));
+        closedEyeIcon = new ImageIcon(getClass().getResource("../Images/closed-eyes.png"));
+        openEyeIcon = new ImageIcon(getClass().getResource("../Images/open-eyes.png"));
 
         // Set scaled icons
         Image closedEye = closedEyeIcon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH);
