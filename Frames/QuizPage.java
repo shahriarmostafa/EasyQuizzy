@@ -14,7 +14,7 @@ public class QuizPage extends JFrame{
     public QuizPage(){
 
         //basic setup
-        super("Homepage");
+        super("Quiz");
         this.setSize(950,600);
         this.setLocationRelativeTo(null);
 
