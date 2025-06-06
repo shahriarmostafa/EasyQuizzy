@@ -9,6 +9,7 @@ public class QuizPage extends JFrame{
     JPanel panel, leftpanel, bigLine, questionPanel, optionPanel1, optionPanel2, optionPanel3, optionPanel4;
     ImageIcon icon, sideImage, topImage, bottomImage;
     ButtonGroup optionsGroup;
+    JButton nextButton;
 
     public QuizPage(){
 
@@ -127,7 +128,7 @@ public class QuizPage extends JFrame{
 
             // Option 1
             JRadioButton radioButton1 = new JRadioButton("This is option 1");
-            radioButton1.setBounds(10, 10, 380, 30);
+            radioButton1.setBounds(10, 0, 400, 50);
             radioButton1.setFont(optionFont);
             radioButton1.setBackground(bgColor);
             radioButton1.setForeground(themeSubColor);
@@ -150,7 +151,7 @@ public class QuizPage extends JFrame{
 
             // Option 2
             JRadioButton radioButton2 = new JRadioButton("This is option 2");
-            radioButton2.setBounds(10, 10, 380, 30);
+            radioButton2.setBounds(10, 0, 400, 50);
             radioButton2.setFont(optionFont);
             radioButton2.setBackground(bgColor);
             radioButton2.setForeground(themeSubColor);
@@ -171,7 +172,7 @@ public class QuizPage extends JFrame{
             panel.add(optionPanel3);
 
             JRadioButton radioButton3 = new JRadioButton("This is option 3");
-            radioButton3.setBounds(10, 10, 380, 30);
+            radioButton3.setBounds(10,0, 400, 50);
             radioButton3.setFont(optionFont);
             radioButton3.setBackground(bgColor);
             radioButton3.setForeground(themeSubColor);
@@ -194,17 +195,19 @@ public class QuizPage extends JFrame{
 
             // Option 4
             JRadioButton radioButton4 = new JRadioButton("This is option 4");
-            radioButton4.setBounds(10, 10, 380, 30);
+            radioButton4.setBounds(10, 0, 400, 50);
             radioButton4.setFont(optionFont);
             radioButton4.setBackground(bgColor);
             radioButton4.setForeground(themeSubColor);
             optionPanel4.add(radioButton4);
             optionsGroup.add(radioButton4);
 
-            // JLabel option4 = new JLabel("This is option 4");
-            // option4.setBounds(30, 10, 360, 30);
-            // option4.setFont(new Font("Arial", Font.BOLD, 20));
-            // option4.setForeground(themeSubColor);
-            // optionPanel4.add(option4);
+            nextButton = new JButton("Next");
+            nextButton.setBounds(760, 460, 100, 40);
+            nextButton.setForeground(Color.WHITE);
+            nextButton.setBackground(themeSubColor);
+            nextButton.setFont(new Font("Arial", Font.BOLD, 14));
+
+            panel.add(nextButton);
     }
 }
