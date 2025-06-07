@@ -12,7 +12,7 @@ public class Subject extends JFrame{
         ImageIcon icon;
 
         public Subject(){
-            super("Choose a subject");
+            super("Select a Subject");
             this.setSize(400,700);
             this.setLocationRelativeTo(null);
 
@@ -21,9 +21,10 @@ public class Subject extends JFrame{
             gray = new Color(110, 107, 106);
             pink = new Color(195, 55, 90);
             red = new Color(235, 101, 72);
-            orange = new Color(255, 158, 123);
-            yellow = new Color(254, 204, 106);
-            green = new Color(107, 154, 110);
+            orange = new Color(204, 50, 50);   // ~20% darker
+            yellow = new Color(200, 163, 40);   // ~20% darker
+            green  = new Color(85, 123, 180);    // ~20% darker
+
 
             panel=new JPanel();
             panel.setLayout(null);
@@ -33,7 +34,7 @@ public class Subject extends JFrame{
             icon = new ImageIcon(getClass().getResource("../Images/logo.png"));
             this.setIconImage(icon.getImage());
 
-            pageTitle = new JLabel("Subject of Quiz", SwingConstants.CENTER);
+            pageTitle = new JLabel("Select a Subject", SwingConstants.CENTER);
             pageTitle.setBounds(0, 35, 400, 30);
             pageTitle.setForeground(themeSubColor);
             pageTitle.setFont(new  Font("Arial", Font.BOLD, 30));

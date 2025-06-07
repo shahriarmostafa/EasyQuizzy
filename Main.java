@@ -13,6 +13,7 @@ public class Main{
        Profile p1 = new Profile("Shihab Bhuiyan");
        QuizPage q1 = new QuizPage();
        Subject sub1 = new Subject();
+       Result r1 = new Result();
        //s2.setVisible(true);
       //s1.setVisible(true);
       //h1.setVisible(true);
@@ -24,6 +25,7 @@ public class Main{
       //a1.setVisible(true);
       // p1.setVisible(true);
       // q1.setVisible(true);
-      sub1.setVisible(true);
+      // sub1.setVisible(true);
+      r1.setVisible(true);
     }
 }

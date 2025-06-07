@@ -25,7 +25,6 @@ public class QuizPage extends JFrame{
         redColor = new Color(220, 20, 10);
         greenColor = new Color(0, 150, 0);
         Font optionFont = new Font("Arial", Font.BOLD, 20);
-        Color optionTextColor = Color.BLACK;
 
 
         panel=new JPanel();
