@@ -11,19 +11,18 @@ public class Main{
        HomePage h1=new HomePage("Syed Shahriar Mustafa");
        AdminPage a1= new AdminPage();
        Profile p1 = new Profile("Shihab Bhuiyan");
+       AddQuestions add =new AddQuestions();
        //s2.setVisible(true);
-<<<<<<< HEAD
       //s1.setVisible(true);
       //h1.setVisible(true);
-      //  s1.setVisible(true);
-      a1.setVisible(true);
-=======
+      //s1.setVisible(true);
+      //a1.setVisible(true);
       // s1.setVisible(true);
       //h1.setVisible(true);
       //  s1.setVisible(true);
       //a1.setVisible(true);
-      p1.setVisible(true);
->>>>>>> f8eeff89f29b54d02d955324957806aabc978335
+      //p1.setVisible(true);
+      add.setVisible(true);
 
     }
 }
