@@ -36,7 +36,7 @@ public class Profile extends JFrame{
         );
         scaledImageProfilelogoFinal = new ImageIcon(scaledImageProfilelogo);
         labelProfileImage = new JLabel(scaledImageProfilelogoFinal);
-        labelProfileImage.setBounds(115, 50, 150, 150);
+        labelProfileImage.setBounds(115, 40, 150, 150);
         panel.add(labelProfileImage);
 
         //mid part
@@ -129,15 +129,15 @@ public class Profile extends JFrame{
         panel.add(boxPanel4);
 
 
-        boxTitile1 = new JLabel("Quiz Attended", SwingConstants.CENTER);
+        boxTitile1 = new JLabel("Username", SwingConstants.CENTER);
         boxTitile1.setBounds(0, 45, 200, 18);
         boxTitile1.setFont(new Font("Arial", Font.BOLD, 18));
         boxTitile1.setForeground(themeColor);
         boxPanel1.add(boxTitile1);
 
-        boxNumber1 = new JLabel("12", SwingConstants.CENTER);
+        boxNumber1 = new JLabel("shihab123", SwingConstants.CENTER);
         boxNumber1.setBounds(0,70, 200, 40);
-        boxNumber1.setFont(new Font("Arial", Font.BOLD, 40));
+        boxNumber1.setFont(new Font("Arial", Font.BOLD, 25));
         boxNumber1.setForeground(Color.WHITE);
         boxPanel1.add(boxNumber1);
 
@@ -153,7 +153,7 @@ public class Profile extends JFrame{
         boxNumber2.setForeground(Color.WHITE);
         boxPanel2.add(boxNumber2);
 
-        boxTitile3 = new JLabel("Quiz Attended", SwingConstants.CENTER);
+        boxTitile3 = new JLabel("Right Answered", SwingConstants.CENTER);
         boxTitile3.setBounds(0, 45, 200, 18);
         boxTitile3.setFont(new Font("Arial", Font.BOLD, 18));
         boxTitile3.setForeground(themeColor);
@@ -165,13 +165,13 @@ public class Profile extends JFrame{
         boxNumber3.setForeground(Color.WHITE);
         boxPanel3.add(boxNumber3);
 
-        boxTitile4 = new JLabel("Quiz Attended", SwingConstants.CENTER);
+        boxTitile4 = new JLabel("Last Quiz Marks", SwingConstants.CENTER);
         boxTitile4.setBounds(0, 45, 200, 18);
         boxTitile4.setFont(new Font("Arial", Font.BOLD, 18));
         boxTitile4.setForeground(themeColor);
         boxPanel4.add(boxTitile4);
 
-        boxNumber4 = new JLabel("12", SwingConstants.CENTER);
+        boxNumber4 = new JLabel("25", SwingConstants.CENTER);
         boxNumber4.setBounds(0,70, 200, 40);
         boxNumber4.setFont(new Font("Arial", Font.BOLD, 40));
         boxNumber4.setForeground(Color.WHITE);
