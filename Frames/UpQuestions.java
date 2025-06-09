@@ -6,8 +6,8 @@ import java.awt.*;
 
 public class UpQuestions extends JFrame {
 
-    JLabel namelbl, addQLabel, qLabel, optionALabel, optionBLabel, optionCLabel, optionDLabel;
-    JTextField qField, optionAField, optionBField, optionCField, optionDField;
+    JLabel namelbl, addQLabel, qLabel, optionALabel, optionBLabel, optionCLabel, optionDLabel,ansLabel;
+    JTextField qField, optionAField, optionBField, optionCField, optionDField,ansField;
     JComboBox  combo;
     JButton logOutButton, backButton, addQButton, upQButton, delQButton, seeResButton, showStuDeatilsButton, upButton;
     JPanel panel, topPanel, sidePanel;
@@ -183,14 +183,26 @@ public class UpQuestions extends JFrame {
         optionDField.setBounds(300, 440, 400, 30);
         optionDField.setFont(new Font("Arial", Font.PLAIN, 15));
         panel.add(optionDField);
+        //ans
+       ansLabel = new JLabel("Answer:");
+       ansLabel.setBounds(200, 500, 100, 30);
+       ansLabel.setForeground(new Color(70, 138, 59));
+       ansLabel.setFont(new Font("Arial", Font.BOLD, 16));
+       panel.add(ansLabel);
+       
+       ansField = new JTextField();
+       ansField.setBounds(300, 500, 400, 30);
+       ansField.setFont(new Font("Arial", Font.PLAIN, 15));
+       panel.add(ansField);
 
-        // Update button
-        upButton = new JButton("Update");
-        upButton.setBounds(750, 440, 100, 30);
-        upButton.setForeground(Color.RED);
-        upButton.setBackground(Color.WHITE);
-        upButton.setFont(new Font("Arial", Font.BOLD, 16));
-        panel.add(upButton);
+
+       upButton = new JButton("Update");
+       upButton.setBounds(750, 500, 100, 30);
+       upButton.setForeground(new Color(70, 138, 59));
+       upButton.setBackground(Color.WHITE);
+       upButton.setFont(new Font("Arial", Font.BOLD, 16));
+       // upButton.addActionListener(this);
+       panel.add(upButton);
 
         this.add(panel);
     }

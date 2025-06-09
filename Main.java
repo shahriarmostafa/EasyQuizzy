@@ -14,6 +14,8 @@ public class Main{
        AddQuestions add =new AddQuestions();
        UpQuestions up =new UpQuestions();
        deleteQ del = new deleteQ();
+       SeeResult see =new SeeResult();
+       ShowDetails show=new ShowDetails();
        //s2.setVisible(true);
       //s1.setVisible(true);
       //h1.setVisible(true);
@@ -35,7 +37,9 @@ public class Main{
       //p1.setVisible(true);
       //add.setVisible(true);
       //up.setVisible(true);
-      del.setVisible(true);
+      //del.setVisible(true);
+      //see.setVisible(true);
+      show.setVisible(true);
       
 
 

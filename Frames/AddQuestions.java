@@ -5,8 +5,8 @@ import java.awt.*;
 
 public class AddQuestions extends JFrame {
 
-    JLabel namelbl,addQLabel,qLabel,optionALabel, optionBLabel, optionCLabel, optionDLabel;
-    JTextField qField,optionAField, optionBField, optionCField, optionDField;
+    JLabel namelbl,addQLabel,qLabel,optionALabel, optionBLabel, optionCLabel, optionDLabel,ansLabel;
+    JTextField qField,optionAField, optionBField, optionCField, optionDField,ansField;
     JButton logOutButton, backButton, addQButton, upQButton, delQButton, seeResButton, showStuDeatilsButton,addButton;
     Color myColor, lbColor;
     ImageIcon icon, adminIcon,addQIcon;
@@ -194,9 +194,21 @@ public class AddQuestions extends JFrame {
        optionDField.setFont(new Font("Arial", Font.PLAIN, 15));
        panel.add(optionDField);
 
+       //ans
+       ansLabel = new JLabel("Answer:");
+       ansLabel.setBounds(200, 500, 100, 30);
+       ansLabel.setForeground(new Color(70, 138, 59));
+       ansLabel.setFont(new Font("Arial", Font.BOLD, 16));
+       panel.add(ansLabel);
+       
+       ansField = new JTextField();
+       ansField.setBounds(300, 500, 400, 30);
+       ansField.setFont(new Font("Arial", Font.PLAIN, 15));
+       panel.add(ansField);
+
 
        addButton = new JButton("Add");
-       addButton.setBounds(750, 440, 100, 30);
+       addButton.setBounds(750, 500, 100, 30);
        addButton.setForeground(Color.RED);
        addButton.setBackground(Color.WHITE);
        addButton.setFont(new Font("Arial", Font.BOLD, 16));
