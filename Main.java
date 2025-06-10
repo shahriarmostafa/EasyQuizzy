@@ -33,14 +33,7 @@ public class Main{
       //h1.setVisible(true);
       //  s1.setVisible(true);
       //a1.setVisible(true);
-
-      //p1.setVisible(true);
-      add.setVisible(true);
-      //up.setVisible(true);
-      //del.setVisible(true);
-      //see.setVisible(true);
-      //show.setVisible(true);
-      
+   
 
 
       // p1.setVisible(true);
