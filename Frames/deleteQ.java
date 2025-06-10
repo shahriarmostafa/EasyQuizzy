@@ -140,56 +140,56 @@ public class deleteQ extends JFrame {
         combo.setForeground(Color.BLUE);
         panel.add(combo);
 
-        // Option A
-        optionALabel = new JLabel("Option A:");
-        optionALabel.setBounds(200, 320, 100, 30);
-        optionALabel.setFont(new Font("Arial", Font.BOLD, 16));
-        panel.add(optionALabel);
+        // // Option A
+        // optionALabel = new JLabel("Option A:");
+        // optionALabel.setBounds(200, 320, 100, 30);
+        // optionALabel.setFont(new Font("Arial", Font.BOLD, 16));
+        // panel.add(optionALabel);
 
-        optionAField = new JTextField();
-        optionAField.setBounds(300, 320, 400, 30);
-        optionAField.setFont(new Font("Arial", Font.PLAIN, 15));
-        panel.add(optionAField);
+        // optionAField = new JTextField();
+        // optionAField.setBounds(300, 320, 400, 30);
+        // optionAField.setFont(new Font("Arial", Font.PLAIN, 15));
+        // panel.add(optionAField);
 
-        // Option B
-        optionBLabel = new JLabel("Option B:");
-        optionBLabel.setBounds(200, 360, 100, 30);
-        optionBLabel.setFont(new Font("Arial", Font.BOLD, 16));
-        panel.add(optionBLabel);
+        // // Option B
+        // optionBLabel = new JLabel("Option B:");
+        // optionBLabel.setBounds(200, 360, 100, 30);
+        // optionBLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        // panel.add(optionBLabel);
 
-        optionBField = new JTextField();
-        optionBField.setBounds(300, 360, 400, 30);
-        optionBField.setFont(new Font("Arial", Font.PLAIN, 15));
-        panel.add(optionBField);
+        // optionBField = new JTextField();
+        // optionBField.setBounds(300, 360, 400, 30);
+        // optionBField.setFont(new Font("Arial", Font.PLAIN, 15));
+        // panel.add(optionBField);
 
-        // Option C
-        optionCLabel = new JLabel("Option C:");
-        optionCLabel.setBounds(200, 400, 100, 30);
-        optionCLabel.setFont(new Font("Arial", Font.BOLD, 16));
-        panel.add(optionCLabel);
+        // // Option C
+        // optionCLabel = new JLabel("Option C:");
+        // optionCLabel.setBounds(200, 400, 100, 30);
+        // optionCLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        // panel.add(optionCLabel);
 
-        optionCField = new JTextField();
-        optionCField.setBounds(300, 400, 400, 30);
-        optionCField.setFont(new Font("Arial", Font.PLAIN, 15));
-        panel.add(optionCField);
+        // optionCField = new JTextField();
+        // optionCField.setBounds(300, 400, 400, 30);
+        // optionCField.setFont(new Font("Arial", Font.PLAIN, 15));
+        // panel.add(optionCField);
 
-        // Option D
-        optionDLabel = new JLabel("Option D:");
-        optionDLabel.setBounds(200, 440, 100, 30);
-        optionDLabel.setFont(new Font("Arial", Font.BOLD, 16));
-        panel.add(optionDLabel);
+        // // Option D
+        // optionDLabel = new JLabel("Option D:");
+        // optionDLabel.setBounds(200, 440, 100, 30);
+        // optionDLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        // panel.add(optionDLabel);
 
-        optionDField = new JTextField();
-        optionDField.setBounds(300, 440, 400, 30);
-        optionDField.setFont(new Font("Arial", Font.PLAIN, 15));
-        panel.add(optionDField);
+        // optionDField = new JTextField();
+        // optionDField.setBounds(300, 440, 400, 30);
+        // optionDField.setFont(new Font("Arial", Font.PLAIN, 15));
+        // panel.add(optionDField);
 
         // Delete button
         delButton = new JButton("Delete");
-        delButton.setBounds(750, 440, 100, 30);
+        delButton.setBounds(200, 350, 140, 45);
         delButton.setForeground(Color.RED);
         delButton.setBackground(Color.WHITE);
-        delButton.setFont(new Font("Arial", Font.BOLD, 16));
+        delButton.setFont(new Font("Arial", Font.BOLD, 24));
         panel.add(delButton);
 
         this.add(panel);

@@ -6,8 +6,8 @@ import java.awt.*;
 
 public class UpQuestions extends JFrame {
 
-    JLabel namelbl, addQLabel, qLabel, optionALabel, optionBLabel, optionCLabel, optionDLabel,ansLabel;
-    JTextField qField, optionAField, optionBField, optionCField, optionDField,ansField;
+    JLabel namelbl, addQLabel, qLabel, optionALabel, optionBLabel, optionCLabel, optionDLabel,ansLabel,oldQLabel;
+    JTextField qField, optionAField, optionBField, optionCField, optionDField,ansField,oldQField;
     JComboBox  combo;
     JButton logOutButton, backButton, addQButton, upQButton, delQButton, seeResButton, showStuDeatilsButton, upButton;
     JPanel panel, topPanel, sidePanel;
@@ -110,31 +110,44 @@ public class UpQuestions extends JFrame {
         Image scaledUpQImage = upQIcon.getImage().getScaledInstance(140,140, Image.SCALE_SMOOTH);
         ImageIcon scaledUpQIconFinal = new ImageIcon(scaledUpQImage);
         JLabel upQJLabel = new JLabel(scaledUpQIconFinal);
-        upQJLabel.setBounds(450, 60, 140, 140);
+        upQJLabel.setBounds(450, 50, 140, 140);
         panel.add(upQJLabel);
 
         // Update Question text
         addQLabel = new JLabel("Update Question");
-        addQLabel.setBounds(430, 180, 200, 50);
+        addQLabel.setBounds(430, 170, 200, 50);
         addQLabel.setFont(new Font("Arial", Font.BOLD, 24));
         addQLabel.setForeground(new Color(70, 138, 59));
         panel.add(addQLabel);
 
+        //old q
+        oldQLabel = new JLabel("Old Question:");
+        oldQLabel.setBounds(200, 200, 200, 50);
+        oldQLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        panel.add(oldQLabel);
+
+        oldQField = new JTextField();
+        oldQField.setBounds(200, 240, 500, 30);
+        oldQField.setFont(new Font("Arial", Font.BOLD, 15));
+        panel.add(oldQField);
+
+
+
         // Question Label and Field
         qLabel = new JLabel("Question:");
-        qLabel.setBounds(200, 220, 100, 50);
+        qLabel.setBounds(200, 260, 100, 50);
         qLabel.setFont(new Font("Arial", Font.BOLD, 20));
         panel.add(qLabel);
 
         qField = new JTextField();
-        qField.setBounds(200, 260, 500, 45);
+        qField.setBounds(200, 300, 500, 30);
         qField.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(qField);
 
         // Combo Box for department
         String[] items = {"CSE", "CS", "CSSE", "SE", "CIS"};
         combo = new JComboBox<>(items);
-        combo.setBounds(750, 260, 100, 30);
+        combo.setBounds(750, 240, 100, 30);
         combo.setFont(new Font("Arial", Font.BOLD, 14));
         combo.setBackground(Color.WHITE);
         combo.setForeground(Color.BLUE);
@@ -142,62 +155,62 @@ public class UpQuestions extends JFrame {
 
         // Option A
         optionALabel = new JLabel("Option A:");
-        optionALabel.setBounds(200, 320, 100, 30);
+        optionALabel.setBounds(200, 340, 100, 30);
         optionALabel.setFont(new Font("Arial", Font.BOLD, 16));
         panel.add(optionALabel);
 
         optionAField = new JTextField();
-        optionAField.setBounds(300, 320, 400, 30);
+        optionAField.setBounds(300, 340, 400, 30);
         optionAField.setFont(new Font("Arial", Font.PLAIN, 15));
         panel.add(optionAField);
 
         // Option B
         optionBLabel = new JLabel("Option B:");
-        optionBLabel.setBounds(200, 360, 100, 30);
+        optionBLabel.setBounds(200, 380, 100, 30);
         optionBLabel.setFont(new Font("Arial", Font.BOLD, 16));
         panel.add(optionBLabel);
 
         optionBField = new JTextField();
-        optionBField.setBounds(300, 360, 400, 30);
+        optionBField.setBounds(300, 380, 400, 30);
         optionBField.setFont(new Font("Arial", Font.PLAIN, 15));
         panel.add(optionBField);
 
         // Option C
         optionCLabel = new JLabel("Option C:");
-        optionCLabel.setBounds(200, 400, 100, 30);
+        optionCLabel.setBounds(200, 420, 100, 30);
         optionCLabel.setFont(new Font("Arial", Font.BOLD, 16));
         panel.add(optionCLabel);
 
         optionCField = new JTextField();
-        optionCField.setBounds(300, 400, 400, 30);
+        optionCField.setBounds(300, 420, 400, 30);
         optionCField.setFont(new Font("Arial", Font.PLAIN, 15));
         panel.add(optionCField);
 
         // Option D
         optionDLabel = new JLabel("Option D:");
-        optionDLabel.setBounds(200, 440, 100, 30);
+        optionDLabel.setBounds(200, 460, 100, 30);
         optionDLabel.setFont(new Font("Arial", Font.BOLD, 16));
         panel.add(optionDLabel);
 
         optionDField = new JTextField();
-        optionDField.setBounds(300, 440, 400, 30);
+        optionDField.setBounds(300, 460, 400, 30);
         optionDField.setFont(new Font("Arial", Font.PLAIN, 15));
         panel.add(optionDField);
         //ans
        ansLabel = new JLabel("Answer:");
-       ansLabel.setBounds(200, 500, 100, 30);
+       ansLabel.setBounds(200, 520, 100, 30);
        ansLabel.setForeground(new Color(70, 138, 59));
        ansLabel.setFont(new Font("Arial", Font.BOLD, 16));
        panel.add(ansLabel);
        
        ansField = new JTextField();
-       ansField.setBounds(300, 500, 400, 30);
+       ansField.setBounds(300, 520, 400, 30);
        ansField.setFont(new Font("Arial", Font.PLAIN, 15));
        panel.add(ansField);
 
 
        upButton = new JButton("Update");
-       upButton.setBounds(750, 500, 100, 30);
+       upButton.setBounds(750, 520, 100, 30);
        upButton.setForeground(new Color(70, 138, 59));
        upButton.setBackground(Color.WHITE);
        upButton.setFont(new Font("Arial", Font.BOLD, 16));
