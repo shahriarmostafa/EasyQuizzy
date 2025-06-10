@@ -21,26 +21,25 @@ public class Main{
       //h1.setVisible(true);
       //s1.setVisible(true);
       //a1.setVisible(true);
-       QuizPage q1 = new QuizPage();
+       QuizPage q1 = new QuizPage("CSE");
        Subject sub1 = new Subject();
        Result r1 = new Result();
        //s2.setVisible(true);
       //s1.setVisible(true);
       //h1.setVisible(true);
-      //  s1.setVisible(true);
       // a1.setVisible(true);
       // s1.setVisible(true);
       //h1.setVisible(true);
-      //  s1.setVisible(true);
+      // s1.setVisible(true);
       //a1.setVisible(true);
-      //add.setVisible(true);
+      // add.setVisible(true);
       // up.setVisible(true);
-      del.setVisible(true);
-   
+      // del.setVisible(true);
+      // see.setVisible(true);
 
 
       // p1.setVisible(true);
-       //q1.setVisible(true);
+       q1.setVisible(true);
       //sub1.setVisible(true);
       //r1.setVisible(true);
 

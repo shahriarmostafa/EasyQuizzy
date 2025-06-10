@@ -1,19 +1,30 @@
 package Frames;
 
 import javax.swing.*;
-import java.awt.*;
 
-public class Result extends JFrame{
+import Entities.ResultUploader;
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class Result extends JFrame implements ActionListener{
     JLabel congratulationTitle, name, result, resultTitle, resultMotivation;
     ImageIcon icon, resultFrame, cornerDecoration, cornerDecoration2;
     Color themeColor, themeSubColor, pink, orange, red, green;
     JButton home;
     JPanel panel;
+    int resultNumber;
 
     public Result(){
+
+    }
+
+    public Result(int resultText){
+
         super("Quiz Result");
         this.setSize(950, 600);
         this.setLocationRelativeTo(null);
+        resultNumber = resultText;
 
         panel = new JPanel();
         panel.setLayout(null);
@@ -54,7 +65,7 @@ public class Result extends JFrame{
         resultTitle.setForeground(red);
         panel.add(resultTitle);
 
-        result = new JLabel("12", SwingConstants.CENTER);
+        result = new JLabel(String.valueOf(resultText), SwingConstants.CENTER);
         result.setBounds(0, 268, 950, 45);
         result.setFont(new Font("Arial", Font.BOLD, 45));
         result.setForeground(green);
@@ -76,6 +87,7 @@ public class Result extends JFrame{
         home.setBackground(green);
         home.setForeground(Color.WHITE);
         home.setFont(new Font("Arial", Font.BOLD, 14));
+        home.addActionListener(this); // 🔔 Registering listener
         panel.add(home);
 
 
@@ -102,7 +114,15 @@ public class Result extends JFrame{
         JLabel labelCDecoration2 = new JLabel(scaledImageDecorationFinal2);
         labelCDecoration2.setBounds(600, 235, 350, 350);
         panel.add(labelCDecoration2);
+    }
 
-
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == home) {
+            this.setVisible(false);
+            ResultUploader rUp = new ResultUploader("shihabnai", resultNumber, "CSE", "Shihab Uddin Bhuiyan");
+            rUp.uploadResult();
+            HomePage h1 = new HomePage("Shihab Uddin Bhuiya");
+            h1.setVisible(true);
+        }
     }
 }

@@ -128,4 +128,6 @@ public class SeeResult extends JFrame {
 
         this.add(panel);
     }
+
+    
 }
