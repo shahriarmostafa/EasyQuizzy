@@ -1,2 +1,1 @@
-This is a sample question	ok	okok	not okay	very ok	very ok	CSE
-what is what?	wht	wat da	ei	nei	nei	CSE
+a	a	aa	a	a	a	CSE

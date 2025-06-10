@@ -2,9 +2,13 @@ package Frames;
 
 import java.lang.*;
 import javax.swing.*;
-import java.awt.*;
 
-public class deleteQ extends JFrame {
+import Entities.*;
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class deleteQ extends JFrame implements ActionListener{
 
     JLabel namelbl, deleteQLabel, qLabel, optionALabel, optionBLabel, optionCLabel, optionDLabel;
     JTextField qField, optionAField, optionBField, optionCField, optionDField;
@@ -190,8 +194,28 @@ public class deleteQ extends JFrame {
         delButton.setForeground(Color.RED);
         delButton.setBackground(Color.WHITE);
         delButton.setFont(new Font("Arial", Font.BOLD, 24));
+        delButton.addActionListener(this);
         panel.add(delButton);
 
         this.add(panel);
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        String question = qField.getText().trim();
+
+        if (question.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+    
+
+        Question q = new Question();
+        q.deleteQuestion(question);
+
+        JOptionPane.showMessageDialog(null, "Question Deleted successfully!");
+
+        qField.setText("");
+        
     }
 }

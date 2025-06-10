@@ -1,6 +1,6 @@
 package Entities;
 import java.io.*;
-import java.util.Scanner;
+import java.util.*;
 
 public class Question{
     private String questionText;
@@ -46,7 +46,30 @@ public class Question{
     public void setDepartment(String department){
         this.department = department;
     }
-    public void addQuestion() {
+
+    public String getQuestionText(){
+    return questionText;
+}
+    public String getOptionA(){
+        return optionA;
+    }
+    public String getOptionB(){
+        return optionB;
+    }
+    public String getOptionC(){
+        return optionC;
+    }
+    public String getOptionD(){
+        return optionD;
+    }
+    public String getCorrectAnswer(){
+        return correctAnswer;
+    }
+    public String getDepartment(){
+        return department;
+    }
+
+    public void addQuestion(){
         try {
             myfile = new File("./Questions.txt");
             myfile.createNewFile();
@@ -68,13 +91,53 @@ public class Question{
     }
 
 
-    public boolean updateQuestion(String oldQuestionText) {
+public boolean updateQuestion(String oldQuestionText) {
     boolean updated = false;
-    File myfile = new File("./Questions.txt");
-    File tempFile = new File("./Questions_temp.txt");
-    Scanner sc = null;
-    FileWriter fwrite = null;
+    myfile = new File("./Questions.txt");
+    File futureFile = new File("./Questions_temp.txt");
+    Scanner sc;
     
+    try {
+        sc = new Scanner(myfile);
+        fwrite = new FileWriter(futureFile);
+
+        while (sc.hasNextLine()){
+            String line = sc.nextLine();
+            String[] parts = line.split("\t");
+                if (parts[0].equals(oldQuestionText)) {
+                    String updatedLine = getQuestionText() +"\t"+ getOptionA() + "\t" + getOptionB() + "\t" + getOptionC() + "\t" + getOptionD() + "\t" + getCorrectAnswer() + "\t" + getDepartment();
+                    fwrite.write(updatedLine + "\n");
+                    updated = true;
+                } else {
+                    fwrite.write(line + "\n");
+                }
+        }
+        fwrite.flush();
+        fwrite.close();
+        sc.close();
+
+        if (updated) {
+             myfile.delete();
+            futureFile.renameTo(myfile);
+
+        }
+        else{
+            futureFile.delete();
+        }
+
+    } catch (IOException ioe) {
+        ioe.printStackTrace();
+    }
+    return updated;
+}
+
+
+public boolean deleteQuestion(String questionToDelete){
+    boolean deleted = false;
+    myfile = new File("./Questions.txt");
+    File tempFile = new File("./Questions_temp.txt");
+    Scanner sc;
+
     try {
         sc = new Scanner(myfile);
         fwrite = new FileWriter(tempFile);
@@ -82,33 +145,24 @@ public class Question{
         while (sc.hasNextLine()) {
             String line = sc.nextLine();
             String[] parts = line.split("\t");
-            if (parts.length >= 7) {
-                // Check if this is the question to update
-                if (parts[0].equalsIgnoreCase(oldQuestionText)) {
-                    // Write updated question info instead of old line
-                    String updatedLine = this.questionText + "\t" + this.optionA + "\t" + this.optionB + "\t" + this.optionC + "\t" + this.optionD + "\t" + this.correctAnswer + "\t" + this.department;
-                    fwrite.write(updatedLine + "\n");
-                    updated = true;
+
+                if (parts[0].equals(questionToDelete)) {
+                    deleted = true;
                 } else {
-                    // Write line as is
                     fwrite.write(line + "\n");
                 }
-            }
         }
+
         fwrite.flush();
         fwrite.close();
         sc.close();
 
-        if (updated) {
-            if (!myfile.delete()) {
-                System.err.println("Could not delete original question file");
-                return false;
-            }
-            if (!tempFile.renameTo(myfile)) {
-                System.err.println("Could not rename temp file");
-                return false;
-            }
-        } else {
+        if (deleted) {
+            myfile.delete();
+            tempFile.renameTo(myfile);
+        }
+
+        else{
             tempFile.delete();
         }
 
@@ -116,7 +170,8 @@ public class Question{
         ioe.printStackTrace();
     }
 
-    return updated;
+    return deleted;
 }
+
 
 }

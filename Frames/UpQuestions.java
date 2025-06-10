@@ -2,9 +2,13 @@ package Frames;
 
 import java.lang.*;
 import javax.swing.*;
-import java.awt.*;
 
-public class UpQuestions extends JFrame {
+import Entities.*;
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class UpQuestions extends JFrame implements ActionListener{
 
     JLabel namelbl, addQLabel, qLabel, optionALabel, optionBLabel, optionCLabel, optionDLabel,ansLabel,oldQLabel;
     JTextField qField, optionAField, optionBField, optionCField, optionDField,ansField,oldQField;
@@ -214,10 +218,31 @@ public class UpQuestions extends JFrame {
        upButton.setForeground(new Color(70, 138, 59));
        upButton.setBackground(Color.WHITE);
        upButton.setFont(new Font("Arial", Font.BOLD, 16));
-       // upButton.addActionListener(this);
+       upButton.addActionListener(this);
        panel.add(upButton);
 
         this.add(panel);
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        String oldQuestionText = oldQField.getText(); // this field holds the original question text before update
+        String question = qField.getText();
+        String optionA = optionAField.getText();
+        String optionB = optionBField.getText();
+        String optionC = optionCField.getText();
+        String optionD = optionDField.getText();
+        String answer = ansField.getText();
+        String department = combo.getSelectedItem().toString();
+
+Question q = new Question(question, optionA, optionB, optionC, optionD, answer, department);
+boolean success = q.updateQuestion(oldQuestionText);
+
+if(success) {
+    JOptionPane.showMessageDialog(null, "Question updated successfully.");
+} else {
+    JOptionPane.showMessageDialog(null, "Question not found or failed to update.");
+}
+
     }
 
 
