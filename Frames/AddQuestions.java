@@ -2,8 +2,10 @@ package Frames;
 import java.lang.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import Entities.*;
 
-public class AddQuestions extends JFrame {
+public class AddQuestions extends JFrame implements ActionListener{
 
     JLabel namelbl,addQLabel,qLabel,optionALabel, optionBLabel, optionCLabel, optionDLabel,ansLabel;
     JTextField qField,optionAField, optionBField, optionCField, optionDField,ansField;
@@ -212,17 +214,48 @@ public class AddQuestions extends JFrame {
        addButton.setForeground(Color.RED);
        addButton.setBackground(Color.WHITE);
        addButton.setFont(new Font("Arial", Font.BOLD, 16));
-       // addButton.addActionListener(this);
+       addButton.addActionListener(this);
        panel.add(addButton);
 
-        
+
+    
 
         
 
-
-
-
+    
         this.add(panel);
+    }
+
+
+    public void actionPerformed(ActionEvent ae) {
+        String question = qField.getText().trim();
+        String optionA = optionAField.getText().trim();
+        String optionB = optionBField.getText().trim();
+        String optionC = optionCField.getText().trim();
+        String optionD = optionDField.getText().trim();
+        String answer = ansField.getText().trim();
+        String department = (String) combo.getSelectedItem();
+
+        if (question.isEmpty() || optionA.isEmpty() || optionB.isEmpty() || optionC.isEmpty() || optionD.isEmpty() || answer.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+    
+
+        // Create Question object and add to file
+        Question q = new Question(question, optionA, optionB, optionC, optionD, answer, department);
+        q.addQuestion();
+
+        JOptionPane.showMessageDialog(null, "Question added successfully!");
+
+        // Clear input fields
+        qField.setText("");
+        optionAField.setText("");
+        optionBField.setText("");
+        optionCField.setText("");
+        optionDField.setText("");
+        ansField.setText("");
     }
 
 }
