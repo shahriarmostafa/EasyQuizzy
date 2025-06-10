@@ -35,11 +35,11 @@ public class Main{
       //a1.setVisible(true);
 
       //p1.setVisible(true);
-      //add.setVisible(true);
+      add.setVisible(true);
       //up.setVisible(true);
       //del.setVisible(true);
       //see.setVisible(true);
-      show.setVisible(true);
+      //show.setVisible(true);
       
 
 
