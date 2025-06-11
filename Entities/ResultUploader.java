@@ -24,13 +24,12 @@ public class ResultUploader {
     public void uploadResult() {
         try{
             FileWriter fwrite = new FileWriter("Result.txt", true);
-            fwrite.write(getUsername() + "\t");
+            fwrite.write(getFullName() + "\t");
             fwrite.write(getResult() + "\t");
             fwrite.write(getDepartment() + "\t");
-            fwrite.write(getFullName() + "\n");
+            fwrite.write(getUsername() + "\n");
             fwrite.close();
             fwrite.flush();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
