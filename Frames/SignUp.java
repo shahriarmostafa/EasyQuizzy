@@ -235,8 +235,10 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
             Account a1=new Account(fullName , username, password);
 			a1.addAccount();
 			this.setVisible(false);
-			HomePage h1=new HomePage(fullName);
-			h1.setVisible(true);
+            JOptionPane.showMessageDialog(null,"Sign Up Successful");
+
+			Sign_in s1 = new Sign_in();
+            s1.setVisible(true);
         }
     }
 

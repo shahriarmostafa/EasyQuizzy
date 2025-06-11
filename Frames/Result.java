@@ -2,6 +2,7 @@ package Frames;
 
 import javax.swing.*;
 
+import Entities.Account;
 import Entities.ResultUploader;
 
 import java.awt.*;
@@ -14,17 +15,20 @@ public class Result extends JFrame implements ActionListener{
     JButton home;
     JPanel panel;
     int resultNumber;
+    String username;
 
     public Result(){
 
     }
 
-    public Result(int resultText){
+    public Result(int resultText, String username){
 
         super("Quiz Result");
         this.setSize(950, 600);
         this.setLocationRelativeTo(null);
         resultNumber = resultText;
+
+        this.username = username;
 
         panel = new JPanel();
         panel.setLayout(null);
@@ -49,7 +53,7 @@ public class Result extends JFrame implements ActionListener{
         panel.add(congratulationTitle);
 
 
-        name = new JLabel(("SHIHAB UDDIN BHUIYAN").toUpperCase(), SwingConstants.CENTER);
+        name = new JLabel((new Account().getFullNameWithPara(username)).toUpperCase(), SwingConstants.CENTER);
         name.setBounds(0, 100, 950, 35);
         name.setFont(new Font("Arial", Font.BOLD, 35));
         name.setForeground(themeSubColor);
@@ -121,7 +125,7 @@ public class Result extends JFrame implements ActionListener{
             this.setVisible(false);
             ResultUploader rUp = new ResultUploader("shihabnai", resultNumber, "CSE", "Shihab Uddin Bhuiyan");
             rUp.uploadResult();
-            HomePage h1 = new HomePage("Shihab Uddin Bhuiya");
+            HomePage h1 = new HomePage(username);
             h1.setVisible(true);
         }
     }

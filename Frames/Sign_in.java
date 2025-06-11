@@ -18,7 +18,7 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
 	Font myfont;
 	ImageIcon icon, sideImage, bigLogo, showIcon, hideIcon;
 	JPanel panel;
-    boolean isPasswordVisible = false;
+    boolean isPasswordVisible;
 
     
 
@@ -199,7 +199,7 @@ private void togglePasswordVisibility() {
 			if(a1.getAccount(username, password)==true)
 			{
 				this.setVisible(false);
-                HomePage h1=new HomePage(a1.getFullNameForSignIn(username));
+                HomePage h1=new HomePage(username);
                 h1.setVisible(true);
                 JOptionPane.showMessageDialog(null, "Sign in success");
 			}

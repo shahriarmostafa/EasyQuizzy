@@ -143,7 +143,7 @@ public class AddQuestions extends JFrame implements ActionListener{
         qField.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(qField);
 
-       String items[] = {"CSE", "EEE", "CS", "BBA", "English", "Architecture"};
+       String items[] = {"CSE", "EEE", "CS", "BBA", "English", "Architechture"};
        combo = new JComboBox(items);
        combo.setBounds(750, 260, 100, 30);
        combo.setFont(new Font("Arial", Font.BOLD, 14));

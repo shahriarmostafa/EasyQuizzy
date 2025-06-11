@@ -17,12 +17,12 @@ public class Main{
        SeeResult see =new SeeResult();
        ShowDetails show=new ShowDetails();
        //s2.setVisible(true);
-      //s1.setVisible(true);
+      s1.setVisible(true);
       //h1.setVisible(true);
       //s1.setVisible(true);
       //a1.setVisible(true);
-       QuizPage q1 = new QuizPage("CSE");
-       Subject sub1 = new Subject();
+       QuizPage q1 = new QuizPage("CSE", "mustafa");
+       Subject sub1 = new Subject("mustafa");
        Result r1 = new Result();
        //s2.setVisible(true);
       //s1.setVisible(true);
@@ -35,7 +35,7 @@ public class Main{
       // add.setVisible(true);
       // up.setVisible(true);
       // del.setVisible(true);
-      see.setVisible(true);
+      // see.setVisible(true);
 
 
       // p1.setVisible(true);

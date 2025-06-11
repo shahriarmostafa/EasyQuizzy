@@ -17,6 +17,8 @@ public class QuizPage extends JFrame implements ActionListener{
     ButtonGroup optionsGroup;
     JButton nextButton;
 
+    String username;
+
     // Radio buttons as fields so we can update text later
     JRadioButton radioButton1, radioButton2, radioButton3, radioButton4;
 
@@ -31,12 +33,24 @@ public class QuizPage extends JFrame implements ActionListener{
 
     public QuizPage(){}
 
-    public QuizPage(String selectedDepartment) {
+    public QuizPage(String selectedDepartment, String username) {
 
         // Basic setup
         super("Quiz");
         this.setSize(950, 600);
         this.setLocationRelativeTo(null);
+
+        this.username = username;
+
+        questions = loadQuestions("Questions.txt", selectedDepartment);
+
+
+        if (questions.length == 0) {
+            JOptionPane.showMessageDialog(null, "No questions available for " + selectedDepartment);
+            nextButton.setEnabled(false);
+            this.setVisible(false);
+            return;
+        }
 
         bgColor = new Color(151, 174, 209);
         themeColor = new Color(41, 110, 214);
@@ -193,19 +207,13 @@ public class QuizPage extends JFrame implements ActionListener{
         panel.add(nextButton);
 
         // questions
-        questions = loadQuestions("Questions.txt", selectedDepartment);
 
 
 
-        if (questions.length == 0) {
-            JOptionPane.showMessageDialog(this, "No questions available for " + selectedDepartment);
-            nextButton.setEnabled(false);
-            return;
-        }
+        
 
         // Show the first question
         showQuestion(currentIndex);
-
             
     }
 
@@ -238,7 +246,7 @@ public class QuizPage extends JFrame implements ActionListener{
                 currentIndex++;
                 if(currentIndex > 15){
                     this.setVisible(false);
-                    Result see1 = new Result(rightAnswered);
+                    Result see1 = new Result(rightAnswered, username);
                     see1.setVisible(true);
                     return;
                 }
@@ -246,7 +254,7 @@ public class QuizPage extends JFrame implements ActionListener{
                     showQuestion(currentIndex);
                 } else {
                     this.setVisible(false);
-                    Result see1 = new Result(rightAnswered);
+                    Result see1 = new Result(rightAnswered, username);
                     see1.setVisible(true);
                     return;
                 }

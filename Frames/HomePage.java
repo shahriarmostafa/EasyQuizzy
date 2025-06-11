@@ -1,10 +1,14 @@
 package Frames;
 import java.lang.*;
 import javax.swing.*;
+
+import Entities.*;
+
 import java.awt.*;
 //import java.awt.event.*;
+import java.awt.event.*;
 
-public class HomePage extends JFrame {
+public class HomePage extends JFrame implements ActionListener{
 
 
     JLabel namelbl, hiNameLabel, attendExamLabel,qLabel;
@@ -13,18 +17,20 @@ public class HomePage extends JFrame {
     Color themeColor;
     ImageIcon icon, roundLogo,qimg;
 	JPanel panel, topPanel;
+    String username;
     
     public HomePage(){
 
     }
 
-    public HomePage(String fullName)
+    public HomePage(String username)
     {
 
         //basic setup
         super("Homepage");
         this.setSize(950,600);
         this.setLocationRelativeTo(null);
+        this.username = username;
 
         themeColor = new Color(41, 110, 214);
 
@@ -67,7 +73,7 @@ public class HomePage extends JFrame {
 
 
         //mid part
-        hiNameLabel = new JLabel("Hi, " + fullName, SwingConstants.CENTER);
+        hiNameLabel = new JLabel("Hi, " + new Account().getFullNameWithPara(username), SwingConstants.CENTER);
         hiNameLabel.setBounds(0, 125, 950, 30);
         hiNameLabel.setFont(new Font("Arial", Font.BOLD, 30));
         // hiNameLabel.setForeground(Color.WHITE);
@@ -93,18 +99,16 @@ public class HomePage extends JFrame {
         attendQuiz.setForeground(Color.WHITE);
         attendQuiz.setBackground(themeColor);
         attendQuiz.setFont(new Font("Arial", Font.BOLD, 14));
-        // logOutButton.addMouseListener(this);
-        // logOutButton.addActionListener(this);
+        attendQuiz.addActionListener(this);
         panel.add(attendQuiz);
-
-        
-
-        
-
-
         this.add(panel);
-
-
     }
-    
+
+    public void actionPerformed(ActionEvent ae){
+        if(ae.getSource() == attendQuiz){
+            Subject r1 = new Subject(username);
+            r1.setVisible(true);
+            this.setVisible(false);
+        }
+    }
 }

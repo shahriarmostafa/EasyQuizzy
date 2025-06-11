@@ -48,7 +48,7 @@ public class Account
 		return fullName;
 	}
 
-	public String getFullNameForSignIn(String username)
+	public String getFullNameWithPara(String username)
 	{
 		String fullName = "";
 		try

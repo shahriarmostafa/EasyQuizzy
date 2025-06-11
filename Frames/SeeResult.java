@@ -31,23 +31,23 @@ public class SeeResult extends JFrame {
         resultHeader.setFont(new Font("Arial", Font.BOLD, 14));
         resultTablePanel.add(resultHeader);
 
-        int yOffset = 35;
+        int yValue = 35;
         for (String[] entry : allResults) {
             if (entry[2].equals(subject)) {
 
                 JLabel nameLbl = new JLabel(entry[0]);
-                nameLbl.setBounds(20, yOffset, 150, 30);
+                nameLbl.setBounds(20, yValue, 150, 30);
                 resultTablePanel.add(nameLbl);
 
                 JLabel resultLbl = new JLabel(entry[1]);
-                resultLbl.setBounds(200, yOffset, 150, 30);
+                resultLbl.setBounds(200, yValue, 150, 30);
                 resultTablePanel.add(resultLbl);
 
-                yOffset += 35;
+                yValue += 35;
             }
         }
 
-        resultTablePanel.setPreferredSize(new Dimension(350, yOffset));
+        resultTablePanel.setPreferredSize(new Dimension(350, yValue));
         resultTablePanel.revalidate();
         resultTablePanel.repaint();
     }
@@ -165,7 +165,7 @@ public class SeeResult extends JFrame {
 
        String[] subjects = {"CSE", "EEE", "CS", "BBA", "English", "Architecture"};
 
-int startX = 275;
+int XValue = 275;
 int startY = 485;
 int btnWidth = 100;
 int btnHeight = 30;
@@ -174,7 +174,7 @@ int gap = 10;
 for (int i = 0; i < subjects.length; i++) {
     String subject = subjects[i];
     JButton subjectBtn = new JButton(subject);
-    subjectBtn.setBounds(startX + (i % 3) * (btnWidth + gap), startY + (i / 3) * (btnHeight + gap), btnWidth, btnHeight);
+    subjectBtn.setBounds(XValue + (i % 3) * (btnWidth + gap), startY + (i / 3) * (btnHeight + gap), btnWidth, btnHeight);
     subjectBtn.setBackground(new Color(70, 138, 59));
     subjectBtn.setForeground(Color.WHITE);
     subjectBtn.setFont(new Font("Arial", Font.BOLD, 12));
