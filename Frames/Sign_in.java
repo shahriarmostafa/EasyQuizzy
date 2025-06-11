@@ -190,12 +190,20 @@ private void togglePasswordVisibility() {
             String username = namefld.getText();
             String password = passfld.getText();
 
+            if(username.equals("admin") && password.equals("adminpass")){
+                AdminPage admin1 = new AdminPage();
+                admin1.setVisible(true);
+                this.setVisible(false);
+                return;
+            }
+
             Account a1=new Account(username, password);
 			if(username.isEmpty() || password.isEmpty())
             {
                 JOptionPane.showMessageDialog(null,"Feild is empty");
                 return;
             }
+            
 			if(a1.getAccount(username, password)==true)
 			{
 				this.setVisible(false);
