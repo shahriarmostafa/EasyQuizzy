@@ -13,7 +13,7 @@ public class HomePage extends JFrame implements ActionListener{
 
     JLabel namelbl, hiNameLabel, attendExamLabel,qLabel;
 	JTextField namefld;
-	JButton backbtn, logOutButton, attendQuiz;
+	JButton backbtn, logOutButton, attendQuiz, profileBtn;
     Color themeColor;
     ImageIcon icon, roundLogo,qimg;
 	JPanel panel, topPanel;
@@ -58,9 +58,16 @@ public class HomePage extends JFrame implements ActionListener{
         logOutButton.setForeground(themeColor);
         logOutButton.setBackground(Color.WHITE);
         logOutButton.setFont(new Font("Arial", Font.BOLD, 14));
-        // logOutButton.addMouseListener(this);
-        // logOutButton.addActionListener(this);
+        logOutButton.addActionListener(this);
         panel.add(logOutButton);
+
+        profileBtn = new JButton("Profile");
+        profileBtn.setBounds(690, 15, 100, 40);
+        profileBtn.setForeground(themeColor);
+        profileBtn.setBackground(Color.WHITE);
+        profileBtn.setFont(new Font("Arial", Font.BOLD, 14));
+        profileBtn.addActionListener(this);
+        panel.add(profileBtn);
         
 
         //top part
@@ -108,6 +115,17 @@ public class HomePage extends JFrame implements ActionListener{
         if(ae.getSource() == attendQuiz){
             Subject r1 = new Subject(username);
             r1.setVisible(true);
+            this.setVisible(false);
+        }
+
+        else if(ae.getSource() == profileBtn){
+            Profile p1 = new Profile(username);
+            p1.setVisible(true);
+            this.setVisible(false);
+        }
+        else if(ae.getSource() == logOutButton){
+            Sign_in s1 = new Sign_in();
+            s1.setVisible(true);
             this.setVisible(false);
         }
     }

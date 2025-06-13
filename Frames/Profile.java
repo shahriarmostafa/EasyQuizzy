@@ -1,22 +1,24 @@
 package Frames;
-
+import Entities.*;
 import javax.swing.*;
 import java.awt.*;
-
-public class Profile extends JFrame{
+import java.awt.event.*;
+public class Profile extends JFrame implements ActionListener{
     JLabel nameLabel, proshongshaLabel, labelProfileImage, titleLabel, labelPeopleImage, motivationLabel1, motivationLabel2, boxTitile1, boxTitile2, boxTitile3, boxTitile4, boxNumber1, boxNumber2, boxNumber3, boxNumber4;
     ImageIcon profileImage, icon, scaledImageProfilelogoFinal, peopleImage, scaledImagePeopleFinal, roundLogo;
     JButton backbtn, logOutButton;
     Color themeColor, themeSubColor, creameColor;
     JPanel panel, topPanel, leftpanel, boxPanel1,boxPanel2, boxPanel3, boxPanel4;
+    String username;
     public Profile(){
 
     }
 
-    public Profile(String Name){
+    public Profile(String username){
         super("User Profile");
         this.setSize(950,600);
         this.setLocationRelativeTo(null);
+        this.username = username;
 
         themeColor = new Color(41, 110, 214);
         themeSubColor = new Color(0, 6, 36);
@@ -40,7 +42,7 @@ public class Profile extends JFrame{
         panel.add(labelProfileImage);
 
         //mid part
-        nameLabel = new JLabel(Name, SwingConstants.CENTER);
+        nameLabel = new JLabel(new Account().getFullNameWithPara(username), SwingConstants.CENTER);
         nameLabel.setBounds(0, 190, 380, 30);
         nameLabel.setFont(new Font("Arial", Font.BOLD, 30));
         // hiNameLabel.setForeground(Color.WHITE);
@@ -74,7 +76,7 @@ public class Profile extends JFrame{
         logOutButton.setBackground(themeColor);
         logOutButton.setFont(new Font("Arial", Font.BOLD, 14));
         // logOutButton.addMouseListener(this);
-        // logOutButton.addActionListener(this);
+        logOutButton.addActionListener(this);
         panel.add(logOutButton);
 
         backbtn = new JButton("Back");
@@ -83,7 +85,7 @@ public class Profile extends JFrame{
         backbtn.setBackground(themeColor);
         backbtn.setFont(new Font("Arial", Font.BOLD, 14));
         // logOutButton.addMouseListener(this);
-        // logOutButton.addActionListener(this);
+        backbtn.addActionListener(this);
         panel.add(backbtn);
 
 
@@ -98,11 +100,6 @@ public class Profile extends JFrame{
         panel.add(labelRoundLogo);
 
 
-
-        // topPanel = new JPanel();
-        // topPanel.setBounds(380, 0, 570, 70);
-        // topPanel.setBackground(themeColor);
-        // panel.add(topPanel);
 
         boxPanel1 = new JPanel();
         boxPanel1.setLayout(null);
@@ -135,7 +132,7 @@ public class Profile extends JFrame{
         boxTitile1.setForeground(themeColor);
         boxPanel1.add(boxTitile1);
 
-        boxNumber1 = new JLabel("shihab123", SwingConstants.CENTER);
+        boxNumber1 = new JLabel(username, SwingConstants.CENTER);
         boxNumber1.setBounds(0,70, 200, 40);
         boxNumber1.setFont(new Font("Arial", Font.BOLD, 25));
         boxNumber1.setForeground(Color.WHITE);
@@ -147,32 +144,32 @@ public class Profile extends JFrame{
         boxTitile2.setForeground(themeColor);
         boxPanel2.add(boxTitile2);
 
-        boxNumber2 = new JLabel("12", SwingConstants.CENTER);
+        boxNumber2 = new JLabel(new ResultUploader().getTotalQuizAttendedWithUserName(username), SwingConstants.CENTER);
         boxNumber2.setBounds(0,70, 200, 40);
         boxNumber2.setFont(new Font("Arial", Font.BOLD, 40));
         boxNumber2.setForeground(Color.WHITE);
         boxPanel2.add(boxNumber2);
 
-        boxTitile3 = new JLabel("Right Answered", SwingConstants.CENTER);
-        boxTitile3.setBounds(0, 45, 200, 18);
+        boxTitile3 = new JLabel("<html><body  style='text-align:center;'>Total <br> Right Answered</body></html>", SwingConstants.CENTER);
+        boxTitile3.setBounds(0, 30, 200, 36);
         boxTitile3.setFont(new Font("Arial", Font.BOLD, 18));
         boxTitile3.setForeground(themeColor);
         boxPanel3.add(boxTitile3);
 
-        boxNumber3 = new JLabel("12", SwingConstants.CENTER);
-        boxNumber3.setBounds(0,70, 200, 40);
+        boxNumber3 = new JLabel(new ResultUploader().getRightAnsweredWithUserName(username), SwingConstants.CENTER);
+        boxNumber3.setBounds(0,80, 200, 40);
         boxNumber3.setFont(new Font("Arial", Font.BOLD, 40));
         boxNumber3.setForeground(Color.WHITE);
         boxPanel3.add(boxNumber3);
 
-        boxTitile4 = new JLabel("Last Quiz Marks", SwingConstants.CENTER);
-        boxTitile4.setBounds(0, 45, 200, 18);
+        boxTitile4 = new JLabel("<html><body  style='text-align:center;'>Last <br> Quiz Marks</body></html>", SwingConstants.CENTER);
+        boxTitile4.setBounds(0, 30, 200, 36);
         boxTitile4.setFont(new Font("Arial", Font.BOLD, 18));
         boxTitile4.setForeground(themeColor);
         boxPanel4.add(boxTitile4);
 
-        boxNumber4 = new JLabel("25", SwingConstants.CENTER);
-        boxNumber4.setBounds(0,70, 200, 40);
+        boxNumber4 = new JLabel(new ResultUploader().getResultWithUserName(username), SwingConstants.CENTER);
+        boxNumber4.setBounds(0,80, 200, 40);
         boxNumber4.setFont(new Font("Arial", Font.BOLD, 40));
         boxNumber4.setForeground(Color.WHITE);
         boxPanel4.add(boxNumber4);
@@ -197,5 +194,19 @@ public class Profile extends JFrame{
 
 
 
+    }
+
+    public void actionPerformed(ActionEvent ae){
+
+        if(ae.getSource() == backbtn){
+            HomePage h1 = new HomePage(username);
+            h1.setVisible(true);
+            this.setVisible(false);
+        }
+        else if(ae.getSource() == logOutButton){
+            Sign_in s1 = new Sign_in();
+            s1.setVisible(true);
+            this.setVisible(false);
+        }
     }
 }

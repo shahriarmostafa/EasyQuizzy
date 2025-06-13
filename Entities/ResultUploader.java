@@ -1,6 +1,7 @@
 package Entities;
 
 import java.io.*;
+import java.util.*;
 
 public class ResultUploader {
 
@@ -8,6 +9,8 @@ public class ResultUploader {
     private int result;
     private String department;
     private String fullName;
+    Scanner  sc;
+    File myfile;
 
 
     public ResultUploader(){
@@ -48,9 +51,84 @@ public class ResultUploader {
         return result;
     }
 
+    public String getResultWithUserName(String username) {
+        String lastResult = "None";
+		try
+		{
+			myfile=new File("./Result.txt");
+			sc=new Scanner(myfile);
+			
+			while(sc.hasNextLine())
+			{
+				String line=sc.nextLine();
+				String[] value=line.split("\t");
+				if(value[3].equals(username))
+				{
+					lastResult = value[1];
+				}
+			}
+			
+		}
+		catch(IOException ioe)
+		{
+			ioe.printStackTrace();
+		}
+		return lastResult;
+    }
+
+    public String getRightAnsweredWithUserName(String username){
+        int totalRightAnswered = 0;
+		try
+		{
+			myfile=new File("./Result.txt");
+			sc=new Scanner(myfile);
+			
+			while(sc.hasNextLine())
+			{
+				String line=sc.nextLine();
+				String[] value=line.split("\t");
+				if(value[3].equals(username))
+				{
+					totalRightAnswered = totalRightAnswered + Integer.parseInt(value[1]);
+				}
+			}
+			
+		}
+		catch(IOException ioe)
+		{
+			ioe.printStackTrace();
+		}
+		return String.valueOf(totalRightAnswered);
+    }
+    public String getTotalQuizAttendedWithUserName(String username){
+        int totalQuizAttended = 0;
+		try
+		{
+			myfile=new File("./Result.txt");
+			sc=new Scanner(myfile);
+			
+			while(sc.hasNextLine())
+			{
+				String line=sc.nextLine();
+				String[] value=line.split("\t");
+				if(value[3].equals(username))
+				{
+					totalQuizAttended = totalQuizAttended + 1;
+				}
+			}
+			
+		}
+		catch(IOException ioe)
+		{
+			ioe.printStackTrace();
+		}
+		return String.valueOf(totalQuizAttended);
+    }
     public void setResult(int result) {
         this.result = result;
     }
+    
+    
 
     public String getDepartment() {
         return department;

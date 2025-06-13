@@ -12,9 +12,8 @@ Shihab Uddin Bhuiyan	1	CSE	shihabnai
 Shihab Uddin Bhuiyan	1	CSE	shihabnai
 Shihab Uddin Bhuiyan	1	CSE	shihabnai
 Shihab Uddin Bhuiyan	1	CSE	shihabnai
-
 Shihab Uddin Bhuiyan	1	CSE	shihabnai
 Shihab Uddin Bhuiyan	1	CSE	shihabnai
 Shihab Uddin Bhuiyan	0	CSE	shihabnai
 Shihab Uddin Bhuiyan	0	CSE	shihabnai
-Shihab Uddin Bhuiyan	0	CSE	shihabnai
+Shihab Uddin Bhuiyan	5	CSE	shihabnai
