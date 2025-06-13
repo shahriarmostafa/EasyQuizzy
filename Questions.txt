@@ -1,4 +1,5 @@
 What is a and b	a	b	v	d	v	CSE
 What is a and b	b is a	a	c	d	v	CSE
-is a is b?	d	g	d	e	d	CSE
+Mustafa ki vondo?	yes	option a	option b	option c	yes	CSE
 not a not n	b	x	d	e	e	CSE
+AIUB ki valo ?	valo na	ekdom e na	option a	option c	option c	Architechture

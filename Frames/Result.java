@@ -16,12 +16,13 @@ public class Result extends JFrame implements ActionListener{
     JPanel panel;
     int resultNumber;
     String username;
+    String subject;
 
     public Result(){
 
     }
 
-    public Result(int resultText, String username){
+    public Result(int resultText, String username, String subject){
 
         super("Quiz Result");
         this.setSize(950, 600);
@@ -29,6 +30,7 @@ public class Result extends JFrame implements ActionListener{
         resultNumber = resultText;
 
         this.username = username;
+        this.subject=subject;
 
         panel = new JPanel();
         panel.setLayout(null);
@@ -123,7 +125,7 @@ public class Result extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == home) {
             this.setVisible(false);
-            ResultUploader rUp = new ResultUploader("shihabnai", resultNumber, "CSE", "Shihab Uddin Bhuiyan");
+            ResultUploader rUp = new ResultUploader(username, resultNumber, subject,new Account().getFullNameWithPara(username));
             rUp.uploadResult();
             HomePage h1 = new HomePage(username);
             h1.setVisible(true);

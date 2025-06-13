@@ -18,6 +18,7 @@ public class QuizPage extends JFrame implements ActionListener{
     JButton nextButton;
 
     String username;
+    String depertment;
 
     // Radio buttons as fields so we can update text later
     JRadioButton radioButton1, radioButton2, radioButton3, radioButton4;
@@ -41,6 +42,7 @@ public class QuizPage extends JFrame implements ActionListener{
         this.setLocationRelativeTo(null);
 
         this.username = username;
+        depertment=selectedDepartment;
 
         questions = loadQuestions("Questions.txt", selectedDepartment);
 
@@ -246,7 +248,7 @@ public class QuizPage extends JFrame implements ActionListener{
                 currentIndex++;
                 if(currentIndex > 15){
                     this.setVisible(false);
-                    Result see1 = new Result(rightAnswered, username);
+                    Result see1 = new Result(rightAnswered, username,depertment);
                     see1.setVisible(true);
                     return;
                 }
@@ -254,7 +256,7 @@ public class QuizPage extends JFrame implements ActionListener{
                     showQuestion(currentIndex);
                 } else {
                     this.setVisible(false);
-                    Result see1 = new Result(rightAnswered, username);
+                    Result see1 = new Result(rightAnswered, username,depertment);
                     see1.setVisible(true);
                     return;
                 }

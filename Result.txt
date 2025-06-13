@@ -12,9 +12,14 @@ Shihab Uddin Bhuiyan	1	CSE	shihabnai
 Shihab Uddin Bhuiyan	1	CSE	shihabnai
 Shihab Uddin Bhuiyan	1	CSE	shihabnai
 Shihab Uddin Bhuiyan	1	CSE	shihabnai
-
 Shihab Uddin Bhuiyan	1	CSE	shihabnai
 Shihab Uddin Bhuiyan	1	CSE	shihabnai
 Shihab Uddin Bhuiyan	0	CSE	shihabnai
 Shihab Uddin Bhuiyan	0	CSE	shihabnai
 Shihab Uddin Bhuiyan	0	CSE	shihabnai
+Shihab Uddin Bhuiyan	1	CSE	shihabnai
+Shihab Uddin Bhuiyan	1	CSE	shihabnai
+Shihab Uddin Bhuiyan	3	CSE	shihabnai
+Syed Shahriar Mustafa	2	CSE	mustafa
+Syed Shahriar Mustafa	2	CSE	mustafa
+Shefaat Sir	1	Architechture	sir

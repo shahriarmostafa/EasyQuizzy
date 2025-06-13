@@ -5,18 +5,20 @@ import java.awt.*;
 
 public class AdminPage extends JFrame {
 
-    JLabel namelbl,tstuNum,tStudents;
+    JLabel namelbl,tstuNum,tStudents,welcomLabel;
 	JTextField namefld;
 	JButton logOutButton,addQButton,upQButton,delQButton,seeResButton,showStuDeatilsButton;
-    Color myColor,lbColor;
+    Color themeColor;
     ImageIcon icon,adminIcon,addQ,totalStu,qnA;
-	JPanel panel,topPanel,sidePanel,midPanel1,midPanel2,midPanel3,midPanel4;
+	JPanel panel,topPanel,sidePanel,midPanel1,midPanel2;
 
     public AdminPage()
     {
         super("Admin Dashboard");
         this.setSize(950,600);
         this.setLocationRelativeTo(null);
+
+        themeColor = new Color(41, 110, 214);
 
 
         panel=new JPanel();
@@ -59,12 +61,18 @@ public class AdminPage extends JFrame {
         sidePanel = new JPanel();
         sidePanel.setLayout(null);
         sidePanel.setBounds(0, 0, 185, 600);
-        sidePanel.setBackground(Color.BLUE);
+        sidePanel.setBackground(themeColor);
         panel.add(sidePanel);
+
+       welcomLabel = new JLabel("Welcome to Admin Dashboard");
+       welcomLabel.setBounds(200, 150, 500, 50);
+       welcomLabel.setFont(new Font("Arial", Font.BOLD, 24));
+       welcomLabel.setForeground(new Color(14, 22, 79));
+       panel.add(welcomLabel);
 
         midPanel1 = new JPanel();
         midPanel1.setLayout(null);
-        midPanel1.setBounds(250, 110, 200, 150);
+        midPanel1.setBounds(250, 350, 200, 150);
         midPanel1.setBackground(new Color(14, 22, 79));
         panel.add(midPanel1);
 
@@ -84,7 +92,7 @@ public class AdminPage extends JFrame {
         midPanel1.add(totalSJLabel);
 
        tStudents = new JLabel("Total Students");
-       tStudents.setBounds(265, 250, 200, 50);
+       tStudents.setBounds(265, 500, 250, 50);
        tStudents.setFont(new Font("Arial", Font.BOLD, 24));
        tStudents.setForeground(new Color(14, 22, 79));
        panel.add(tStudents);
@@ -93,7 +101,7 @@ public class AdminPage extends JFrame {
 
         midPanel2 = new JPanel();
         midPanel2.setLayout(null);
-        midPanel2.setBounds(650, 110, 200, 150);
+        midPanel2.setBounds(650, 350, 200, 150);
         midPanel2.setBackground(new Color(14, 22, 79));
         panel.add(midPanel2);
         
@@ -113,23 +121,26 @@ public class AdminPage extends JFrame {
         midPanel2.add(tqaNum);
         
         // Description label below midPanel2
-        JLabel qnaLabel = new JLabel("Question & Answer");
-        qnaLabel.setBounds(635, 250, 250, 50); // Adjust as needed
+        JLabel qnaLabel = new JLabel("Set of Question & Answer");
+        qnaLabel.setBounds(610, 500, 350, 50); // Adjust as needed
         qnaLabel.setFont(new Font("Arial", Font.BOLD, 24));
         qnaLabel.setForeground(new Color(14, 22, 79));
         panel.add(qnaLabel);
-        midPanel3= new JPanel();
-        midPanel3.setLayout(null);
-        midPanel3.setBounds(250, 350, 200, 150);
-        midPanel3.setBackground(new Color(14, 22, 79));
-        panel.add(midPanel3);
 
 
-        midPanel4 = new JPanel();
-        midPanel4.setLayout(null);
-        midPanel4.setBounds(650, 350, 200, 150);
-        midPanel4.setBackground(new Color(14, 22, 79));
-        panel.add(midPanel4);
+
+        // midPanel3= new JPanel();
+        // midPanel3.setLayout(null);
+        // midPanel3.setBounds(250, 350, 200, 150);
+        // midPanel3.setBackground(new Color(14, 22, 79));
+        // panel.add(midPanel3);
+
+
+        // midPanel4 = new JPanel();
+        // midPanel4.setLayout(null);
+        // midPanel4.setBounds(650, 350, 200, 150);
+        // midPanel4.setBackground(new Color(14, 22, 79));
+        // panel.add(midPanel4);
 
 
 
@@ -146,10 +157,10 @@ public class AdminPage extends JFrame {
         // sidePanel.add(addQlbl);
 
         addQButton = new JButton("Add Question");
-        addQButton.setBounds(0, 15, 185, 25);
-        addQButton.setForeground(Color.WHITE);
-        addQButton.setBackground(Color.BLUE);
-        addQButton.setFont(new Font("Arial", Font.PLAIN, 20));
+        addQButton.setBounds(0, 0, 185, 60);
+        addQButton.setForeground(new Color(14, 22, 79));
+        addQButton.setBackground(themeColor);
+        addQButton.setFont(new Font("Arial", Font.BOLD, 22));
         // addQButton.addMouseListener(this);
         // addQButton.addActionListener(this);
         sidePanel.add(addQButton);
