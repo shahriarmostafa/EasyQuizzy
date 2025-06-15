@@ -218,27 +218,30 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
     }
 
     public void actionPerformed(ActionEvent ae){
-        String fullName = fullNameField.getText();
+        if(ae.getSource() == rgstbtn){
+            String fullName = fullNameField.getText();
         String username = usernameField.getText();
         String password = passwordField.getText();
         String confirmpassword = confirmPasswordField.getText();
         if(fullName.isEmpty() ||username.isEmpty() || password.isEmpty() || confirmpassword.isEmpty())
             {
                 JOptionPane.showMessageDialog(null,"Feild is empty");
-                return;
-            }
-        if(!password.equals(confirmpassword)){
+        }
+        else if(username.equals("admin")){
+            JOptionPane.showMessageDialog(null,"Username can not be admin...");
+        }
+        else if(!password.equals(confirmpassword)){
             JOptionPane.showMessageDialog(null,"Password did not match...");
-            return;
         }
         else{
             Account a1=new Account(fullName , username, password);
 			a1.addAccount();
 			this.setVisible(false);
-            JOptionPane.showMessageDialog(null,"Sign Up Successful");
+            JOptionPane.showMessageDialog(null,"Sign Up Successful. Now please sign in");
 
 			Sign_in s1 = new Sign_in();
             s1.setVisible(true);
+        }
         }
     }
 

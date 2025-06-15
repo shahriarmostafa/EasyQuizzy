@@ -333,11 +333,7 @@ public void actionPerformed(ActionEvent ae)
         ShowDetails sd = new ShowDetails();
         sd.setVisible(true);
     }
-}
-
-
-
-        public void actionPerformed(ActionEvent ae) {
+    else if(ae.getSource() == addButton){
         String question = qField.getText().trim();
         String optionA = optionAField.getText().trim();
         String optionB = optionBField.getText().trim();
@@ -367,5 +363,10 @@ public void actionPerformed(ActionEvent ae)
         optionDField.setText("");
         ansField.setText("");
     }
+}
+
+
+
+
 
 }

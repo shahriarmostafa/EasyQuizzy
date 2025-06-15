@@ -1,11 +1,8 @@
 package Frames;
-
 import Entities.*;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.nio.file.*;
 import java.io.*;
 import java.util.*;
 
