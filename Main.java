@@ -25,15 +25,15 @@ public class Main{
        Subject sub1 = new Subject("mustafa");
        Result r1 = new Result();
        //s2.setVisible(true);
-      s1.setVisible(true);
+      //s1.setVisible(true);
       //h1.setVisible(true);
       // a1.setVisible(true);
       // s1.setVisible(true);
       //h1.setVisible(true);
       // s1.setVisible(true);
        //a1.setVisible(true);
-    //  add.setVisible(true);
-      // up.setVisible(true);
+    //add.setVisible(true);
+      up.setVisible(true);
       // del.setVisible(true);
     // see.setVisible(true);
 

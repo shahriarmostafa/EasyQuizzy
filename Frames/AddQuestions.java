@@ -111,12 +111,18 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
         showStuDeatilsButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(showStuDeatilsButton);
 
+
+        backButton.addMouseListener(this);
+        logOutButton.addMouseListener(this);
         addQButton.addMouseListener(this);
         upQButton.addMouseListener(this);
         delQButton.addMouseListener(this);
         seeResButton.addMouseListener(this);
         showStuDeatilsButton.addMouseListener(this);
 
+
+        backButton.addActionListener(this);
+        logOutButton.addActionListener(this);
         addQButton.addActionListener(this);
         upQButton.addActionListener(this);
         delQButton.addActionListener(this);
@@ -240,11 +246,7 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
     public void mousePressed(MouseEvent me) {}
     public void mouseReleased(MouseEvent me) {}
     public void mouseEntered(MouseEvent me) {
-    if (me.getSource() == addQButton) {
-        addQButton.setBackground(new Color(14, 22, 79));
-        addQButton.setForeground(Color.WHITE);
-    }
-    else if (me.getSource() == upQButton) {
+    if (me.getSource() == upQButton) {
         upQButton.setBackground(new Color(14, 22, 79));
         upQButton.setForeground(Color.WHITE);
     }
@@ -265,15 +267,17 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
         logOutButton.setBackground(themeColor);
         logOutButton.setForeground(Color.WHITE);
     }
+    else if(me.getSource() == backButton)
+    {
+        backButton.setBackground(themeColor);
+        backButton.setForeground(Color.WHITE);
+    }
 
 }
 
 public void mouseExited(MouseEvent me) {
-    if (me.getSource() == addQButton) {
-        addQButton.setBackground(themeColor);
-        addQButton.setForeground(Color.WHITE);
-    }
-    else if (me.getSource() == upQButton) {
+    
+    if (me.getSource() == upQButton) {
         upQButton.setBackground(themeColor);
         upQButton.setForeground(Color.WHITE);
     }
@@ -292,7 +296,12 @@ public void mouseExited(MouseEvent me) {
     else if(me.getSource()==logOutButton)
     {
         logOutButton.setBackground(Color.WHITE);
-        logOutButton.setForeground(Color.BLUE);
+        logOutButton.setForeground(themeColor);
+    }
+    else if (me.getSource()==backButton)
+    {
+        backButton.setBackground(Color.WHITE);
+        backButton.setForeground(themeColor);
     }
 }
 public void actionPerformed(ActionEvent ae)
@@ -302,12 +311,6 @@ public void actionPerformed(ActionEvent ae)
         this.setVisible(false);
         Sign_in si = new Sign_in();
         si.setVisible(true);
-    }
-    else if (ae.getSource() == addQButton)
-    {
-        this.setVisible(false);
-        AddQuestions aq = new AddQuestions();
-        aq.setVisible(true);
     }
     else if (ae.getSource() == upQButton)
     {
@@ -332,6 +335,12 @@ public void actionPerformed(ActionEvent ae)
         this.setVisible(false);
         ShowDetails sd = new ShowDetails();
         sd.setVisible(true);
+    }
+    else if (ae.getSource()==backButton)
+    {
+        this.setVisible(false);
+        AdminPage a1 = new AdminPage();
+        a1.setVisible(true);
     }
     else if(ae.getSource() == addButton){
         String question = qField.getText().trim();
