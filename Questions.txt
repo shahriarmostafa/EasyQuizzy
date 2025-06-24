@@ -1,6 +1,75 @@
-What is a and b	a	b	v	d	v	CSE
-What is a and b	b is a	a	c	d	v	CSE
-Mustafa ki vondo?	yes	option a	option b	option c	yes	CSE
-not a not n	b	x	d	e	e	CSE
-AIUB ki valo ?	valo na	ekdom e na	option a	option c	option c	Architechture
-What is what?	what is what	what is not what	what is ki	ki is ki	ki is ki	CSE
+What is the full form of CPU?	Central Processing Unit	Control Panel Unit	Computer Processing Utility	Core Processor Unit	Central Processing Unit	CSE
+What does HTML stand for?	HyperText Markup Language	HighText Machine Language	Hyperloop Machine Language	HighlyTextual Marking Language	HyperText Markup Language	CSE
+Which data structure uses LIFO?	Queue	Array	Linked List	Stack	Stack	CSE
+What is an example of a programming language?	HTML	CSS	Python	SQL	Python	CSE
+Which one is used for database management?	Photoshop	PowerPoint	MySQL	Excel	MySQL	CSE
+What does API stand for?	Application Programming Interface	Applied Program Interface	Advanced Programming Integration	Automatic Process Interface	Application Programming Interface	CSE
+What is the base of binary system?	8	10	2	16	2	CSE
+Which logic gate outputs true only when both inputs are true?	OR	NAND	NOR	AND	AND	CSE
+Which protocol is used for secure web browsing?	HTTP	FTP	TCP	HTTPS	HTTPS	CSE
+Which programming language is known as the backbone of web?	PHP	JavaScript	Python	Ruby	JavaScript	CSE
+What is the time complexity of binary search?	O(n)	O(log n)	O(n^2)	O(1)	O(log n)	CSE
+Which number system uses digits from 0 to 7?	Binary	Decimal	Octal	Hexadecimal	Octal	CSE
+Which is a frontend framework?	Node.js	Django	React	Laravel	React	CSE
+Which language is used for styling web pages?	HTML	PHP	CSS	JavaScript	CSS	CSE
+What is Ohm’s law?	V = IR	P = IV	E = IR	P = I^2R	V = IR	EEE
+What is the unit of resistance?	Volt	Ampere	Ohm	Watt	Ohm	EEE
+Which device stores electric charge?	Resistor	Inductor	Capacitor	Transformer	Capacitor	EEE
+What does AC stand for?	Alternative Current	Alternating Current	Analog Current	Active Current	Alternating Current	EEE
+Which element opposes the change in current?	Resistor	Capacitor	Inductor	Diode	Inductor	EEE
+What is the main function of a transformer?	Store energy	Convert AC to DC	Increase or decrease voltage	Measure current	Increase or decrease voltage	EEE
+What is a diode used for?	Amplification	Rectification	Filtering	Oscillation	Rectification	EEE
+Which law states total voltage in a loop is zero?	Kirchhoff’s Current Law	Kirchhoff’s Voltage Law	Ohm’s Law	Newton’s Law	Kirchhoff’s Voltage Law	EEE
+Which of these is a passive component?	Transistor	MOSFET	Resistor	IC	Resistor	EEE
+Which device converts AC to DC?	Transformer	Diode	Inverter	Rectifier	Rectifier	EEE
+Which of these is a semiconductor?	Copper	Aluminum	Germanium	Silver	Germanium	EEE
+What is the SI unit of capacitance?	Farad	Coulomb	Joule	Watt	Farad	EEE
+Which is used to measure current?	Voltmeter	Ohmmeter	Ammeter	Barometer	Ammeter	EEE
+What is the typical frequency of household AC?	60Hz	100Hz	120Hz	50Hz	50Hz	EEE
+What is the function of a relay?	Heat energy	Current amplification	Signal transmission	Electrical switching	Electrical switching	EEE
+What does CS stand for in tech?	Computer Science	Control System	Cyber Security	Code Structure	Computer Science	CS
+Which is a sorting algorithm?	Dijkstra	Merge Sort	BFS	DFS	Merge Sort	CS
+What is the main use of an operating system?	Hardware design	Compiling code	Manage system resources	Network security	Manage system resources	CS
+What is 101 in binary equal to in decimal?	4	5	6	7	5	CS
+Which one is a markup language?	Java	HTML	Python	C++	HTML	CS
+Which of these is used in machine learning?	Python	PHP	HTML	CSS	Python	CS
+Which of the following is a data type?	Boolean	Function	Loop	Array	Boolean	CS
+Which search algorithm is used in trees?	BFS	Binary Search	DFS	All of them	All of them	CS
+What does RAM stand for?	Read Access Memory	Random Access Memory	Ready Active Memory	Run All Memory	Random Access Memory	CS
+Which of these is a compiler?	MS Word	GCC	Photoshop	Excel	GCC	CS
+Which one is not an OOP concept?	Encapsulation	Inheritance	Polymorphism	Iteration	Iteration	CS
+Which is a dynamic programming language?	C	C++	Python	Java	Python	CS
+Which file format is used for stylesheets?	.js	.css	.html	.xml	.css	CS
+What is the output of 3 + "3" in JS?	6	33	Error	"33"	"33"	CS
+What is the base of hexadecimal number system?	10	8	2	16	16	CS
+What does BBA stand for?	Bachelor of Business Analysis	Business Banking Academy	Bachelor of Business Administration	Business Budget Authority	Bachelor of Business Administration	BBA
+Which of the following is a financial statement?	Balance Sheet	Agenda	Invoice	Memo	Balance Sheet	BBA
+What is marketing?	Selling only	Advertising only	Promoting products and services	Customer support	Promoting products and services	BBA
+Which one is a factor of production?	Money	Land	Loan	Profit	Land	BBA
+What is SWOT analysis?	Strengths Weaknesses Opportunities Threats	Strategy Work Overview Technique	Structured Way of Tactics	Success Work Organization Technique	Strengths Weaknesses Opportunities Threats	BBA
+Who is known as the father of modern management?	Elon Musk	Steve Jobs	Peter Drucker	Bill Gates	Peter Drucker	BBA
+What is GDP?	Gross Domestic Product	Global Data Position	General Demand Price	Gross Demand Potential	Gross Domestic Product	BBA
+Which of these is a leadership style?	Tough	Easy	Autocratic	Democratic	Autocratic	BBA
+What is the function of HRM?	Stock control	Staff management	Fundraising	Marketing	Staff management	BBA
+Which of these is a pricing strategy?	Skimming	Linking	Merging	Stacking	Skimming	BBA
+What is a startup?	Old company	New business venture	Public company	Subsidiary company	New business venture	BBA
+Which of these is a liability?	Revenue	Capital	Loan	Profit	Loan	BBA
+What is bookkeeping?	Writing books	Keeping records of finance	Planning meetings	Designing posters	Keeping records of finance	BBA
+Which is a part of microeconomics?	National income	Unemployment	Consumer behavior	Inflation	Consumer behavior	BBA
+Which document shows ownership in a company?	Credit card	Invoice	Share certificate	Contract	Share certificate	BBA
+What is a blueprint in architecture?	Building model	Design sketch	Legal permit	Wall painting	Design sketch	Architechture
+Which of these is a building material?	Glass	Copper	Iron	Plastic	Glass	Architechture
+What does CAD stand for?	Computer Architecture Design	Computer Aided Design	Construct And Design	Concrete Architectural Draft	Computer Aided Design	Architechture
+Which of these is a famous architect?	Leonardo da Vinci	Frank Lloyd Wright	Tesla	Newton	Frank Lloyd Wright	Architechture
+What is used for measuring angles?	Ruler	Tape	Compass	Protractor	Protractor	Architechture
+What is elevation in architecture?	Side view	Top view	Front view	3D view	Front view	Architechture
+Which of these is an element of design?	Color	Weight	Price	Volume	Color	Architechture
+What is a façade?	Roof	Front part of building	Base of wall	Ceiling	Front part of building	Architechture
+What is sustainable architecture?	Expensive buildings	Futuristic architecture	Environment-friendly design	Modern styles	Environment-friendly design	Architechture
+Which tool is used for technical drawings?	Paint	AutoCAD	Photoshop	MS Word	AutoCAD	Architechture
+Which unit is used in architectural drawings?	Pixels	Inches	Feet	Meters	Feet	Architechture
+What is a floor plan?	Vertical section	Side view	Layout of rooms	Structural design	Layout of rooms	Architechture
+What is reinforced concrete?	Concrete with iron bars	Clean concrete	Colored concrete	Polished concrete	Concrete with iron bars	Architechture
+Which of the following is an architectural style?	Gothic	French	Dutch	English	Gothic	Architechture
+What is a cantilever?	A support beam	A suspended staircase	An overhanging structure	Foundation structure	An overhanging structure	Architechture
+Which tag is used for inserting images in HTML?	<image>	add photo	<img>	none	<img>	CSE

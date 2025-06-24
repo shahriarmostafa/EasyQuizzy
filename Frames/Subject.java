@@ -100,6 +100,7 @@ public class Subject extends JFrame implements ActionListener {
         backButton.setBackground(themeSubColor);
         backButton.setForeground(Color.WHITE);
         backButton.setFont(new Font("Arial", Font.BOLD, 14));
+        backButton.addActionListener(this);
         panel.add(backButton);
     }
 
@@ -108,6 +109,11 @@ public class Subject extends JFrame implements ActionListener {
             String selectedSubject = ((JButton) ae.getSource()).getText();
             QuizPage q1 = new QuizPage(selectedSubject, username);
             q1.setVisible(true);
+            this.setVisible(false);
+        }
+        else if(ae.getSource() == backButton){
+            HomePage home = new HomePage(username);
+            home.setVisible(true);
             this.setVisible(false);
         }
     }

@@ -151,7 +151,7 @@ public class Profile extends JFrame implements ActionListener{
         boxPanel2.add(boxNumber2);
 
         boxTitile3 = new JLabel("<html><body  style='text-align:center;'>Total <br> Right Answered</body></html>", SwingConstants.CENTER);
-        boxTitile3.setBounds(0, 30, 200, 36);
+        boxTitile3.setBounds(0, 30, 200, 42);
         boxTitile3.setFont(new Font("Arial", Font.BOLD, 18));
         boxTitile3.setForeground(themeColor);
         boxPanel3.add(boxTitile3);

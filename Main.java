@@ -21,12 +21,12 @@ public class Main{
       //a1.setVisible(true);
        QuizPage q1 = new QuizPage("CSE", "mustafa");
        Subject sub1 = new Subject("mustafa");
-       Result r1 = new Result();
-       s2.setVisible(true);
+       Result r1 = new Result(5, "mustafa", "CSE");
+       //s2.setVisible(true);
       //s1.setVisible(true);
       //h1.setVisible(true);
       // a1.setVisible(true);
-      //s1.setVisible(true);
+      s1.setVisible(true);
       //h1.setVisible(true);
        //s1.setVisible(true);
        //a1.setVisible(true);
@@ -39,8 +39,8 @@ public class Main{
 
       // p1.setVisible(true);
       //  q1.setVisible(true);
-      //sub1.setVisible(true);
-      //r1.setVisible(true);
+      // sub1.setVisible(true);
+      // r1.setVisible(true);
 
     }
 }

@@ -26,3 +26,10 @@ Shefaat Sir	1	Architechture	sir
 Shihab Uddin Bhuiyan	5	CSE	shihabnai
 Syed Shahriar Mustafa	1	CSE	mustafa
 Syed Shahriar Mustafa	3	CSE	mustafa
+Syed Shahriar Mustafa	3	CSE	mustafa
+Syed Shahriar Mustafa	5	CSE	mustafa
+Syed Shahriar Mustafa	5	CSE	mustafa
+Syed Shahriar Mustafa	1	CSE	mustafa
+Leonel Messi	2	CSE	suiii
+Ronaldo	5	CSE	messi10
+Ronaldo	13	CSE	messi10

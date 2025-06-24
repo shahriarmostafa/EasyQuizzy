@@ -12,7 +12,7 @@ public class ShowDetails extends JFrame implements ActionListener,MouseListener{
     Color themeColor;
 
     public ShowDetails() {
-        super("Student Details");
+        super("Admin Details");
         this.setSize(950, 600);
         this.setLocationRelativeTo(null);
         
@@ -126,21 +126,20 @@ public class ShowDetails extends JFrame implements ActionListener,MouseListener{
         showDetailsIcon = new ImageIcon(getClass().getResource("../Images/showDetails.png"));
         Image scaledImage = showDetailsIcon.getImage().getScaledInstance(140, 140, Image.SCALE_SMOOTH);
         JLabel imgLabel = new JLabel(new ImageIcon(scaledImage));
-        imgLabel.setBounds(450, 60, 140, 140);
+        imgLabel.setBounds(500, 60, 140, 140);
         panel.add(imgLabel);
 
-        JLabel textLabel = new JLabel("Student Details");
-        textLabel.setBounds(380, 185, 300, 50);
+        JLabel textLabel = new JLabel("Admin Details",SwingConstants.CENTER);
+        textLabel.setBounds(190, 185, 760, 50);
         textLabel.setFont(new Font("Arial", Font.BOLD, 24));
         textLabel.setForeground(new Color(70, 138, 59));
         panel.add(textLabel);
 
-        // showDetailsButton = new JButton("Show Details");
-        // showDetailsButton.setBounds(400, 290, 150, 35);
-        // showDetailsButton.setForeground(new Color(70, 138, 59));
-        // showDetailsButton.setBackground(Color.WHITE);
-        // showDetailsButton.setFont(new Font("Arial", Font.BOLD, 16));
-        // panel.add(showDetailsButton);
+        JLabel admindtls = new JLabel("<html><body style='text-align:center;'>As an admin, you have full control over the platform.<br> You can add, update, or delete questions, manage content, <br>and view important app details and statistics <br>from the admin panel.<body/><html/>",SwingConstants.CENTER);
+        admindtls.setBounds(190, 260, 760, 100);
+        admindtls.setFont(new Font("Arial", Font.BOLD, 22));
+        admindtls.setForeground(Color.BLACK);
+        panel.add(admindtls);
     }
     public void mouseClicked(MouseEvent me) {}
     public void mousePressed(MouseEvent me) {}

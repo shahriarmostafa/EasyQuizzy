@@ -1,7 +1,6 @@
 package Frames;
 import javax.swing.*;
 
-// import org.w3c.dom.events.MouseEvent;
 import java.awt.event.*;
 import java.awt.*;
 // import java.awt.event.ActionListener;
@@ -17,12 +16,10 @@ public class SeeResult extends JFrame implements ActionListener,MouseListener {
     JPanel panel, topPanel, sidePanel;
     ImageIcon icon, adminIcon, seeResultIcon;
 
-    // Declare here to access globally
     String[][] allResults;
     Color themeColor;
     JPanel resultTablePanel;
 
-    // Method to update table
     void updateResultTable(String subject) {
         resultTablePanel.removeAll();
 
@@ -187,7 +184,7 @@ public class SeeResult extends JFrame implements ActionListener,MouseListener {
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         panel.add(scrollPane);
 
-       String[] subjects = {"CSE", "EEE", "CS", "BBA", "English", "Architecture"};
+       String subjects[] = new String[]{"CSE", "EEE", "CS", "BBA", "English", "Architechture"};
 
 int XValue = 275;
 int startY = 485;

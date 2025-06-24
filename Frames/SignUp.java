@@ -249,11 +249,12 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         else{
             Account a1=new Account(fullName , username, password);
 			a1.addAccount();
+            Sign_in s1 = new Sign_in();
+            s1.setVisible(true);
 			this.setVisible(false);
             JOptionPane.showMessageDialog(null,"Sign Up Successful. Now please sign in");
 
-			Sign_in s1 = new Sign_in();
-            s1.setVisible(true);
+			
         }
        
         }
