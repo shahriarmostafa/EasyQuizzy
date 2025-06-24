@@ -218,46 +218,43 @@ public class QuizPage extends JFrame implements ActionListener{
 
 
     public void actionPerformed(ActionEvent ae) {
-                if (optionsGroup.getSelection() == null) {
-                    JOptionPane.showMessageDialog(QuizPage.this, "Please select an answer before continuing.");
-                    return;
-                }
-
-                totalAnswered++;
-                totalNumber.setText(totalAnswered + "/15");
-
-                // Get selected option text
-                String selectedAnswer = null;
-                if (radioButton1.isSelected()) selectedAnswer = radioButton1.getText();
-                else if (radioButton2.isSelected()) selectedAnswer = radioButton2.getText();
-                else if (radioButton3.isSelected()) selectedAnswer = radioButton3.getText();
-                else if (radioButton4.isSelected()) selectedAnswer = radioButton4.getText();
-
-                // Check answer correctness
-                if (selectedAnswer != null && selectedAnswer.equals(questions[currentIndex].getCorrectAnswer())){
-                    rightAnswered++;
-                    rightNumber.setText(String.valueOf(rightAnswered));
-                } else {
-                    wrongAnswered++;
-                    wrongNumber.setText(String.valueOf(wrongAnswered));
-                }
-
-                currentIndex++;
-                if(currentIndex > 15){
-                    this.setVisible(false);
-                    Result see1 = new Result(rightAnswered, username,depertment);
-                    see1.setVisible(true);
-                    return;
-                }
-                if (currentIndex < questions.length) {
-                    showQuestion(currentIndex);
-                } else {
-                    this.setVisible(false);
-                    Result see1 = new Result(rightAnswered, username,depertment);
-                    see1.setVisible(true);
-                    return;
-                }
+        if(ae.getSource() == nextButton){
+            if (optionsGroup.getSelection() == null) {
+                JOptionPane.showMessageDialog(QuizPage.this, "Please select an answer before continuing.");
+                return;
             }
+            totalAnswered++;
+            totalNumber.setText(totalAnswered + "/15");
+            String selectedAnswer = null;
+            if (radioButton1.isSelected()) selectedAnswer = radioButton1.getText();
+            else if (radioButton2.isSelected()) selectedAnswer = radioButton2.getText();
+            else if (radioButton3.isSelected()) selectedAnswer = radioButton3.getText();
+            else if (radioButton4.isSelected()) selectedAnswer = radioButton4.getText();
+
+            if (selectedAnswer.equals(questions[currentIndex].getCorrectAnswer())){
+                rightAnswered++;
+                rightNumber.setText(String.valueOf(rightAnswered));
+            } else {
+                wrongAnswered++;
+                wrongNumber.setText(String.valueOf(wrongAnswered));
+            }
+            currentIndex++;
+            if(currentIndex > 15){
+                this.setVisible(false);
+                Result see1 = new Result(rightAnswered, username,depertment);
+                see1.setVisible(true);
+                return;
+            }
+            if (currentIndex < questions.length) {
+                showQuestion(currentIndex);
+            } else {
+                this.setVisible(false);
+                Result see1 = new Result(rightAnswered, username,depertment);
+                see1.setVisible(true);
+                return;
+            }
+        } 
+    }
     private void showQuestion(int index) {
         Question q = questions[index];
         question.setText("<html>" + q.getQuestionText() + "</html>");
