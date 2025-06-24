@@ -1,18 +1,16 @@
 package Frames;
-
 import java.lang.*;
 import javax.swing.*;
-
 import Entities.*;
-
 import java.awt.*;
 import java.awt.event.*;
 
-public class UpQuestions extends JFrame implements ActionListener{
+public class UpQuestions extends JFrame implements ActionListener,MouseListener{
 
     JLabel namelbl, addQLabel, qLabel, optionALabel, optionBLabel, optionCLabel, optionDLabel,ansLabel,oldQLabel;
     JTextField qField, optionAField, optionBField, optionCField, optionDField,ansField,oldQField;
     JComboBox  combo;
+    Color themeColor;
     JButton logOutButton, backButton, addQButton, upQButton, delQButton, seeResButton, showStuDeatilsButton, upButton;
     JPanel panel, topPanel, sidePanel;
     ImageIcon icon, adminIcon, upQIcon;
@@ -28,6 +26,8 @@ public class UpQuestions extends JFrame implements ActionListener{
 
         icon = new ImageIcon(getClass().getResource("../Images/logo.png"));
         this.setIconImage(icon.getImage());
+
+        themeColor = new Color(41, 110, 214);
 
         // Admin icon
         adminIcon = new ImageIcon(getClass().getResource("../Images/adminIcon.png"));
@@ -70,44 +70,61 @@ public class UpQuestions extends JFrame implements ActionListener{
         sidePanel = new JPanel();
         sidePanel.setLayout(null);
         sidePanel.setBounds(0, 0, 185, 600);
-        sidePanel.setBackground(Color.BLUE);
+        sidePanel.setBackground(themeColor);
         panel.add(sidePanel);
 
-        // Sidebar buttons
         addQButton = new JButton("Add Question");
-        addQButton.setBounds(0, 15, 185, 25);
+        addQButton.setBounds(0, 0, 185, 60);
         addQButton.setForeground(Color.WHITE);
-        addQButton.setBackground(Color.BLUE);
+        addQButton.setBackground(themeColor);
         addQButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(addQButton);
-
+        
         upQButton = new JButton("Update Question");
-        upQButton.setBounds(0, 75, 185, 25);
-        upQButton.setForeground(Color.BLUE);
-        upQButton.setBackground(Color.WHITE);
+        upQButton.setBounds(0, 60, 185, 60); // 0 + 60
+        upQButton.setForeground(Color.WHITE);
+        upQButton.setBackground(new Color(14, 22, 79));
         upQButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(upQButton);
-
+        
         delQButton = new JButton("Delete Question");
-        delQButton.setBounds(0, 135, 185, 25);
+        delQButton.setBounds(0, 120, 185, 60); // 60 + 60
         delQButton.setForeground(Color.WHITE);
-        delQButton.setBackground(Color.BLUE);
+        delQButton.setBackground(themeColor);
         delQButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(delQButton);
-
+        
         seeResButton = new JButton("See Result");
-        seeResButton.setBounds(0, 195, 185, 25);
+        seeResButton.setBounds(0, 180, 185, 60); // 120 + 60
         seeResButton.setForeground(Color.WHITE);
-        seeResButton.setBackground(Color.BLUE);
+        seeResButton.setBackground(themeColor);
         seeResButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(seeResButton);
-
+        
         showStuDeatilsButton = new JButton("Show Details");
-        showStuDeatilsButton.setBounds(0, 255, 185, 25);
+        showStuDeatilsButton.setBounds(0, 240, 185, 60); // 180 + 60
         showStuDeatilsButton.setForeground(Color.WHITE);
-        showStuDeatilsButton.setBackground(Color.BLUE);
+        showStuDeatilsButton.setBackground(themeColor);
         showStuDeatilsButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(showStuDeatilsButton);
+
+
+        backButton.addMouseListener(this);
+        logOutButton.addMouseListener(this);
+        addQButton.addMouseListener(this);
+        upQButton.addMouseListener(this);
+        delQButton.addMouseListener(this);
+        seeResButton.addMouseListener(this);
+        showStuDeatilsButton.addMouseListener(this);
+
+
+        backButton.addActionListener(this);
+        logOutButton.addActionListener(this);
+        addQButton.addActionListener(this);
+        upQButton.addActionListener(this);
+        delQButton.addActionListener(this);
+        seeResButton.addActionListener(this);
+        showStuDeatilsButton.addActionListener(this);
 
         // Mid part - update icon
         upQIcon = new ImageIcon(getClass().getResource("../Images/upQ.png"));
@@ -223,24 +240,125 @@ public class UpQuestions extends JFrame implements ActionListener{
 
         this.add(panel);
     }
-
-    public void actionPerformed(ActionEvent ae) {
-        String oldQuestionText = oldQField.getText(); // this field holds the original question text before update
-        String question = qField.getText();
-        String optionA = optionAField.getText();
-        String optionB = optionBField.getText();
-        String optionC = optionCField.getText();
-        String optionD = optionDField.getText();
-        String answer = ansField.getText();
-        String department = combo.getSelectedItem().toString();
-
-        Question q = new Question(question, optionA, optionB, optionC, optionD, answer, department);
-        boolean success = q.updateQuestion(oldQuestionText);
-
-        if(success) {
-            JOptionPane.showMessageDialog(null, "Question updated successfully.");
-        } else {
-            JOptionPane.showMessageDialog(null, "Question not found or failed to update.");
+    public void mouseClicked(MouseEvent me) {}
+    public void mousePressed(MouseEvent me) {}
+    public void mouseReleased(MouseEvent me) {}
+    public void mouseEntered(MouseEvent me) {
+        if (me.getSource() == addQButton) {
+            addQButton.setBackground(new Color(14, 22, 79));
+            addQButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == delQButton) {
+            delQButton.setBackground(new Color(14, 22, 79));
+            delQButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == seeResButton) {
+            seeResButton.setBackground(new Color(14, 22, 79));
+            seeResButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == showStuDeatilsButton) {
+            showStuDeatilsButton.setBackground(new Color(14, 22, 79));
+            showStuDeatilsButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == logOutButton)
+        {
+            logOutButton.setBackground(themeColor);
+            logOutButton.setForeground(Color.WHITE);
+        }
+        else if(me.getSource() == backButton)
+        {
+            backButton.setBackground(themeColor);
+            backButton.setForeground(Color.WHITE);
         }
     }
+    public void mouseExited(MouseEvent me) {
+        if (me.getSource() == addQButton) {
+            addQButton.setBackground(themeColor);
+            addQButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == delQButton) {
+            delQButton.setBackground(themeColor);
+            delQButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == seeResButton) {
+            seeResButton.setBackground(themeColor);
+            seeResButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == showStuDeatilsButton) {
+            showStuDeatilsButton.setBackground(themeColor);
+            showStuDeatilsButton.setForeground(Color.WHITE);
+        }
+        else if(me.getSource()==logOutButton)
+        {
+            logOutButton.setBackground(Color.WHITE);
+            logOutButton.setForeground(themeColor);
+        }
+        else if (me.getSource()==backButton)
+        {
+            backButton.setBackground(Color.WHITE);
+            backButton.setForeground(themeColor);
+        }
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == logOutButton)
+        {
+            this.setVisible(false);
+            Sign_in si = new Sign_in();
+            si.setVisible(true);
+        }
+        else if (ae.getSource() == addQButton)
+        {
+            this.setVisible(false);
+            AddQuestions ad =new AddQuestions();
+            ad.setVisible(true);
+        }
+        else if (ae.getSource() == delQButton)
+        {
+            this.setVisible(false);
+            deleteQ dq = new deleteQ();
+            dq.setVisible(true);
+        }
+        else if (ae.getSource() == seeResButton)
+        {
+            this.setVisible(false);
+            SeeResult sr = new SeeResult();
+            sr.setVisible(true);
+        }
+        else if (ae.getSource() == showStuDeatilsButton)
+        {
+            this.setVisible(false);
+            ShowDetails sd = new ShowDetails();
+            sd.setVisible(true);
+        }
+        else if (ae.getSource()==backButton)
+        {
+            this.setVisible(false);
+            AdminPage a1 = new AdminPage();
+            a1.setVisible(true);
+        }
+        else if(ae.getSource() == upButton){
+            String oldQuestionText = oldQField.getText(); // this field holds the original question text before update
+            String question = qField.getText();
+            String optionA = optionAField.getText();
+            String optionB = optionBField.getText();
+            String optionC = optionCField.getText();
+            String optionD = optionDField.getText();
+            String answer = ansField.getText();
+            String department = combo.getSelectedItem().toString();
+            Question q = new Question(question, optionA, optionB, optionC, optionD, answer, department);
+            boolean success = q.updateQuestion(oldQuestionText);
+            if(success) {
+                JOptionPane.showMessageDialog(null, "Question updated successfully.");
+            } else {
+                JOptionPane.showMessageDialog(null, "Question not found or failed to update.");
+            }
+        }
+    }
+
+
 }
+
+
+
+

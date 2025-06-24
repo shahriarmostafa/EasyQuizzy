@@ -111,12 +111,18 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
         showStuDeatilsButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(showStuDeatilsButton);
 
+
+        backButton.addMouseListener(this);
+        logOutButton.addMouseListener(this);
         addQButton.addMouseListener(this);
         upQButton.addMouseListener(this);
         delQButton.addMouseListener(this);
         seeResButton.addMouseListener(this);
         showStuDeatilsButton.addMouseListener(this);
 
+
+        backButton.addActionListener(this);
+        logOutButton.addActionListener(this);
         addQButton.addActionListener(this);
         upQButton.addActionListener(this);
         delQButton.addActionListener(this);
@@ -240,133 +246,130 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
     public void mousePressed(MouseEvent me) {}
     public void mouseReleased(MouseEvent me) {}
     public void mouseEntered(MouseEvent me) {
-    if (me.getSource() == addQButton) {
-        addQButton.setBackground(new Color(14, 22, 79));
-        addQButton.setForeground(Color.WHITE);
-    }
-    else if (me.getSource() == upQButton) {
-        upQButton.setBackground(new Color(14, 22, 79));
-        upQButton.setForeground(Color.WHITE);
-    }
-    else if (me.getSource() == delQButton) {
-        delQButton.setBackground(new Color(14, 22, 79));
-        delQButton.setForeground(Color.WHITE);
-    }
-    else if (me.getSource() == seeResButton) {
-        seeResButton.setBackground(new Color(14, 22, 79));
-        seeResButton.setForeground(Color.WHITE);
-    }
-    else if (me.getSource() == showStuDeatilsButton) {
-        showStuDeatilsButton.setBackground(new Color(14, 22, 79));
-        showStuDeatilsButton.setForeground(Color.WHITE);
-    }
-    else if (me.getSource() == logOutButton)
-    {
-        logOutButton.setBackground(themeColor);
-        logOutButton.setForeground(Color.WHITE);
-    }
-
-}
-
-public void mouseExited(MouseEvent me) {
-    if (me.getSource() == addQButton) {
-        addQButton.setBackground(themeColor);
-        addQButton.setForeground(Color.WHITE);
-    }
-    else if (me.getSource() == upQButton) {
-        upQButton.setBackground(themeColor);
-        upQButton.setForeground(Color.WHITE);
-    }
-    else if (me.getSource() == delQButton) {
-        delQButton.setBackground(themeColor);
-        delQButton.setForeground(Color.WHITE);
-    }
-    else if (me.getSource() == seeResButton) {
-        seeResButton.setBackground(themeColor);
-        seeResButton.setForeground(Color.WHITE);
-    }
-    else if (me.getSource() == showStuDeatilsButton) {
-        showStuDeatilsButton.setBackground(themeColor);
-        showStuDeatilsButton.setForeground(Color.WHITE);
-    }
-    else if(me.getSource()==logOutButton)
-    {
-        logOutButton.setBackground(Color.WHITE);
-        logOutButton.setForeground(Color.BLUE);
-    }
-}
-public void actionPerformed(ActionEvent ae)
-{
-    if (ae.getSource() == logOutButton)
-    {
-        this.setVisible(false);
-        Sign_in si = new Sign_in();
-        si.setVisible(true);
-    }
-    else if (ae.getSource() == addQButton)
-    {
-        this.setVisible(false);
-        AddQuestions aq = new AddQuestions();
-        aq.setVisible(true);
-    }
-    else if (ae.getSource() == upQButton)
-    {
-        this.setVisible(false);
-        UpQuestions uq = new UpQuestions();
-        uq.setVisible(true);
-    }
-    else if (ae.getSource() == delQButton)
-    {
-        this.setVisible(false);
-        deleteQ dq = new deleteQ();
-        dq.setVisible(true);
-    }
-    else if (ae.getSource() == seeResButton)
-    {
-        this.setVisible(false);
-        SeeResult sr = new SeeResult();
-        sr.setVisible(true);
-    }
-    else if (ae.getSource() == showStuDeatilsButton)
-    {
-        this.setVisible(false);
-        ShowDetails sd = new ShowDetails();
-        sd.setVisible(true);
-    }
-    else if(ae.getSource() == addButton){
-        String question = qField.getText().trim();
-        String optionA = optionAField.getText().trim();
-        String optionB = optionBField.getText().trim();
-        String optionC = optionCField.getText().trim();
-        String optionD = optionDField.getText().trim();
-        String answer = ansField.getText().trim();
-        String department = (String) combo.getSelectedItem();
-
-        if (question.isEmpty() || optionA.isEmpty() || optionB.isEmpty() || optionC.isEmpty() || optionD.isEmpty() || answer.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
+        if (me.getSource() == upQButton) {
+            upQButton.setBackground(new Color(14, 22, 79));
+            upQButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == delQButton) {
+            delQButton.setBackground(new Color(14, 22, 79));
+            delQButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == seeResButton) {
+            seeResButton.setBackground(new Color(14, 22, 79));
+            seeResButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == showStuDeatilsButton) {
+            showStuDeatilsButton.setBackground(new Color(14, 22, 79));
+            showStuDeatilsButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == logOutButton)
+        {
+            logOutButton.setBackground(themeColor);
+            logOutButton.setForeground(Color.WHITE);
+        }
+        else if(me.getSource() == backButton)
+        {
+            backButton.setBackground(themeColor);
+            backButton.setForeground(Color.WHITE);
         }
 
-    
-
-        // Create Question object and add to file
-        Question q = new Question(question, optionA, optionB, optionC, optionD, answer, department);
-        q.addQuestion();
-
-        JOptionPane.showMessageDialog(null, "Question added successfully!");
-
-        // Clear input fields
-        qField.setText("");
-        optionAField.setText("");
-        optionBField.setText("");
-        optionCField.setText("");
-        optionDField.setText("");
-        ansField.setText("");
     }
-}
 
+    public void mouseExited(MouseEvent me) {
+        
+        if (me.getSource() == upQButton) {
+            upQButton.setBackground(themeColor);
+            upQButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == delQButton) {
+            delQButton.setBackground(themeColor);
+            delQButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == seeResButton) {
+            seeResButton.setBackground(themeColor);
+            seeResButton.setForeground(Color.WHITE);
+        }
+        else if (me.getSource() == showStuDeatilsButton) {
+            showStuDeatilsButton.setBackground(themeColor);
+            showStuDeatilsButton.setForeground(Color.WHITE);
+        }
+        else if(me.getSource()==logOutButton)
+        {
+            logOutButton.setBackground(Color.WHITE);
+            logOutButton.setForeground(themeColor);
+        }
+        else if (me.getSource()==backButton)
+        {
+            backButton.setBackground(Color.WHITE);
+            backButton.setForeground(themeColor);
+        }
+    }
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == logOutButton)
+        {
+            this.setVisible(false);
+            Sign_in si = new Sign_in();
+            si.setVisible(true);
+        }
+        else if (ae.getSource() == upQButton)
+        {
+            this.setVisible(false);
+            UpQuestions uq = new UpQuestions();
+            uq.setVisible(true);
+        }
+        else if (ae.getSource() == delQButton)
+        {
+            this.setVisible(false);
+            deleteQ dq = new deleteQ();
+            dq.setVisible(true);
+        }
+        else if (ae.getSource() == seeResButton)
+        {
+            this.setVisible(false);
+            SeeResult sr = new SeeResult();
+            sr.setVisible(true);
+        }
+        else if (ae.getSource() == showStuDeatilsButton)
+        {
+            this.setVisible(false);
+            ShowDetails sd = new ShowDetails();
+            sd.setVisible(true);
+        }
+        else if (ae.getSource()==backButton)
+        {
+            this.setVisible(false);
+            AdminPage a1 = new AdminPage();
+            a1.setVisible(true);
+        }
+        else if(ae.getSource() == addButton){
+            String question = qField.getText().trim();
+            String optionA = optionAField.getText().trim();
+            String optionB = optionBField.getText().trim();
+            String optionC = optionCField.getText().trim();
+            String optionD = optionDField.getText().trim();
+            String answer = ansField.getText().trim();
+            String department = (String) combo.getSelectedItem();
 
+            if (question.isEmpty() || optionA.isEmpty() || optionB.isEmpty() || optionC.isEmpty() || optionD.isEmpty() || answer.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
+        
 
+            // Create Question object and add to file
+            Question q = new Question(question, optionA, optionB, optionC, optionD, answer, department);
+            q.addQuestion();
 
+            JOptionPane.showMessageDialog(null, "Question added successfully!");
+
+            // Clear input fields
+            qField.setText("");
+            optionAField.setText("");
+            optionBField.setText("");
+            optionCField.setText("");
+            optionDField.setText("");
+            ansField.setText("");
+        }
+    }
 }

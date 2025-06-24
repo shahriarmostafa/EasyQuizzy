@@ -66,32 +66,32 @@ public class Result extends JFrame implements ActionListener{
         
 
         resultTitle = new JLabel("YOUR SCORE", SwingConstants.CENTER);
-        resultTitle.setBounds(0, 315, 950, 14);
-        resultTitle.setFont(new Font("", Font.BOLD, 14));
-        resultTitle.setForeground(red);
+        resultTitle.setBounds(0, 318, 950, 20);
+        resultTitle.setFont(new Font("", Font.BOLD, 20));
+        resultTitle.setForeground(Color.WHITE);
         panel.add(resultTitle);
 
         result = new JLabel(String.valueOf(resultText), SwingConstants.CENTER);
-        result.setBounds(0, 268, 950, 45);
-        result.setFont(new Font("Arial", Font.BOLD, 45));
-        result.setForeground(green);
+        result.setBounds(0, 258, 950, 65);
+        result.setFont(new Font("Arial", Font.BOLD, 65));
+        result.setForeground(Color.WHITE);
         panel.add(result);
 
 
-        resultFrame = new ImageIcon(getClass().getResource("../Images/resultFrame.png"));
+        resultFrame = new ImageIcon(getClass().getResource("../Images/resultFrame.jpg"));
         Image scaledImageRFrame = resultFrame.getImage().getScaledInstance(
             250, 250, Image.SCALE_SMOOTH
         );
         ImageIcon scaledImageRFrameFinal = new ImageIcon(scaledImageRFrame);
         JLabel labelResultFrame = new JLabel(scaledImageRFrameFinal);
-        labelResultFrame.setBounds(348, 170, 250, 250);
+        labelResultFrame.setBounds(350, 170, 250, 250);
         panel.add(labelResultFrame);
 
 
         home = new JButton("Go Home");
         home.setBounds(410, 500, 120, 40);
         home.setBackground(green);
-        home.setForeground(Color.WHITE);
+        home.setForeground(themeColor);
         home.setFont(new Font("Arial", Font.BOLD, 14));
         home.addActionListener(this); // 🔔 Registering listener
         panel.add(home);
