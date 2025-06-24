@@ -1,21 +1,23 @@
 package Frames;
-
 import java.lang.*;
 import javax.swing.*;
 import java.awt.*;
-
-public class ShowDetails extends JFrame {
+import java.awt.event.*;
+public class ShowDetails extends JFrame implements ActionListener,MouseListener{
 
     JPanel panel, topPanel, sidePanel;
     JLabel namelbl;
-    JButton backButton, logOutButton, addQButton, upQButton, delQButton, seeResButton, showStuDetailsButton, showDetailsButton;
+    JButton backButton, logOutButton, addQButton, upQButton, delQButton, seeResButton, showStuDeatilsButton;
     ImageIcon icon, adminIcon, showDetailsIcon;
+    Color themeColor;
 
     public ShowDetails() {
-        super("Show Student Details");
+        super("Student Details");
         this.setSize(950, 600);
         this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+
+        themeColor = new Color(41, 110, 214);
 
         // Panel setup
         panel = new JPanel();
@@ -33,6 +35,21 @@ public class ShowDetails extends JFrame {
         JLabel adminLbl = new JLabel(new ImageIcon(scaledAdmin));
         adminLbl.setBounds(190, 7, 40, 40);
         panel.add(adminLbl);
+        // Back button
+        backButton = new JButton("Back");
+        backButton.setBounds(700, 7, 100, 30);
+        backButton.setForeground(Color.BLUE);
+        backButton.setBackground(Color.WHITE);
+        backButton.setFont(new Font("Arial", Font.BOLD, 16));
+        panel.add(backButton);
+
+        // Log Out button
+        logOutButton = new JButton("Log Out");
+        logOutButton.setBounds(805, 7, 100, 30);
+        logOutButton.setForeground(Color.BLUE);
+        logOutButton.setBackground(Color.WHITE);
+        logOutButton.setFont(new Font("Arial", Font.BOLD, 16));
+        panel.add(logOutButton);
 
         // Top panel
         topPanel = new JPanel();
@@ -47,64 +64,64 @@ public class ShowDetails extends JFrame {
         namelbl.setForeground(Color.WHITE);
         topPanel.add(namelbl);
 
-        // Log Out button
-        logOutButton = new JButton("Log Out");
-        logOutButton.setBounds(805, 7, 100, 30);
-        logOutButton.setForeground(Color.BLUE);
-        logOutButton.setBackground(Color.WHITE);
-        logOutButton.setFont(new Font("Arial", Font.BOLD, 16));
-        panel.add(logOutButton);
-
-        // Back button
-        backButton = new JButton("Back");
-        backButton.setBounds(700, 7, 100, 30);
-        backButton.setForeground(Color.BLUE);
-        backButton.setBackground(Color.WHITE);
-        backButton.setFont(new Font("Arial", Font.BOLD, 16));
-        panel.add(backButton);
-
         // Side panel
         sidePanel = new JPanel();
         sidePanel.setLayout(null);
         sidePanel.setBounds(0, 0, 185, 600);
-        sidePanel.setBackground(Color.BLUE);
+        sidePanel.setBackground(themeColor);
         panel.add(sidePanel);
 
         addQButton = new JButton("Add Question");
-        addQButton.setBounds(0, 15, 185, 25);
+        addQButton.setBounds(0, 0, 185, 60);
         addQButton.setForeground(Color.WHITE);
-        addQButton.setBackground(Color.BLUE);
+        addQButton.setBackground(themeColor);
         addQButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(addQButton);
-
+        
         upQButton = new JButton("Update Question");
-        upQButton.setBounds(0, 75, 185, 25);
+        upQButton.setBounds(0, 60, 185, 60); // 0 + 60
         upQButton.setForeground(Color.WHITE);
-        upQButton.setBackground(Color.BLUE);
+        upQButton.setBackground(themeColor);
         upQButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(upQButton);
-
+        
         delQButton = new JButton("Delete Question");
-        delQButton.setBounds(0, 135, 185, 25);
+        delQButton.setBounds(0, 120, 185, 60); // 60 + 60
         delQButton.setForeground(Color.WHITE);
-        delQButton.setBackground(Color.BLUE);
+        delQButton.setBackground(themeColor);
         delQButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(delQButton);
-
+        
         seeResButton = new JButton("See Result");
-        seeResButton.setBounds(0, 195, 185, 25);
+        seeResButton.setBounds(0, 180, 185, 60); // 120 + 60
         seeResButton.setForeground(Color.WHITE);
-        seeResButton.setBackground(Color.BLUE);
+        seeResButton.setBackground(themeColor);
         seeResButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(seeResButton);
+        
+        showStuDeatilsButton = new JButton("Show Details");
+        showStuDeatilsButton.setBounds(0, 240, 185, 60); // 180 + 60
+        showStuDeatilsButton.setForeground(Color.WHITE);
+        showStuDeatilsButton.setBackground(new Color(14, 22, 79));
+        showStuDeatilsButton.setFont(new Font("Arial", Font.PLAIN, 20));
+        sidePanel.add(showStuDeatilsButton);
 
-        showStuDetailsButton = new JButton("Show Details");
-        showStuDetailsButton.setBounds(0, 255, 185, 25);
-        showStuDetailsButton.setForeground(Color.BLUE);
-        showStuDetailsButton.setBackground(Color.WHITE);
-        showStuDetailsButton.setFont(new Font("Arial", Font.PLAIN, 20));
-        sidePanel.add(showStuDetailsButton);
+        backButton.addMouseListener(this);
+        logOutButton.addMouseListener(this);
+        addQButton.addMouseListener(this);
+        upQButton.addMouseListener(this);
+        delQButton.addMouseListener(this);
+        seeResButton.addMouseListener(this);
+        showStuDeatilsButton.addMouseListener(this);
 
+
+        backButton.addActionListener(this);
+        logOutButton.addActionListener(this);
+        addQButton.addActionListener(this);
+        upQButton.addActionListener(this);
+        delQButton.addActionListener(this);
+        seeResButton.addActionListener(this);
+        showStuDeatilsButton.addActionListener(this);
         // Mid part
         showDetailsIcon = new ImageIcon(getClass().getResource("../Images/showDetails.png"));
         Image scaledImage = showDetailsIcon.getImage().getScaledInstance(140, 140, Image.SCALE_SMOOTH);
@@ -112,7 +129,7 @@ public class ShowDetails extends JFrame {
         imgLabel.setBounds(450, 60, 140, 140);
         panel.add(imgLabel);
 
-        JLabel textLabel = new JLabel("Show Student Details");
+        JLabel textLabel = new JLabel("Student Details");
         textLabel.setBounds(380, 185, 300, 50);
         textLabel.setFont(new Font("Arial", Font.BOLD, 24));
         textLabel.setForeground(new Color(70, 138, 59));
@@ -125,4 +142,106 @@ public class ShowDetails extends JFrame {
         // showDetailsButton.setFont(new Font("Arial", Font.BOLD, 16));
         // panel.add(showDetailsButton);
     }
+    public void mouseClicked(MouseEvent me) {}
+    public void mousePressed(MouseEvent me) {}
+    public void mouseReleased(MouseEvent me) {}
+    public void mouseEntered(MouseEvent me) {
+    if (me.getSource() == addQButton) {
+        addQButton.setBackground(new Color(14, 22, 79));
+        addQButton.setForeground(Color.WHITE);
+    }
+    else if (me.getSource() == upQButton) {
+        upQButton.setBackground(new Color(14, 22, 79));
+        upQButton.setForeground(Color.WHITE);
+    }
+    else if (me.getSource() == delQButton) {
+        delQButton.setBackground(new Color(14, 22, 79));
+        delQButton.setForeground(Color.WHITE);
+    }
+    else if (me.getSource() == seeResButton) {
+        seeResButton.setBackground(new Color(14, 22, 79));
+        seeResButton.setForeground(Color.WHITE);
+    }
+    else if (me.getSource() == logOutButton)
+    {
+        logOutButton.setBackground(themeColor);
+        logOutButton.setForeground(Color.WHITE);
+    }
+    else if (me.getSource()==backButton)
+    {
+        backButton.setBackground(themeColor);
+        backButton.setForeground(Color.WHITE);
+    }
+
+}
+
+public void mouseExited(MouseEvent me) {
+    if (me.getSource() == addQButton) {
+        addQButton.setBackground(themeColor);
+        addQButton.setForeground(Color.WHITE);
+    }
+    else if (me.getSource() == upQButton) {
+        upQButton.setBackground(themeColor);
+        upQButton.setForeground(Color.WHITE);
+    }
+    else if (me.getSource() == delQButton) {
+        delQButton.setBackground(themeColor);
+        delQButton.setForeground(Color.WHITE);
+    }
+    else if (me.getSource() == seeResButton) {
+        seeResButton.setBackground(themeColor);
+        seeResButton.setForeground(Color.WHITE);
+    }
+    else if(me.getSource()==logOutButton)
+    {
+        logOutButton.setBackground(Color.WHITE);
+        logOutButton.setForeground(Color.BLUE);
+    }
+    else if (me.getSource()==backButton)
+    {
+        backButton.setBackground(Color.WHITE);
+        backButton.setForeground(themeColor);
+    }
+}
+public void actionPerformed(ActionEvent ae)
+{
+    if (ae.getSource() == logOutButton)
+    {
+        this.setVisible(false);
+        Sign_in si = new Sign_in();
+        si.setVisible(true);
+    }
+    else if (ae.getSource() == addQButton)
+    {
+        this.setVisible(false);
+        AddQuestions aq = new AddQuestions();
+        aq.setVisible(true);
+    }
+    else if (ae.getSource() == upQButton)
+    {
+        this.setVisible(false);
+        UpQuestions uq = new UpQuestions();
+        uq.setVisible(true);
+    }
+    else if (ae.getSource() == delQButton)
+    {
+        this.setVisible(false);
+        deleteQ dq = new deleteQ();
+        dq.setVisible(true);
+    }
+    else if (ae.getSource() == seeResButton)
+    {
+        this.setVisible(false);
+        SeeResult sr = new SeeResult();
+        sr.setVisible(true);
+    }
+    else if (ae.getSource()==backButton)
+    {
+        this.setVisible(false);
+        AdminPage a1 = new AdminPage();
+        a1.setVisible(true);
+    }
+    
+}
+
 }
