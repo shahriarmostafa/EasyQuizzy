@@ -135,13 +135,7 @@ public class deleteQ extends JFrame implements ActionListener,MouseListener{
         panel.add(qField);
 
         // Combo Box for department
-        String items[] = new String[]{"CSE", "CS", "CSSE", "SE", "CIS"};
-        combo = new JComboBox(items);
-        combo.setBounds(750, 260, 100, 30);
-        combo.setFont(new Font("Arial", Font.BOLD, 14));
-        combo.setBackground(Color.WHITE);
-        combo.setForeground(Color.BLUE);
-        panel.add(combo);
+        
 
         backButton.addMouseListener(this);
         logOutButton.addMouseListener(this);
@@ -317,21 +311,17 @@ public void mouseExited(MouseEvent me) {
         a1.setVisible(true);
     }
        
-    String question = qField.getText().trim();
-
+    else if(ae.getSource() == delButton){
+        String question = qField.getText().trim();
         if (question.isEmpty()){
             JOptionPane.showMessageDialog(null, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
-    
-
         Question q = new Question();
         q.deleteQuestion(question);
-
         JOptionPane.showMessageDialog(null, "Question Deleted successfully!");
-
         qField.setText("");
+    }
         
     }
 
