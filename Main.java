@@ -1,8 +1,6 @@
 import java.lang.*;
 import javax.swing.*;
-
 import Frames.*;
-
 public class Main{
     public static void main(String [] args)
     {
@@ -24,13 +22,13 @@ public class Main{
        QuizPage q1 = new QuizPage("CSE", "mustafa");
        Subject sub1 = new Subject("mustafa");
        Result r1 = new Result();
-       //s2.setVisible(true);
+       s2.setVisible(true);
       //s1.setVisible(true);
       //h1.setVisible(true);
       // a1.setVisible(true);
       //s1.setVisible(true);
       //h1.setVisible(true);
-      // s1.setVisible(true);
+       //s1.setVisible(true);
        //a1.setVisible(true);
     //add.setVisible(true);
      // up.setVisible(true);
@@ -41,7 +39,7 @@ public class Main{
 
       // p1.setVisible(true);
       //  q1.setVisible(true);
-      sub1.setVisible(true);
+      //sub1.setVisible(true);
       //r1.setVisible(true);
 
     }

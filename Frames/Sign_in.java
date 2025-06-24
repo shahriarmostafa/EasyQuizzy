@@ -1,9 +1,7 @@
 package Frames;
 import java.lang.*;
 import javax.swing.*;
-
 import Entities.*;
-
 import java.awt.*;
 import java.awt.event.*;
 public class Sign_in extends JFrame implements MouseListener,ActionListener
@@ -14,7 +12,7 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
 	JPasswordField passfld;
 	JButton lgnbtn,rgstrbtn,backbtn;
     JLabel eyeIcon;
-	Color mycolor,lblcolor;
+	Color mycolor,lblcolor,themeColor;
 	Font myfont;
 	ImageIcon icon, sideImage, bigLogo, showIcon, hideIcon;
 	JPanel panel;
@@ -32,13 +30,15 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
         panel.setLayout(null);
         panel.setBackground(Color.WHITE);
 
+        themeColor = new Color(41, 110, 214);
+
         icon = new ImageIcon(getClass().getResource("/Images/logo.png"));
         this.setIconImage(icon.getImage());
 
         welcomelbl=new JLabel("Welcome Back");
         welcomelbl.setBounds(500, 100, 250, 150);
         welcomelbl.setFont(new Font("Arial", Font.BOLD, 26));
-        welcomelbl.setForeground(Color.BLUE);
+        welcomelbl.setForeground(themeColor);
         panel.add(welcomelbl);
 
         namelbl=new JLabel("Username");
@@ -62,8 +62,8 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
         passfld.setEchoChar('*');
         panel.add(passfld);
 
-        showIcon = new ImageIcon(getClass().getResource("../Images/eye-close-up.png"));
-        hideIcon = new ImageIcon(getClass().getResource("../Images/closed-eyes.png"));
+        showIcon = new ImageIcon(getClass().getResource("../Images/closed-eyes.png"));
+        hideIcon = new ImageIcon(getClass().getResource("../Images/eye-close-up.png"));
 
         Image scaledHide = hideIcon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH);
         eyeIcon = new JLabel(new ImageIcon(scaledHide));
@@ -81,7 +81,7 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
         lgnbtn=new JButton("Login");
         lgnbtn.setBounds(500,380,250,50);
         lgnbtn.setForeground(Color.WHITE);
-        lgnbtn.setBackground(Color.BLUE);
+        lgnbtn.setBackground(themeColor);
         lgnbtn.setFont(new Font("Arial", Font.BOLD, 18));
         lgnbtn.addMouseListener(this);
         lgnbtn.addActionListener(this);
@@ -96,7 +96,7 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
 
         rgstrbtn=new JButton("Sign Up");
         rgstrbtn.setBounds(670,445,80,30);
-        rgstrbtn.setForeground(Color.BLUE);
+        rgstrbtn.setForeground(themeColor);
         rgstrbtn.setBackground(Color.WHITE);
         rgstrbtn.setFont(new Font("Arial", Font.BOLD, 12));
         rgstrbtn.addMouseListener(this);
@@ -150,12 +150,12 @@ private void togglePasswordVisibility() {
         if(me.getSource()==lgnbtn)
         {
             lgnbtn.setBackground(Color.WHITE);
-            lgnbtn.setForeground(Color.BLUE);
+            lgnbtn.setForeground(themeColor);
         }
 
         else if(me.getSource()==rgstrbtn)
         {
-            rgstrbtn.setBackground(Color.BLUE);
+            rgstrbtn.setBackground(themeColor);
             rgstrbtn.setForeground(Color.WHITE);
         }
     }
@@ -163,21 +163,17 @@ private void togglePasswordVisibility() {
     {
         if(me.getSource()==lgnbtn)
         {
-            lgnbtn.setBackground(Color.BLUE);
+            lgnbtn.setBackground(themeColor);
             lgnbtn.setForeground(Color.WHITE);
         }
         else if(me.getSource()==rgstrbtn)
         {
             rgstrbtn.setBackground(Color.WHITE);
-            rgstrbtn.setForeground(Color.BLUE);
+            rgstrbtn.setForeground(themeColor);
         }
     }
     public void actionPerformed(ActionEvent ae)
 	{
-
-
-
-
 
 		if(ae.getSource()==rgstrbtn)
 		{

@@ -1,8 +1,6 @@
 package Frames;
-
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
 
 public class Subject extends JFrame implements ActionListener {

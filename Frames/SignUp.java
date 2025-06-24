@@ -8,10 +8,10 @@ import Entities.*;
 public class SignUp  extends JFrame implements MouseListener, ActionListener
 {
 
-    JLabel wlbl,fnmlbl,unmlbl,pslbl,crlbl, welcomeLabel, helloLabel, logoLbl,sloganlbl;
+    JLabel wlbl,fnmlbl,unmlbl,pslbl,crlbl, welcomeLabel, helloLabel, logoLbl,sloganlbl,queslbl;
 	JTextField fullNameField, usernameField;
 	JPasswordField passwordField, confirmPasswordField;
-	JButton rgstbtn,bckbtn;
+	JButton rgstbtn,lgnbtn;
     ImageIcon icon, roundLogo,openEyeIcon, closedEyeIcon;
 	JPanel panel, leftPanel;
     Color themeColor, hoverColor;
@@ -57,11 +57,11 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         logoLbl.setBounds(138, 200, 200, 200);
         panel.add(logoLbl);
 
-        // sloganlbl=new JLabel("Tap, think, win! Easy Quizzy brings"+"\n"+"the fun right to your fingertips." );
-        // sloganlbl.setBounds(100,400,250,100);
-        // sloganlbl.setFont(new Font("Arail", Font.PLAIN, 15));
-        // sloganlbl.setForeground(Color.WHITE);
-        // panel.add(sloganlbl);
+        sloganlbl=new JLabel("Your Brain’s Favorite Playground!");
+        sloganlbl.setBounds(70,400,500,100);
+        sloganlbl.setFont(new Font("Arail", Font.BOLD, 20));
+        sloganlbl.setForeground(Color.WHITE);
+        panel.add(sloganlbl);
 
 
         leftPanel = new JPanel();
@@ -74,12 +74,7 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         icon = new ImageIcon(getClass().getResource("../Images/logo.png"));
         this.setIconImage(icon.getImage());
 
-        // wlbl=new JLabel("Welcome");
-        // wlbl.setBounds(587, 50, 250, 150);
-        // wlbl.setFont(new Font("Arial", Font.BOLD, 26));
-        // wlbl.setForeground(Color.BLUE);
-        // panel.add(wlbl);
-
+        
         crlbl=new JLabel("Creat your account");
         crlbl.setBounds(587,4,300,100);
         crlbl.setFont(new Font("Arial", Font.BOLD, 28));
@@ -118,15 +113,15 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         passwordField.setEchoChar('*');
 		panel.add(passwordField);
 
-        // Load both eye icons (open and closed)
+        
         closedEyeIcon = new ImageIcon(getClass().getResource("../Images/eye-close-up.png"));
         openEyeIcon = new ImageIcon(getClass().getResource("../Images/closed-eyes.png"));
 
-        // Set scaled icons
+        
         Image closedEye = closedEyeIcon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH);
         Image openEye = openEyeIcon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH);
 
-        // Toggle password visibility icon
+        
         togglePassword = new JLabel(new ImageIcon(closedEye));
         togglePassword.setBounds(840, 265, 25, 25);
         togglePassword.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -144,7 +139,7 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         });
         panel.add(togglePassword);
 
-        // Confirm password
+        
         pslbl = new JLabel("Confirm Password");
         pslbl.setBounds(587, 305, 200, 50);
         pslbl.setFont(new Font("Arial", Font.BOLD, 15));
@@ -156,7 +151,7 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         confirmPasswordField.setEchoChar('*');
         panel.add(confirmPasswordField);
 
-        // Toggle confirm password icon
+        
         toggleConfirmPassword = new JLabel(new ImageIcon(closedEye));
         toggleConfirmPassword.setBounds(840, 345, 25, 25);
         toggleConfirmPassword.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -185,13 +180,20 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         panel.add(rgstbtn);
 
 
-        // bckbtn=new JButton("←");
-        // bckbtn.setBounds(0, 550, 20, 10);
-        // bckbtn.setForeground(Color.WHITE);
-        // bckbtn.setForeground(Color.WHITE);
-        // bckbtn.setFont(new Font("Arial", Font.BOLD, 18));
-        // bckbtn.addMouseListener(this);
-        // panel.add(bckbtn);
+        queslbl=new JLabel("Already have a account?");
+        queslbl.setBounds(586,455,200,50);
+        queslbl.setFont(new Font("Arial", Font.BOLD, 15));
+        panel.add(queslbl);
+
+
+        lgnbtn=new JButton("Login");
+        lgnbtn.setBounds(770,465,70,30);
+        lgnbtn.setForeground(themeColor);
+        lgnbtn.setBackground(Color.WHITE);
+        lgnbtn.setFont(new Font("Arial", Font.BOLD, 13));
+        lgnbtn.addMouseListener(this);
+        lgnbtn.addActionListener(this);
+        panel.add(lgnbtn);
 
         this.add(panel);
 
@@ -206,6 +208,12 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         {
             rgstbtn.setBackground(hoverColor);
         }
+        else if(me.getSource()==lgnbtn)
+        {
+           lgnbtn.setBackground(themeColor);
+           lgnbtn.setForeground(Color.WHITE);
+        }
+
 
     }
     public void mouseExited(MouseEvent me)
@@ -213,6 +221,11 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         if(me.getSource()==rgstbtn)
         {
             rgstbtn.setBackground(themeColor);
+        }
+         else if(me.getSource()==lgnbtn)
+        {
+           lgnbtn.setBackground(Color.WHITE);
+           lgnbtn.setForeground(themeColor);
         }
 
     }
@@ -242,7 +255,15 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
 			Sign_in s1 = new Sign_in();
             s1.setVisible(true);
         }
+       
         }
+        else if(ae.getSource()==lgnbtn)
+		{
+			this.setVisible(false);
+			Sign_in su=new Sign_in();
+			su.setVisible(true);
+		}
+        
     }
 
 
