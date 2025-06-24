@@ -136,8 +136,8 @@ public class deleteQ extends JFrame implements ActionListener{
         panel.add(qField);
 
         // Combo Box for department
-        String[] items = {"CSE", "CS", "CSSE", "SE", "CIS"};
-        combo = new JComboBox<>(items);
+        String items[] = new String[]{"CSE", "CS", "CSSE", "SE", "CIS"};
+        combo = new JComboBox(items);
         combo.setBounds(750, 260, 100, 30);
         combo.setFont(new Font("Arial", Font.BOLD, 14));
         combo.setBackground(Color.WHITE);

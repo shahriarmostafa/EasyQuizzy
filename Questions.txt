@@ -4,3 +4,4 @@ Mustafa ki vondo?	yes	option a	option b	option c	yes	CSE
 not a not n	b	x	d	e	e	CSE
 AIUB ki valo ?	valo na	ekdom e na	option a	option c	option c	Architechture
 What is what?	what is what	what is not what	what is ki	ki is ki	ki is ki	CSE
+what is question	question hoilo question	a	a	a	a	CSE

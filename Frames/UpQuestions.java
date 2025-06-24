@@ -149,8 +149,8 @@ public class UpQuestions extends JFrame implements ActionListener{
         panel.add(qField);
 
         // Combo Box for department
-        String[] items = {"CSE", "CS", "CSSE", "SE", "CIS"};
-        combo = new JComboBox<>(items);
+        String[] items = new String[]{"CSE", "EEE", "CS", "BBA", "English", "Architechture"};
+        combo = new JComboBox(items);
         combo.setBounds(750, 240, 100, 30);
         combo.setFont(new Font("Arial", Font.BOLD, 14));
         combo.setBackground(Color.WHITE);
@@ -234,16 +234,13 @@ public class UpQuestions extends JFrame implements ActionListener{
         String answer = ansField.getText();
         String department = combo.getSelectedItem().toString();
 
-Question q = new Question(question, optionA, optionB, optionC, optionD, answer, department);
-boolean success = q.updateQuestion(oldQuestionText);
+        Question q = new Question(question, optionA, optionB, optionC, optionD, answer, department);
+        boolean success = q.updateQuestion(oldQuestionText);
 
-if(success) {
-    JOptionPane.showMessageDialog(null, "Question updated successfully.");
-} else {
-    JOptionPane.showMessageDialog(null, "Question not found or failed to update.");
-}
-
+        if(success) {
+            JOptionPane.showMessageDialog(null, "Question updated successfully.");
+        } else {
+            JOptionPane.showMessageDialog(null, "Question not found or failed to update.");
+        }
     }
-
-
 }

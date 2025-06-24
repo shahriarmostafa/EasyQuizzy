@@ -163,7 +163,7 @@ public class SeeResult extends JFrame {
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         panel.add(scrollPane);
 
-       String[] subjects = {"CSE", "EEE", "CS", "BBA", "English", "Architecture"};
+       String subjects[] = new String[]{"CSE", "EEE", "CS", "BBA", "English", "Architechture"};
 
 int XValue = 275;
 int startY = 485;
