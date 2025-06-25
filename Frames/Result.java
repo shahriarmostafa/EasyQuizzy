@@ -15,8 +15,8 @@ public class Result extends JFrame implements ActionListener{
     JButton home;
     JPanel panel;
     int resultNumber;
-    String username;
-    String subject;
+    private String username;
+    private String subject;
 
     public Result(){
 

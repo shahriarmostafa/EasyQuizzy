@@ -33,3 +33,5 @@ Syed Shahriar Mustafa	1	CSE	mustafa
 Leonel Messi	2	CSE	suiii
 Ronaldo	5	CSE	messi10
 Ronaldo	13	CSE	messi10
+Ronaldo	7	BBA	messi10
+Ronaldo	10	CSE	messi10

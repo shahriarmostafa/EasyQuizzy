@@ -53,7 +53,7 @@ public class Account
 		String fullName = "";
 		try
 		{
-			myfile=new File("./Data.txt");
+			myfile=new File("./DataBase/Data.txt");
 			sc=new Scanner(myfile);
 			
 			while(sc.hasNextLine())
@@ -89,7 +89,7 @@ public class Account
 	{
 		try
 		{
-			myfile=new File("./Data.txt");
+			myfile=new File("./DataBase/Data.txt");
 			myfile.createNewFile();
 			fwrite=new FileWriter(myfile,true);
 
@@ -112,7 +112,7 @@ public class Account
 		boolean flag=false;
 		try
 		{
-			myfile=new File("./Data.txt");
+			myfile=new File("./DataBase/Data.txt");
 			sc=new Scanner(myfile);
 			
 			while(sc.hasNextLine())

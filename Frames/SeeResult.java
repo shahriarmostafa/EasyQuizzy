@@ -205,7 +205,7 @@ for (int i = 0; i < subjects.length; i++) {
 
 try {
     // Count valid lines
-    File myfile = new File("./Result.txt");
+    File myfile = new File("./DataBase/Result.txt");
     Scanner lineCounter = new Scanner(myfile);
     int count = 0;
     while (lineCounter.hasNextLine()) {

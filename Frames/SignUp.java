@@ -17,8 +17,8 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
 	JPanel panel, leftPanel;
     Color themeColor, hoverColor;
     JLabel togglePassword, toggleConfirmPassword;
-    boolean isPasswordVisible = false;
-    boolean isConfirmPasswordVisible = false;
+    private boolean isPasswordVisible = false;
+    private boolean isConfirmPasswordVisible = false;
 
     
 

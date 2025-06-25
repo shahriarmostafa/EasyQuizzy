@@ -55,7 +55,7 @@ public class ResultUploader {
         String lastResult = "None";
 		try
 		{
-			myfile=new File("./Result.txt");
+			myfile=new File("./DataBase/Result.txt");
 			sc=new Scanner(myfile);
 			
 			while(sc.hasNextLine())
@@ -80,7 +80,7 @@ public class ResultUploader {
         int totalRightAnswered = 0;
 		try
 		{
-			myfile=new File("./Result.txt");
+			myfile=new File("./DataBase/Result.txt");
 			sc=new Scanner(myfile);
 			
 			while(sc.hasNextLine())
@@ -104,7 +104,7 @@ public class ResultUploader {
         int totalQuizAttended = 0;
 		try
 		{
-			myfile=new File("./Result.txt");
+			myfile=new File("./DataBase/Result.txt");
 			sc=new Scanner(myfile);
 			
 			while(sc.hasNextLine())

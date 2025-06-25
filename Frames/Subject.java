@@ -9,7 +9,7 @@ public class Subject extends JFrame implements ActionListener {
     JLabel pageTitle, subject1, subject2, subject3, subject4, subject5, subject6;
     Color themeColor, themeSubColor, pink, red, orange, yellow, green, gray;
     ImageIcon icon, subject;
-    String username;
+    private String username;
 
     public Subject(String username) {
         super("Select a Subject");

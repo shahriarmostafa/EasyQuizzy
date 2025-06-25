@@ -71,7 +71,7 @@ public class Question{
 
     public void addQuestion(){
         try {
-            myfile = new File("./Questions.txt");
+            myfile = new File("./DataBase/Questions.txt");
             myfile.createNewFile();
             fwrite = new FileWriter(myfile, true);
 
@@ -93,7 +93,7 @@ public class Question{
 
 public boolean updateQuestion(String oldQuestionText) {
     boolean updated = false;
-    myfile = new File("./Questions.txt");
+    myfile = new File("./DataBase/Questions.txt");
     File futureFile = new File("./Questions_temp.txt");
     Scanner sc;
     
@@ -134,7 +134,7 @@ public boolean updateQuestion(String oldQuestionText) {
 
 public boolean deleteQuestion(String questionToDelete){
     boolean deleted = false;
-    myfile = new File("./Questions.txt");
+    myfile = new File("./DataBase/Questions.txt");
     File tempFile = new File("./Questions_temp.txt");
     Scanner sc;
 

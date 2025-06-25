@@ -14,17 +14,14 @@ public class QuizPage extends JFrame implements ActionListener{
     ButtonGroup optionsGroup;
     JButton nextButton;
 
-    String username;
-    String depertment;
+    private String username;
+    private String depertment;
 
-    // Radio buttons as fields so we can update text later
     JRadioButton radioButton1, radioButton2, radioButton3, radioButton4;
 
-    // Array of filtered questions
     Question[] questions;
     int currentIndex = 0;
 
-    // Stats counters
     int totalAnswered = 0;
     int rightAnswered = 0;
     int wrongAnswered = 0;
@@ -41,7 +38,7 @@ public class QuizPage extends JFrame implements ActionListener{
         this.username = username;
         depertment=selectedDepartment;
 
-        questions = loadQuestions("Questions.txt", selectedDepartment);
+        questions = loadQuestions("./DataBase/Questions.txt", selectedDepartment);
 
 
         if (questions.length == 0) {
@@ -137,7 +134,6 @@ public class QuizPage extends JFrame implements ActionListener{
 
         optionsGroup = new ButtonGroup();
 
-        // Option 1
         optionPanel1 = new JPanel();
         optionPanel1.setLayout(null);
         optionPanel1.setBounds(460, 210, 400, 50);
@@ -152,7 +148,6 @@ public class QuizPage extends JFrame implements ActionListener{
         optionPanel1.add(radioButton1);
         optionsGroup.add(radioButton1);
 
-        // Option 2
         optionPanel2 = new JPanel();
         optionPanel2.setLayout(null);
         optionPanel2.setBounds(460, 270, 400, 50);
@@ -167,7 +162,6 @@ public class QuizPage extends JFrame implements ActionListener{
         optionPanel2.add(radioButton2);
         optionsGroup.add(radioButton2);
 
-        // Option 3
         optionPanel3 = new JPanel();
         optionPanel3.setLayout(null);
         optionPanel3.setBounds(460, 330, 400, 50);
@@ -182,7 +176,6 @@ public class QuizPage extends JFrame implements ActionListener{
         optionPanel3.add(radioButton3);
         optionsGroup.add(radioButton3);
 
-        // Option 4
         optionPanel4 = new JPanel();
         optionPanel4.setLayout(null);
         optionPanel4.setBounds(460, 390, 400, 50);
@@ -205,13 +198,11 @@ public class QuizPage extends JFrame implements ActionListener{
         nextButton.addActionListener(this);
         panel.add(nextButton);
 
-        // questions
 
 
 
         
 
-        // Show the first question
         showQuestion(currentIndex);
             
     }
@@ -268,7 +259,6 @@ public class QuizPage extends JFrame implements ActionListener{
 
     private Question[] loadQuestions(String filePath, String department) {
     int count = 0;
-    // First pass: count how many matching questions
     try{
         Scanner sc = new Scanner(new File(filePath));
         while (sc.hasNextLine()) {
@@ -285,7 +275,6 @@ public class QuizPage extends JFrame implements ActionListener{
         return new Question[0];
     }
 
-    // Second pass: actually store the matching questions
     Question[] questions = new Question[count];
     int index = 0;
 
