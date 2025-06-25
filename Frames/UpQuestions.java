@@ -29,7 +29,6 @@ public class UpQuestions extends JFrame implements ActionListener,MouseListener{
 
         themeColor = new Color(41, 110, 214);
 
-        // Admin icon
         adminIcon = new ImageIcon(getClass().getResource("../Images/adminIcon.png"));
         Image scaledImageRlogo = adminIcon.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH);
         ImageIcon scaledImageRlogoFinal = new ImageIcon(scaledImageRlogo);
@@ -37,7 +36,6 @@ public class UpQuestions extends JFrame implements ActionListener,MouseListener{
         adminLbl.setBounds(190, 7, 40, 40);
         panel.add(adminLbl);
 
-        // Back button
         backButton = new JButton("Back");
         backButton.setBounds(700, 7, 100, 30);
         backButton.setForeground(Color.BLUE);
@@ -126,7 +124,6 @@ public class UpQuestions extends JFrame implements ActionListener,MouseListener{
         seeResButton.addActionListener(this);
         showStuDeatilsButton.addActionListener(this);
 
-        // Mid part - update icon
         upQIcon = new ImageIcon(getClass().getResource("../Images/upQ.png"));
         Image scaledUpQImage = upQIcon.getImage().getScaledInstance(140,140, Image.SCALE_SMOOTH);
         ImageIcon scaledUpQIconFinal = new ImageIcon(scaledUpQImage);
@@ -134,14 +131,12 @@ public class UpQuestions extends JFrame implements ActionListener,MouseListener{
         upQJLabel.setBounds(450, 50, 140, 140);
         panel.add(upQJLabel);
 
-        // Update Question text
         addQLabel = new JLabel("Update Question");
         addQLabel.setBounds(430, 170, 200, 50);
         addQLabel.setFont(new Font("Arial", Font.BOLD, 24));
         addQLabel.setForeground(new Color(70, 138, 59));
         panel.add(addQLabel);
 
-        //old q
         oldQLabel = new JLabel("Old Question:");
         oldQLabel.setBounds(200, 200, 200, 50);
         oldQLabel.setFont(new Font("Arial", Font.BOLD, 20));
@@ -154,7 +149,6 @@ public class UpQuestions extends JFrame implements ActionListener,MouseListener{
 
 
 
-        // Question Label and Field
         qLabel = new JLabel("Question:");
         qLabel.setBounds(200, 260, 100, 50);
         qLabel.setFont(new Font("Arial", Font.BOLD, 20));
@@ -165,7 +159,6 @@ public class UpQuestions extends JFrame implements ActionListener,MouseListener{
         qField.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(qField);
 
-        // Combo Box for department
         String[] items = new String[]{"CSE", "EEE", "CS", "BBA", "English", "Architechture"};
         combo = new JComboBox(items);
         combo.setBounds(750, 240, 100, 30);

@@ -19,23 +19,19 @@ public class ShowDetails extends JFrame implements ActionListener,MouseListener{
 
         themeColor = new Color(41, 110, 214);
 
-        // Panel setup
         panel = new JPanel();
         panel.setLayout(null);
         panel.setBackground(Color.WHITE);
         this.setContentPane(panel);
 
-        // Frame icon
         icon = new ImageIcon(getClass().getResource("../Images/logo.png"));
         this.setIconImage(icon.getImage());
 
-        // Admin icon
         adminIcon = new ImageIcon(getClass().getResource("../Images/adminIcon.png"));
         Image scaledAdmin = adminIcon.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH);
         JLabel adminLbl = new JLabel(new ImageIcon(scaledAdmin));
         adminLbl.setBounds(190, 7, 40, 40);
         panel.add(adminLbl);
-        // Back button
         backButton = new JButton("Back");
         backButton.setBounds(700, 7, 100, 30);
         backButton.setForeground(Color.BLUE);
@@ -43,7 +39,6 @@ public class ShowDetails extends JFrame implements ActionListener,MouseListener{
         backButton.setFont(new Font("Arial", Font.BOLD, 16));
         panel.add(backButton);
 
-        // Log Out button
         logOutButton = new JButton("Log Out");
         logOutButton.setBounds(805, 7, 100, 30);
         logOutButton.setForeground(Color.BLUE);
@@ -51,7 +46,6 @@ public class ShowDetails extends JFrame implements ActionListener,MouseListener{
         logOutButton.setFont(new Font("Arial", Font.BOLD, 16));
         panel.add(logOutButton);
 
-        // Top panel
         topPanel = new JPanel();
         topPanel.setLayout(null);
         topPanel.setBounds(185, 0, 950, 50);
@@ -64,7 +58,6 @@ public class ShowDetails extends JFrame implements ActionListener,MouseListener{
         namelbl.setForeground(Color.WHITE);
         topPanel.add(namelbl);
 
-        // Side panel
         sidePanel = new JPanel();
         sidePanel.setLayout(null);
         sidePanel.setBounds(0, 0, 185, 600);
@@ -122,7 +115,7 @@ public class ShowDetails extends JFrame implements ActionListener,MouseListener{
         delQButton.addActionListener(this);
         seeResButton.addActionListener(this);
         showStuDeatilsButton.addActionListener(this);
-        // Mid part
+        
         showDetailsIcon = new ImageIcon(getClass().getResource("../Images/showDetails.png"));
         Image scaledImage = showDetailsIcon.getImage().getScaledInstance(140, 140, Image.SCALE_SMOOTH);
         JLabel imgLabel = new JLabel(new ImageIcon(scaledImage));

@@ -41,7 +41,6 @@ public class Profile extends JFrame implements ActionListener{
         labelProfileImage.setBounds(115, 40, 150, 150);
         panel.add(labelProfileImage);
 
-        //mid part
         nameLabel = new JLabel(new Account().getFullNameWithPara(username), SwingConstants.CENTER);
         nameLabel.setBounds(0, 190, 380, 30);
         nameLabel.setFont(new Font("Arial", Font.BOLD, 30));

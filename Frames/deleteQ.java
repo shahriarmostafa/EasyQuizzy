@@ -29,7 +29,6 @@ public class deleteQ extends JFrame implements ActionListener,MouseListener{
         icon = new ImageIcon(getClass().getResource("../Images/logo.png"));
         this.setIconImage(icon.getImage());
 
-        // Admin icon
         adminIcon = new ImageIcon(getClass().getResource("../Images/adminIcon.png"));
         Image scaledImageRlogo = adminIcon.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH);
         ImageIcon scaledImageRlogoFinal = new ImageIcon(scaledImageRlogo);
@@ -37,7 +36,6 @@ public class deleteQ extends JFrame implements ActionListener,MouseListener{
         adminLbl.setBounds(190, 7, 40, 40);
         panel.add(adminLbl);
 
-        // Back button
         backButton = new JButton("Back");
         backButton.setBounds(700, 7, 100, 30);
         backButton.setForeground(Color.BLUE);
@@ -45,7 +43,6 @@ public class deleteQ extends JFrame implements ActionListener,MouseListener{
         backButton.setFont(new Font("Arial", Font.BOLD, 16));
         panel.add(backButton);
 
-        // Log Out button
         logOutButton = new JButton("Log Out");
         logOutButton.setBounds(805, 7, 100, 30);
         logOutButton.setForeground(Color.BLUE);
@@ -53,7 +50,6 @@ public class deleteQ extends JFrame implements ActionListener,MouseListener{
         logOutButton.setFont(new Font("Arial", Font.BOLD, 16));
         panel.add(logOutButton);
 
-        // Top panel
         topPanel = new JPanel();
         topPanel.setLayout(null);
         topPanel.setBounds(185, 0, 950, 50);
@@ -66,7 +62,6 @@ public class deleteQ extends JFrame implements ActionListener,MouseListener{
         namelbl.setForeground(Color.WHITE);
         topPanel.add(namelbl);
 
-        // Side panel
         sidePanel = new JPanel();
         sidePanel.setLayout(null);
         sidePanel.setBounds(0, 0, 185, 600);
@@ -108,7 +103,6 @@ public class deleteQ extends JFrame implements ActionListener,MouseListener{
         showStuDeatilsButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(showStuDeatilsButton);
 
-        // Mid part - delete icon
         deleteQIcon = new ImageIcon(getClass().getResource("../Images/deleteQ.png"));
         Image scaledDeleteQImage = deleteQIcon.getImage().getScaledInstance(140,140, Image.SCALE_SMOOTH);
         ImageIcon scaledDeleteQIconFinal = new ImageIcon(scaledDeleteQImage);
@@ -116,14 +110,12 @@ public class deleteQ extends JFrame implements ActionListener,MouseListener{
         deleteQJLabel.setBounds(450, 60, 140, 140);
         panel.add(deleteQJLabel);
 
-        // Delete Question text
         deleteQLabel = new JLabel("Delete Question");
         deleteQLabel.setBounds(430, 185, 200, 50);
         deleteQLabel.setFont(new Font("Arial", Font.BOLD, 24));
         deleteQLabel.setForeground(new Color(197, 68, 68));
         panel.add(deleteQLabel);
 
-        // Question Label and Field
         qLabel = new JLabel("Question:");
         qLabel.setBounds(200, 220, 100, 50);
         qLabel.setFont(new Font("Arial", Font.BOLD, 20));
@@ -134,7 +126,6 @@ public class deleteQ extends JFrame implements ActionListener,MouseListener{
         qField.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(qField);
 
-        // Combo Box for department
         
 
         backButton.addMouseListener(this);

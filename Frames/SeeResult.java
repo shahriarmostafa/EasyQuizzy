@@ -3,8 +3,7 @@ import javax.swing.*;
 
 import java.awt.event.*;
 import java.awt.*;
-// import java.awt.event.ActionListener;
-// import java.awt.event.MouseListener;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -186,8 +185,6 @@ public class SeeResult extends JFrame implements ActionListener,MouseListener {
 
        String subjects[] = new String[]{"CSE", "EEE", "CS", "BBA", "English", "Architechture"};
 
-int XValue = 275;
-int startY = 485;
 int btnWidth = 100;
 int btnHeight = 30;
 int gap = 10;
@@ -195,7 +192,7 @@ int gap = 10;
 for (int i = 0; i < subjects.length; i++) {
     String subject = subjects[i];
     JButton subjectBtn = new JButton(subject);
-    subjectBtn.setBounds(XValue + (i % 3) * (btnWidth + gap), startY + (i / 3) * (btnHeight + gap), btnWidth, btnHeight);
+    subjectBtn.setBounds(250 + i * (btnWidth + gap), 500, btnWidth, btnHeight);
     subjectBtn.setBackground(new Color(70, 138, 59));
     subjectBtn.setForeground(Color.WHITE);
     subjectBtn.setFont(new Font("Arial", Font.BOLD, 12));
@@ -203,8 +200,8 @@ for (int i = 0; i < subjects.length; i++) {
     panel.add(subjectBtn);
 }
 
+
 try {
-    // Count valid lines
     File myfile = new File("./DataBase/Result.txt");
     Scanner lineCounter = new Scanner(myfile);
     int count = 0;
@@ -214,10 +211,8 @@ try {
     }
     lineCounter.close();
 
-    // Create array
     allResults = new String[count][3];
 
-    // Re-open and fill valid entries only
     Scanner sc = new Scanner(myfile);
     int index = 0;
     while (sc.hasNextLine()) {
@@ -235,7 +230,6 @@ try {
     JOptionPane.showMessageDialog(null, "Result.txt file not found!", "Error", JOptionPane.ERROR_MESSAGE);
 }
 
-    // Default view with first subject
     updateResultTable(subjects[0]);
 
 
