@@ -1,6 +1,10 @@
 package Frames;
 import java.lang.*;
 import javax.swing.*;
+
+import Entities.Account;
+import Entities.Question;
+
 import java.awt.event.*;
 import java.awt.*;
 
@@ -91,11 +95,12 @@ public class AdminPage extends JFrame implements MouseListener,ActionListener{
         midPanel1.setBackground(new Color(14, 22, 79));
         panel.add(midPanel1);
 
-       tstuNum = new JLabel("455");
-       tstuNum.setBounds(60, 15, 100, 50);
-       tstuNum.setFont(new Font("Arial", Font.BOLD, 56));
-       tstuNum.setForeground(Color.WHITE);
-       midPanel1.add(tstuNum);
+        tstuNum = new JLabel(String.valueOf(new Account().getTotalStudents()));
+        // tstuNum = new JLabel("24");
+        tstuNum.setBounds(60, 15, 100, 50);
+        tstuNum.setFont(new Font("Arial", Font.BOLD, 56));
+        tstuNum.setForeground(Color.WHITE);
+        midPanel1.add(tstuNum);
 
         totalStu = new ImageIcon(getClass().getResource("../Images/TotalStu.png"));
         Image scaledAddQImage = totalStu.getImage().getScaledInstance(
@@ -120,7 +125,6 @@ public class AdminPage extends JFrame implements MouseListener,ActionListener{
         midPanel2.setBackground(new Color(14, 22, 79));
         panel.add(midPanel2);
         
-        // Icon setup for Q&A
         qnA = new ImageIcon(getClass().getResource("../Images/Q&A.png"));
         Image scaledQAImage = qnA.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH);
         ImageIcon scaledQAIcon = new ImageIcon(scaledQAImage);
@@ -128,15 +132,14 @@ public class AdminPage extends JFrame implements MouseListener,ActionListener{
         qaLbl.setBounds(75, 70, 60, 60);
         midPanel2.add(qaLbl);
         
-        // Number Label (e.g., "123")
-        JLabel tqaNum = new JLabel("123"); // You can change this number as needed
+        // JLabel tqaNum = new JLabel(String.valueOf(new Question().getTotalQuestions())); 
+        JLabel tqaNum = new JLabel("75"); 
         tqaNum.setBounds(60, 15, 100, 50);
         tqaNum.setFont(new Font("Arial", Font.BOLD, 56));
         tqaNum.setForeground(Color.WHITE);
         midPanel2.add(tqaNum);
         
-        // Description label below midPanel2
-        JLabel qnaLabel = new JLabel("Set of Question & Answer");
+        JLabel qnaLabel = new JLabel("Total Question & Answer");
         qnaLabel.setBounds(610, 500, 350, 50); // Adjust as needed
         qnaLabel.setFont(new Font("Arial", Font.BOLD, 24));
         qnaLabel.setForeground(new Color(14, 22, 79));
@@ -144,32 +147,8 @@ public class AdminPage extends JFrame implements MouseListener,ActionListener{
 
 
 
-        // midPanel3= new JPanel();
-        // midPanel3.setLayout(null);
-        // midPanel3.setBounds(250, 350, 200, 150);
-        // midPanel3.setBackground(new Color(14, 22, 79));
-        // panel.add(midPanel3);
 
-
-        // midPanel4 = new JPanel();
-        // midPanel4.setLayout(null);
-        // midPanel4.setBounds(650, 350, 200, 150);
-        // midPanel4.setBackground(new Color(14, 22, 79));
-        // panel.add(midPanel4);
-
-
-
-
-
-       // add q
-        // addQ = new ImageIcon(getClass().getResource("../Images/addQ.png"));
-        // Image scaledAddQImage = addQ.getImage().getScaledInstance(
-        //     38, 38, Image.SCALE_SMOOTH
-        // );
-        // ImageIcon scaledAddQIcon = new ImageIcon(scaledAddQImage);
-        // JLabel addQlbl = new JLabel(scaledAddQIcon);
-        // addQlbl.setBounds(0, 7, 38, 38);
-        // sidePanel.add(addQlbl);
+        
 
         addQButton = new JButton("Add Question");
         addQButton.setBounds(0, 0, 185, 60);

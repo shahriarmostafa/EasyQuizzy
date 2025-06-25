@@ -230,29 +230,27 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
     public void actionPerformed(ActionEvent ae){
         if(ae.getSource() == rgstbtn){
             String fullName = fullNameField.getText();
-        String username = usernameField.getText();
-        String password = passwordField.getText();
-        String confirmpassword = confirmPasswordField.getText();
-        if(fullName.isEmpty() ||username.isEmpty() || password.isEmpty() || confirmpassword.isEmpty())
-            {
-                JOptionPane.showMessageDialog(null,"Feild is empty");
-        }
-        else if(username.equals("admin")){
-            JOptionPane.showMessageDialog(null,"Username can not be admin...");
-        }
-        else if(!password.equals(confirmpassword)){
-            JOptionPane.showMessageDialog(null,"Password did not match...");
-        }
-        else{
-            Account a1=new Account(fullName , username, password);
-			a1.addAccount();
-            Sign_in s1 = new Sign_in();
-            s1.setVisible(true);
-			this.setVisible(false);
-            JOptionPane.showMessageDialog(null,"Sign Up Successful. Now please sign in");
-
-			
-        }
+            String username = usernameField.getText();
+            String password = passwordField.getText();
+            String confirmpassword = confirmPasswordField.getText();
+            if(fullName.isEmpty() ||username.isEmpty() || password.isEmpty() || confirmpassword.isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null,"Feild is empty");
+            }
+            else if(username.equals("admin")){
+                JOptionPane.showMessageDialog(null,"Username can not be admin...");
+            }
+            else if(!password.equals(confirmpassword)){
+                JOptionPane.showMessageDialog(null,"Password did not match...");
+            }
+            else{
+                Account a1=new Account(fullName , username, password);
+                a1.addAccount();
+                Sign_in s1 = new Sign_in();
+                s1.setVisible(true);
+                this.setVisible(false);
+                JOptionPane.showMessageDialog(null,"Sign Up Successful. Now please sign in");                
+            }
        
         }
         else if(ae.getSource()==lgnbtn)
