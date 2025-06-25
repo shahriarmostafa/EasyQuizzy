@@ -84,6 +84,24 @@ public class Account
 		return upass;
 	}
 
+	public int getTotalStudents(){
+        myfile = new File("./Data.txt");
+        Scanner sc;
+        int count = 0;
+    
+        try {
+            sc = new Scanner(myfile);
+            while (sc.hasNextLine()){
+				sc.nextLine();
+                count++;
+            }
+            sc.close();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+		}
+        return count;
+    }
+
 	
 	public void addAccount()
 	{

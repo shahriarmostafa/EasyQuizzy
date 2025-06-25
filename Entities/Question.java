@@ -69,6 +69,24 @@ public class Question{
         return department;
     }
 
+    public int getTotalQuestions(){
+        myfile = new File("./Questions.txt");
+        Scanner sc;
+        int count = 0;
+    
+        try {
+            sc = new Scanner(myfile);
+            while (sc.hasNextLine()){
+                sc.nextLine();
+                count  = count + 1;
+            }
+            sc.close();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+        return count;
+    }
+
     public void addQuestion(){
         try {
             myfile = new File("./Questions.txt");
