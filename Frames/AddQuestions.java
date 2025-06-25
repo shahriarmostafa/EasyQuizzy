@@ -38,25 +38,20 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
         adminLbl.setBounds(190, 7, 40, 40);
         panel.add(adminLbl);
 
-        // Back button
         backButton = new JButton("Back");
         backButton.setBounds(700, 7, 100, 30);
         backButton.setForeground(Color.BLUE);
         backButton.setBackground(Color.WHITE);
         backButton.setFont(new Font("Arial", Font.BOLD, 16));
-        // backButton.addActionListener(this);
         panel.add(backButton);
 
-        // Log Out button
         logOutButton = new JButton("Log Out");
         logOutButton.setBounds(805, 7, 100, 30);
         logOutButton.setForeground(Color.BLUE);
         logOutButton.setBackground(Color.WHITE);
         logOutButton.setFont(new Font("Arial", Font.BOLD, 16));
-        // logOutButton.addActionListener(this);
         panel.add(logOutButton);
 
-        // Top panel
         topPanel = new JPanel();
         topPanel.setLayout(null);
         topPanel.setBounds(185, 0, 950, 50);
@@ -69,7 +64,6 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
         namelbl.setForeground(Color.WHITE);
         topPanel.add(namelbl);
 
-        // Side panel
         sidePanel = new JPanel();
         sidePanel.setLayout(null);
         sidePanel.setBounds(0, 0, 185, 600);
@@ -131,7 +125,6 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
 
 
         
-        //mid part
         addQIcon = new ImageIcon(getClass().getResource("../Images/addQ.png"));
         Image scaledAddQImage = addQIcon.getImage().getScaledInstance(
             140, 140, Image.SCALE_SMOOTH);
@@ -140,14 +133,12 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
         addQLabel.setBounds(450, 60, 140, 140);
         panel.add(addQLabel);
 
-        //Add Qestion text
         addQLabel = new JLabel("Add Question");
         addQLabel.setBounds(450, 180, 200, 50);
         addQLabel.setFont(new Font("Arial", Font.BOLD, 24));
         addQLabel.setForeground(new Color(70, 138, 59));
         panel.add(addQLabel);
 
-        //Queston:
         qLabel=new JLabel("Qestion: ");
         qLabel.setBounds(200,220,100,50);
         qLabel.setFont(new Font("Arial", Font.BOLD, 20));
@@ -168,7 +159,6 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
        panel.add(combo);
 
 
-       // Option A
        optionALabel = new JLabel("Option A:");
        optionALabel.setBounds(200, 320, 100, 30);
        optionALabel.setFont(new Font("Arial", Font.BOLD, 16));
@@ -179,7 +169,6 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
        optionAField.setFont(new Font("Arial", Font.PLAIN, 15));
        panel.add(optionAField);
        
-       // Option B
        optionBLabel = new JLabel("Option B:");
        optionBLabel.setBounds(200, 360, 100, 30);
        optionBLabel.setFont(new Font("Arial", Font.BOLD, 16));
@@ -190,7 +179,6 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
        optionBField.setFont(new Font("Arial", Font.PLAIN, 15));
        panel.add(optionBField);
        
-       // Option C
        optionCLabel = new JLabel("Option C:");
        optionCLabel.setBounds(200, 400, 100, 30);
        optionCLabel.setFont(new Font("Arial", Font.BOLD, 16));
@@ -201,7 +189,6 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
        optionCField.setFont(new Font("Arial", Font.PLAIN, 15));
        panel.add(optionCField);
        
-       // Option D
        optionDLabel = new JLabel("Option D:");
        optionDLabel.setBounds(200, 440, 100, 30);
        optionDLabel.setFont(new Font("Arial", Font.BOLD, 16));
@@ -212,7 +199,6 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
        optionDField.setFont(new Font("Arial", Font.PLAIN, 15));
        panel.add(optionDField);
 
-       //ans
        ansLabel = new JLabel("Answer:");
        ansLabel.setBounds(200, 500, 100, 30);
        ansLabel.setForeground(new Color(70, 138, 59));
@@ -357,13 +343,11 @@ public class AddQuestions extends JFrame implements ActionListener,MouseListener
 
         
 
-            // Create Question object and add to file
             Question q = new Question(question, optionA, optionB, optionC, optionD, answer, department);
             q.addQuestion();
 
             JOptionPane.showMessageDialog(null, "Question added successfully!");
 
-            // Clear input fields
             qField.setText("");
             optionAField.setText("");
             optionBField.setText("");

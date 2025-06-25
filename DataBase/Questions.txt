@@ -73,3 +73,4 @@ What is reinforced concrete?	Concrete with iron bars	Clean concrete	Colored conc
 Which of the following is an architectural style?	Gothic	French	Dutch	English	Gothic	Architechture
 What is a cantilever?	A support beam	A suspended staircase	An overhanging structure	Foundation structure	An overhanging structure	Architechture
 Which tag is used for inserting images in HTML?	<image>	add photo	<img>	none	<img>	CSE
+This is a sample question	a	b	c	d	a	CSE

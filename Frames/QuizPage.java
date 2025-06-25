@@ -30,7 +30,6 @@ public class QuizPage extends JFrame implements ActionListener{
 
     public QuizPage(String selectedDepartment, String username) {
 
-        // Basic setup
         super("Quiz");
         this.setSize(950, 600);
         this.setLocationRelativeTo(null);
@@ -38,7 +37,7 @@ public class QuizPage extends JFrame implements ActionListener{
         this.username = username;
         depertment=selectedDepartment;
 
-        questions = loadQuestions("./DataBase/Questions.txt", selectedDepartment);
+        questions = loadQuestions(selectedDepartment);
 
 
         if (questions.length == 0) {
@@ -211,7 +210,7 @@ public class QuizPage extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource() == nextButton){
             if (optionsGroup.getSelection() == null) {
-                JOptionPane.showMessageDialog(QuizPage.this, "Please select an answer before continuing.");
+                JOptionPane.showMessageDialog(null, "Please select an answer before continuing.");
                 return;
             }
             totalAnswered++;
@@ -257,7 +256,8 @@ public class QuizPage extends JFrame implements ActionListener{
         optionsGroup.clearSelection();
     }
 
-    private Question[] loadQuestions(String filePath, String department) {
+    private Question[] loadQuestions(String department) {
+    String filePath = "./DataBase/Questions.txt";
     int count = 0;
     try{
         Scanner sc = new Scanner(new File(filePath));

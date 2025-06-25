@@ -79,7 +79,7 @@ public class Subject extends JFrame implements ActionListener {
         subjectButton4.addActionListener(this);
         panel.add(subjectButton4);
 
-        subjectButton5 = new JButton("Arch");
+        subjectButton5 = new JButton("Architechture");
         subjectButton5.setBounds(140, 360, 130,90);
         subjectButton5.setBackground(yellow);
         subjectButton5.setForeground(Color.WHITE);

@@ -183,23 +183,20 @@ public class SeeResult extends JFrame implements ActionListener,MouseListener {
 
        String subjects[] = new String[]{"CSE", "EEE", "CS", "BBA", "English", "Architechture"};
 
-int startY = 485;
-int btnWidth = 100;
-int btnHeight = 30;
-int gap = 10;
+        int gap = 10;
 
-for (int i = 0; i < subjects.length; i++) {
-    String subject = subjects[i];
-    JButton subjectBtn = new JButton(subject);
-    subjectBtn.setBounds(275 + (i % 3) * (btnWidth + gap), startY + (i / 3) * (btnHeight + gap), btnWidth, btnHeight);
-    subjectBtn.setBackground(new Color(70, 138, 59));
-    subjectBtn.setForeground(Color.WHITE);
-    subjectBtn.setFont(new Font("Arial", Font.BOLD, 12));
-    currentSubject = i;
-    subjectBtn.addActionListener(this);
-    
-    panel.add(subjectBtn);
-}
+        for (int i = 0; i < subjects.length; i++) {
+            String subject = subjects[i];
+            JButton subjectBtn = new JButton(subject);
+            subjectBtn.setBounds(250 + 110 * i, 500, 100, 30);
+            subjectBtn.setBackground(new Color(70, 138, 59));
+            subjectBtn.setForeground(Color.WHITE);
+            subjectBtn.setFont(new Font("Arial", Font.BOLD, 12));
+            currentSubject = i;
+            subjectBtn.addActionListener(this);
+            
+            panel.add(subjectBtn);
+        }
 
 try {
     File myfile = new File("./DataBase/Result.txt");

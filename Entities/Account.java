@@ -110,11 +110,9 @@ public class Account
 			myfile=new File("./DataBase/Data.txt");
 			myfile.createNewFile();
 			fwrite=new FileWriter(myfile,true);
-
 			fwrite.write(getFullName()+"\t");
 			fwrite.write(getUserName()+"\t");
 			fwrite.write(getUserPass()+"\n");
-			
 			fwrite.flush();
 			fwrite.close();
 			
