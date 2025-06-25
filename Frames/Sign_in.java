@@ -36,28 +36,28 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
         this.setIconImage(icon.getImage());
 
         welcomelbl=new JLabel("Welcome Back");
-        welcomelbl.setBounds(500, 100, 250, 150);
+        welcomelbl.setBounds(550, 100, 250, 150);
         welcomelbl.setFont(new Font("Arial", Font.BOLD, 26));
         welcomelbl.setForeground(themeColor);
         panel.add(welcomelbl);
 
         namelbl=new JLabel("Username");
-        namelbl.setBounds(500,200,100,50);
+        namelbl.setBounds(550,200,100,50);
         namelbl.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(namelbl);
 
         namefld=new JTextField();
-        namefld.setBounds(500,240,250,35);
+        namefld.setBounds(550,240,250,35);
         namefld.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(namefld);
 
         passlbl=new JLabel("Password");
-        passlbl.setBounds(500,270,100,50);
+        passlbl.setBounds(550,270,100,50);
         passlbl.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(passlbl);
 
         passfld=new JPasswordField();
-        passfld.setBounds(500,310,250,35);
+        passfld.setBounds(550,310,250,35);
         passfld.setFont(new Font("Arial", Font.BOLD, 15));
         passfld.setEchoChar('*');
         panel.add(passfld);
@@ -67,19 +67,13 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
 
         Image scaledHide = hideIcon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH);
         eyeIcon = new JLabel(new ImageIcon(scaledHide));
-        eyeIcon.setBounds(750, 315, 25, 25);
-        eyeIcon.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        eyeIcon.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                togglePasswordVisibility();
-            }
-        });
+        eyeIcon.setBounds(800, 315, 25, 25);
+        eyeIcon.addMouseListener(this);
         panel.add(eyeIcon);
 
 
         lgnbtn=new JButton("Login");
-        lgnbtn.setBounds(500,380,250,50);
+        lgnbtn.setBounds(550,380,250,50);
         lgnbtn.setForeground(Color.WHITE);
         lgnbtn.setBackground(themeColor);
         lgnbtn.setFont(new Font("Arial", Font.BOLD, 18));
@@ -88,14 +82,14 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
         panel.add(lgnbtn);
 
         queslbl=new JLabel("Don’t have a account?");
-        queslbl.setBounds(500,435,200,50);
+        queslbl.setBounds(550,435,200,50);
         queslbl.setFont(new Font("Arial", Font.BOLD, 15));
         panel.add(queslbl);
 
 
 
         rgstrbtn=new JButton("Sign Up");
-        rgstrbtn.setBounds(670,445,80,30);
+        rgstrbtn.setBounds(725,445,80,30);
         rgstrbtn.setForeground(themeColor);
         rgstrbtn.setBackground(Color.WHITE);
         rgstrbtn.setFont(new Font("Arial", Font.BOLD, 12));
@@ -117,7 +111,7 @@ public class Sign_in extends JFrame implements MouseListener,ActionListener
         );
         ImageIcon scaledImageFinal = new ImageIcon(scaledImage);
         logolbl = new JLabel(scaledImageFinal);
-        logolbl.setBounds(500, 25, 164, 124);
+        logolbl.setBounds(548, 25, 164, 124);
         panel.add(logolbl);
 
 
@@ -142,7 +136,12 @@ private void togglePasswordVisibility() {
 }
 
 
-    public void mouseClicked(MouseEvent me){}
+    public void mouseClicked(MouseEvent me){
+        if(me.getSource() == eyeIcon){
+            togglePasswordVisibility();
+
+        }
+    }
 	public void mousePressed(MouseEvent me){}
 	public void mouseReleased(MouseEvent me){}
     public void mouseEntered(MouseEvent me)

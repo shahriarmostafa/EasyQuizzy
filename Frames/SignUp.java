@@ -13,9 +13,9 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
 	JPasswordField passwordField, confirmPasswordField;
 	JButton rgstbtn,lgnbtn;
     ImageIcon icon, roundLogo,openEyeIcon, closedEyeIcon;
+    Image openEye, closedEye;
 	JPanel panel, leftPanel;
     Color themeColor, hoverColor;
-
     JLabel togglePassword, toggleConfirmPassword;
     boolean isPasswordVisible = false;
     boolean isConfirmPasswordVisible = false;
@@ -36,14 +36,14 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
 		panel.setLayout(null);
 
 
-        helloLabel=new JLabel("Hello,");
-        helloLabel.setBounds(185, 80, 400, 70);
+        helloLabel=new JLabel("Hello,", SwingConstants.CENTER);
+        helloLabel.setBounds(0, 80, 475, 70);
         helloLabel.setFont(new Font("Arail", Font.PLAIN, 30));
         helloLabel.setForeground(Color.WHITE);
         panel.add(helloLabel);
 
-        welcomeLabel=new JLabel("Welcome to");
-        welcomeLabel.setBounds(110, 120, 400, 70);
+        welcomeLabel=new JLabel("Welcome to", SwingConstants.CENTER);
+        welcomeLabel.setBounds(0, 120, 475, 70);
         welcomeLabel.setFont(new Font("Arail", Font.BOLD, 44));
         welcomeLabel.setForeground(Color.WHITE);
         panel.add(welcomeLabel);
@@ -54,11 +54,11 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         );
         ImageIcon scaledImageFinal = new ImageIcon(scaledImage);
         logoLbl = new JLabel(scaledImageFinal);
-        logoLbl.setBounds(138, 200, 200, 200);
+        logoLbl.setBounds(137, 200, 200, 200);
         panel.add(logoLbl);
 
-        sloganlbl=new JLabel("Your Brain’s Favorite Playground!");
-        sloganlbl.setBounds(70,400,500,100);
+        sloganlbl=new JLabel("Your Brain’s Favorite Playground!", SwingConstants.CENTER);
+        sloganlbl.setBounds(0,400,475,100);
         sloganlbl.setFont(new Font("Arail", Font.BOLD, 20));
         sloganlbl.setForeground(Color.WHITE);
         panel.add(sloganlbl);
@@ -118,25 +118,13 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         openEyeIcon = new ImageIcon(getClass().getResource("../Images/closed-eyes.png"));
 
         
-        Image closedEye = closedEyeIcon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH);
-        Image openEye = openEyeIcon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH);
+        closedEye = closedEyeIcon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH);
+        openEye = openEyeIcon.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH);
 
         
         togglePassword = new JLabel(new ImageIcon(closedEye));
         togglePassword.setBounds(840, 265, 25, 25);
-        togglePassword.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        togglePassword.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {
-                if (isPasswordVisible) {
-                    passwordField.setEchoChar('*');
-                    togglePassword.setIcon(new ImageIcon(closedEye));
-                } else {
-                    passwordField.setEchoChar((char) 0);
-                    togglePassword.setIcon(new ImageIcon(openEye));
-                }
-                isPasswordVisible = !isPasswordVisible;
-            }
-        });
+        togglePassword.addMouseListener(this);
         panel.add(togglePassword);
 
         
@@ -154,19 +142,7 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
         
         toggleConfirmPassword = new JLabel(new ImageIcon(closedEye));
         toggleConfirmPassword.setBounds(840, 345, 25, 25);
-        toggleConfirmPassword.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        toggleConfirmPassword.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {
-                if (isConfirmPasswordVisible) {
-                    confirmPasswordField.setEchoChar('*');
-                    toggleConfirmPassword.setIcon(new ImageIcon(closedEye));
-                } else {
-                    confirmPasswordField.setEchoChar((char) 0);
-                    toggleConfirmPassword.setIcon(new ImageIcon(openEye));
-                }
-                isConfirmPasswordVisible = !isConfirmPasswordVisible;
-            }
-        });
+        toggleConfirmPassword.addMouseListener(this);
         panel.add(toggleConfirmPassword);
 
         rgstbtn=new JButton("Sign Up");
@@ -199,7 +175,28 @@ public class SignUp  extends JFrame implements MouseListener, ActionListener
 
 
     }
-    public void mouseClicked(MouseEvent me){}
+    public void mouseClicked(MouseEvent me){
+        if(me.getSource() == togglePassword){
+            if (isPasswordVisible) {
+                passwordField.setEchoChar('*');
+                togglePassword.setIcon(new ImageIcon(closedEye));
+            } else {
+                passwordField.setEchoChar((char) 0);
+                togglePassword.setIcon(new ImageIcon(openEye));
+            }
+            isPasswordVisible = !isPasswordVisible;
+        }
+        else if( me.getSource() == toggleConfirmPassword){
+            if (isConfirmPasswordVisible) {
+                    confirmPasswordField.setEchoChar('*');
+                    toggleConfirmPassword.setIcon(new ImageIcon(closedEye));
+                } else {
+                    confirmPasswordField.setEchoChar((char) 0);
+                    toggleConfirmPassword.setIcon(new ImageIcon(openEye));
+                }
+                isConfirmPasswordVisible = !isConfirmPasswordVisible;
+        }
+    }
 	public void mousePressed(MouseEvent me){}
 	public void mouseReleased(MouseEvent me){}
     public void mouseEntered(MouseEvent me)
