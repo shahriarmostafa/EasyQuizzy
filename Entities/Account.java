@@ -85,7 +85,7 @@ public class Account
 	}
 
 	public int getTotalStudents(){
-        myfile = new File("./Data.txt");
+        myfile = new File("./DataBase/Data.txt");
         Scanner sc;
         int count = 0;
     
@@ -94,6 +94,7 @@ public class Account
             while (sc.hasNextLine()){
 				sc.nextLine();
                 count++;
+				System.out.println(count);
             }
             sc.close();
         } catch (IOException ioe) {

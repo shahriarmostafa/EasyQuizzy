@@ -70,7 +70,7 @@ public class Question{
     }
 
     public int getTotalQuestions(){
-        myfile = new File("./Questions.txt");
+        myfile = new File("./DataBase/Questions.txt");
         Scanner sc;
         int count = 0;
     
@@ -112,7 +112,7 @@ public class Question{
 public boolean updateQuestion(String oldQuestionText) {
     boolean updated = false;
     myfile = new File("./DataBase/Questions.txt");
-    File futureFile = new File("./Questions_temp.txt");
+    File futureFile = new File("./DataBase/Questions_temp.txt");
     Scanner sc;
     
     try {
@@ -153,7 +153,7 @@ public boolean updateQuestion(String oldQuestionText) {
 public boolean deleteQuestion(String questionToDelete){
     boolean deleted = false;
     myfile = new File("./DataBase/Questions.txt");
-    File tempFile = new File("./Questions_temp.txt");
+    File tempFile = new File("./DataBase/Questions_temp.txt");
     Scanner sc;
 
     try {

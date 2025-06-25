@@ -26,7 +26,7 @@ public class ResultUploader {
 
     public void uploadResult() {
         try{
-            FileWriter fwrite = new FileWriter("Result.txt", true);
+            FileWriter fwrite = new FileWriter("./DataBase/Result.txt", true);
             fwrite.write(getFullName() + "\t");
             fwrite.write(getResult() + "\t");
             fwrite.write(getDepartment() + "\t");
