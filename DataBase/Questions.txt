@@ -51,7 +51,7 @@ Who is known as the father of modern management?	Elon Musk	Steve Jobs	Peter Druc
 What is GDP?	Gross Domestic Product	Global Data Position	General Demand Price	Gross Demand Potential	Gross Domestic Product	BBA
 Which of these is a leadership style?	Tough	Easy	Autocratic	Democratic	Autocratic	BBA
 What is the function of HRM?	Stock control	Staff management	Fundraising	Marketing	Staff management	BBA
-Which of these is a pricing strategy?	Skimming	Linking	Merging	Stacking	Skimming	BBA
+Which of these is a pricing strategy?	i dont know	no body knows	somebody knows	i know	i know	CSE
 What is a startup?	Old company	New business venture	Public company	Subsidiary company	New business venture	BBA
 Which of these is a liability?	Revenue	Capital	Loan	Profit	Loan	BBA
 What is bookkeeping?	Writing books	Keeping records of finance	Planning meetings	Designing posters	Keeping records of finance	BBA

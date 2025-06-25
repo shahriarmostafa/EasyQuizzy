@@ -126,7 +126,6 @@ public class UpQuestions extends JFrame implements ActionListener,MouseListener{
         seeResButton.addActionListener(this);
         showStuDeatilsButton.addActionListener(this);
 
-        // Mid part - update icon
         upQIcon = new ImageIcon(getClass().getResource("../Images/upQ.png"));
         Image scaledUpQImage = upQIcon.getImage().getScaledInstance(140,140, Image.SCALE_SMOOTH);
         ImageIcon scaledUpQIconFinal = new ImageIcon(scaledUpQImage);

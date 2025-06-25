@@ -140,7 +140,7 @@ public class AdminPage extends JFrame implements MouseListener,ActionListener{
         midPanel2.add(tqaNum);
         
         JLabel qnaLabel = new JLabel("Total Question & Answer");
-        qnaLabel.setBounds(610, 500, 350, 50); // Adjust as needed
+        qnaLabel.setBounds(610, 500, 350, 50); 
         qnaLabel.setFont(new Font("Arial", Font.BOLD, 24));
         qnaLabel.setForeground(new Color(14, 22, 79));
         panel.add(qnaLabel);
@@ -158,28 +158,28 @@ public class AdminPage extends JFrame implements MouseListener,ActionListener{
         sidePanel.add(addQButton);
         
         upQButton = new JButton("Update Question");
-        upQButton.setBounds(0, 60, 185, 60); // 0 + 60
+        upQButton.setBounds(0, 60, 185, 60);
         upQButton.setForeground(Color.WHITE);
         upQButton.setBackground(themeColor);
         upQButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(upQButton);
         
         delQButton = new JButton("Delete Question");
-        delQButton.setBounds(0, 120, 185, 60); // 60 + 60
+        delQButton.setBounds(0, 120, 185, 60);
         delQButton.setForeground(Color.WHITE);
         delQButton.setBackground(themeColor);
         delQButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(delQButton);
         
         seeResButton = new JButton("See Result");
-        seeResButton.setBounds(0, 180, 185, 60); // 120 + 60
+        seeResButton.setBounds(0, 180, 185, 60);
         seeResButton.setForeground(Color.WHITE);
         seeResButton.setBackground(themeColor);
         seeResButton.setFont(new Font("Arial", Font.PLAIN, 20));
         sidePanel.add(seeResButton);
         
         showStuDeatilsButton = new JButton("Show Details");
-        showStuDeatilsButton.setBounds(0, 240, 185, 60); // 180 + 60
+        showStuDeatilsButton.setBounds(0, 240, 185, 60);
         showStuDeatilsButton.setForeground(Color.WHITE);
         showStuDeatilsButton.setBackground(themeColor);
         showStuDeatilsButton.setFont(new Font("Arial", Font.PLAIN, 20));

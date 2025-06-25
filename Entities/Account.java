@@ -94,7 +94,6 @@ public class Account
             while (sc.hasNextLine()){
 				sc.nextLine();
                 count++;
-				System.out.println(count);
             }
             sc.close();
         } catch (IOException ioe) {
